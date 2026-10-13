@@ -1,13 +1,13 @@
 # ================================================================================
 #  ALTERNATIVE-VIEW FIGURES
 # ================================================================================
-#  Five alternative presentations of the main results, read back from the
+#  Three alternative presentations of the main results, read back from the
 #  pipeline outputs (no statistics are recomputed). Written to alt_results/ at 300 dpi:
 #    trend01_slope_first_last.png   slope chart, first vs last year, MK-significant states coloured
 #    trend03_sen_dotbar.png         sorted Sen-slope dot-and-bar per state
-#    spat01_choropleth_facet.png    mean annual incidence small multiples
-#    spat02_lisa_facet.png          LISA cluster categories per disease
 #    glm02_caterpillar_temp_irr.png per-state temperature IRR (NegBin), sorted
+#  (The former map views spat01/spat02 were retired: every map is now drawn once, with the three
+#  diseases as symbols, by arbovirus_geospatial.R -- Figure 6 and Figure S2A.)
 # ================================================================================
 # Locate the project root (the folder holding R/utils.R) from this file, Rscript --file= or the working dir.
 .root <- local({
@@ -21,7 +21,7 @@
 })
 source(file.path(.root, "R", "utils.R"))
 source(path_root("pipelines", "data_loader.R"))
-quiet_library("ggplot2", "patchwork", "readxl", "sf")
+quiet_library("ggplot2", "patchwork", "readxl")
 
 OUT_MAIN <- OUTPUT_DIR
 OUT <- path_root("alt_results")
@@ -44,8 +44,6 @@ save_alt <- function(p, name, w, h) {
 # ---- data loaders ----------------------------------------------------------------
 annual_incidence <- function() as.data.table(read_excel(file.path(OUT_MAIN, "py_statistical_results.xlsx"), sheet = "Annual_Incidence"))
 mann_kendall <- function() as.data.table(read_excel(file.path(OUT_MAIN, "py_statistical_results.xlsx"), sheet = "Mann_Kendall"))
-lisa <- function() as.data.table(read_excel(file.path(OUT_MAIN, "geo_spatial_stats.xlsx"), sheet = "LISA_Clusters"))
-mean_inc <- function() as.data.table(read_excel(file.path(OUT_MAIN, "geo_spatial_stats.xlsx"), sheet = "Mean_Incidence"))
 glm_csv <- function(family, spec) fread(file.path(OUT_MAIN, sprintf("glm_%s_%s.csv", family, spec)))
 
 # matplotlib "symlog" axis (linthresh 10, linscale 1, base 10)
@@ -113,36 +111,6 @@ fig_sen_dotbar <- function(mk) {
   save_alt(p, "trend03_sen_dotbar.png", 13, 6.2)
 }
 
-fig_choropleth_facet <- function(mean, gdf) {
-  panels <- lapply(VIRUS_ORDER, function(virus) {
-    g <- merge(gdf, as.data.frame(mean[Virus == virus]), by = "Location_Name", all.x = TRUE)
-    ggplot(g) + geom_sf(aes(fill = Mean_Inc), colour = "white", linewidth = 0.4 / 2.13) +
-      scale_fill_gradientn(colours = c("#f5f5f5", VIRUS_COLOR[[virus]]), na.value = "#e0e0e0", name = "Mean annual\nincidence /100k",
-                           guide = guide_colourbar(barheight = unit(2.2, "in"))) +
-      coord_sf(datum = NA) + labs(title = virus) + theme_void(base_family = PLOT_FONT) +
-      theme(plot.title = element_text(face = "bold", size = 11, hjust = 0.5, colour = VIRUS_COLOR[[virus]]),
-            legend.title = element_text(size = 8), legend.text = element_text(size = 8))
-  })
-  caption_note("spat01_choropleth_facet.png", "Former title", "Choropleth small-multiples \u2014 mean annual incidence per 100k")
-  save_alt(wrap_plots(panels, nrow = 1), "spat01_choropleth_facet.png", 13.5, 5.4)
-}
-
-fig_lisa_grid <- function(lisa_df, gdf) {
-  cat_color <- c(HH = "#b2182b", LL = "#2166ac", HL = "#ef8a62", LH = "#67a9cf", NS = "#dddddd")
-  panels <- lapply(VIRUS_ORDER, function(virus) {
-    g <- merge(gdf, as.data.frame(lisa_df[Virus == virus, .(Location_Name, LISA_Cat)]), by = "Location_Name", all.x = TRUE)
-    g$LISA_Cat[is.na(g$LISA_Cat) | !(g$LISA_Cat %in% names(cat_color))] <- "NS"
-    ggplot(g) + geom_sf(aes(fill = LISA_Cat), colour = "white", linewidth = 0.4 / 2.13, show.legend = TRUE) +
-      scale_fill_manual(values = cat_color, limits = names(cat_color), drop = FALSE, name = NULL) +
-      coord_sf(datum = NA) + labs(title = virus) + theme_void(base_family = PLOT_FONT) +
-      theme(plot.title = element_text(face = "bold", size = 11, hjust = 0.5, colour = VIRUS_COLOR[[virus]]))
-  })
-  p <- wrap_plots(panels, nrow = 1, guides = "collect") & theme(legend.position = "bottom", legend.text = element_text(size = 9))
-  p <- p & guides(fill = guide_legend(nrow = 1))
-  caption_note("spat02_lisa_facet.png", "Former title", "LISA cluster categories \u2014 faceted by disease")
-  save_alt(p, "spat02_lisa_facet.png", 13.5, 5.4)
-}
-
 fig_caterpillar_per_state <- function(per_state_nb) {
   panels <- lapply(VIRUS_ORDER, function(virus) {
     sub <- per_state_nb[Virus == virus & Term == "Temp_Avg"][order(IRR)]
@@ -161,12 +129,11 @@ fig_caterpillar_per_state <- function(per_state_nb) {
 }
 
 main <- function() {
-  ai <- annual_incidence(); mk <- mann_kendall(); li <- lisa(); mi <- mean_inc()
+  ai <- annual_incidence(); mk <- mann_kendall()
   per_state_nb <- glm_csv("negbin", "per_state")
-  gdf <- get_brazil_states()
-  written <- c(fig_slope_chart(ai, mk), fig_sen_dotbar(mk), fig_choropleth_facet(mi, gdf), fig_lisa_grid(li, gdf),
-               fig_caterpillar_per_state(per_state_nb))
+  written <- c(fig_slope_chart(ai, mk), fig_sen_dotbar(mk), fig_caterpillar_per_state(per_state_nb))
   write_caption_notes("alt_results.R")
+  cat(sprintf("Wrote %d figures to %s:\n", length(written), OUT))
   for (p in written) cat(sprintf("  - %s\n", basename(p)))
 }
 

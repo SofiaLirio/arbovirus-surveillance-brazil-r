@@ -164,8 +164,19 @@ write_xlsx_sheets <- function(sheets, path) {
     for (j in seq_along(d)) if (is.factor(d[[j]])) d[[j]] <- as.character(d[[j]])
     d
   })
-  writexl::write_xlsx(sheets, path)
+  # writexl stamps the creation time into the file, so rewriting an unchanged table would still
+  # produce a different file on every run; keep the existing file when every cell is the same.
+  tmp <- tempfile(fileext = ".xlsx")
+  on.exit(unlink(tmp))
+  writexl::write_xlsx(sheets, tmp)
+  if (!(file.exists(path) && xlsx_same_values(tmp, path))) file.copy(tmp, path, overwrite = TRUE)
   invisible(path)
+}
+xlsx_same_values <- function(a, b) {
+  sa <- readxl::excel_sheets(a)
+  sb <- tryCatch(readxl::excel_sheets(b), error = function(e) NULL)
+  identical(sa, sb) && all(vapply(sa, function(s)
+    identical(readxl::read_excel(a, s, col_types = "text"), readxl::read_excel(b, s, col_types = "text")), logical(1)))
 }
 
 # ---------------------------------------------------------------------------------------------
@@ -210,7 +221,6 @@ FIGURE_OF <- c(
   Dengue_04_age_group_violin = "Figure 5A", Chikungunya_04_age_group_violin = "Figure 5A", Zika_04_age_group_violin = "Figure 5A",
   Dengue_03_sex = "Figure 5B", Chikungunya_03_sex = "Figure 5B", Zika_03_sex = "Figure 5B",
   geo_07_combined_map = "Figure 6",
-  geo_02_temporal_dengue = "Figure S1", geo_03_temporal_chikv = "Figure S1", geo_04_temporal_zikv = "Figure S1",
   geo_05_lisa_clusters = "Figure S2A", geo_06_trend_map = "Figure S2B",
   Dengue_02_ELISA = "Figure 7A", Dengue_02_IgM = "Figure 7B", Dengue_02_hospitalization = "Figure 7C", Dengue_03_serotype = "Figure 7D",
   Chikungunya_03_classification = "Figure 8A", Chikungunya_03_criteria = "Figure 8A", Chikungunya_03_evolution = "Figure 8A",
@@ -219,7 +229,8 @@ FIGURE_OF <- c(
   glm_fig4_aic_comparison = "GLM Figure 4", glm_fig5_forest_significant = "GLM Figure 5")
 figure_of <- function(output_file) {
   key <- sub("\\.png$", "", basename(output_file))
-  ifelse(key %in% names(FIGURE_OF), unname(FIGURE_OF[key]), "Supplementary")
+  ifelse(key %in% names(FIGURE_OF), unname(FIGURE_OF[key]),
+         ifelse(startsWith(key, "geo_02_temporal_"), "Figure S1", "Supplementary"))   # one map per year
 }
 
 # Figures carry no in-plot titles; the text they used to hold (former titles, statistics, colour keys)

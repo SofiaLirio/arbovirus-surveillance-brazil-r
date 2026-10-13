@@ -77,7 +77,7 @@ annual incidence, Mann-Kendall, Spearman, global Moran, mean incidence, LISA, an
 | `Figure7`, `Figure8` | Clinical/laboratory counts and the plotted % (DENV; CHIKV and ZIKV) |
 | `GLM_Figures` | glm_fig1–5 |
 | `Additional_Figures` | DLNM, co-circulation, spatial regression, ITS, forecast, epidemic threshold |
-| `Supplementary_Figures` | S1: incidence per state-year (temporal maps). S2: LISA and MK trend classes. py_02, py_03b, py_06b/c, py_07, clinical monthly and state totals, alt_results |
+| `Supplementary_Figures` | S1: incidence per state-year and its natural-breaks class (all years pooled), class bounds. S2: LISA and MK trend classes. py_02, py_03b, py_06b/c, py_07, clinical monthly and state totals, alt_results |
 | `Tables` | Bootstrap CIs, global Moran, clinical breakdowns for 2016–2026 |
 
 **Caveats:**

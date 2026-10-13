@@ -103,7 +103,7 @@ arbovirus-brazil-portable/
 ├── clinical_tables/          # clinical/demographic breakdowns 2016–2026
 ├── outputs/                  # tables + plots (outputs/2026-10-08/additional/ = advanced analyses)
 ├── figures/                  # composite publication figures (Figure 1–8, S1–S2, GLM figures)
-├── alt_results/              # 5 alternative-view figures
+├── alt_results/              # 3 alternative-view figures
 └── source_data/              # one xlsx per figure, one sheet per panel
 ```
 
@@ -123,14 +123,25 @@ and SINAN 2016–2024; the 2025 SINAN zips were re-packed with identical content
 `docs/DATA_SOURCES.md`).
 
 ## Figures
-Main figures are in `figures/` (Figure 1–8; Figure 6 is a single map with the three diseases),
-supplementary maps in `FigureS1_temporal_maps.png` and `FigureS2_lisa_trend.png`, and the numbers
-behind each panel in `source_data/`. Figures carry no in-plot titles. Text for the captions is
-generated with them:
+Main figures are in `figures/` (Figure 1–8), supplementary maps in `FigureS1_<year>.png`
+(2016–2026, plus `FigureS1_overview.png`) and `FigureS2_lisa_trend.png`, and the numbers behind each
+panel in `source_data/`. Every map uses one design: a single map of Brazil with one symbol per state
+and disease (circle = dengue, triangle = chikungunya, square = Zika), filled by the mapped category.
+Figures carry no in-plot titles. Text for the captions is generated with them:
 - `outputs/figure_caption_values.csv`: statistics, colour keys and class bounds per figure panel;
 - `outputs/figure_exclusions.csv` and `figure_exclusions_captions.txt`: records with ignored/blank
   values left out of each clinical figure (n and %), plus ready-to-use caption sentences;
 - `outputs/figure_exclusions_state_years.csv`: state-years without SINAN records.
+
+Draft captions for every figure, with a methods/limitations paragraph, are in
+[`docs/FIGURE_CAPTIONS.md`](docs/FIGURE_CAPTIONS.md).
+
+## License and data
+The code is released under the [MIT License](LICENSE); see [`CITATION.cff`](CITATION.cff) to cite it.
+The tables in `db/` and `clinical_tables/`, and the results and figures, are derived from Brazilian
+federal open data (SINAN/OpenDataSUS, INMET, IBGE), published under the Política de Dados Abertos
+(Decreto 8.777/2016). Cite those publishers and the access date (see
+[`docs/DATA_SOURCES.md`](docs/DATA_SOURCES.md)).
 
 ---
 

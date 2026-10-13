@@ -8,8 +8,8 @@
 #   Figure 6 — Combined map: mean incidence class of the three diseases on one map of Brazil
 #   Figure 7 — Dengue clinical (ELISA, IgM, hospitalization, serotype)
 #   Figure 8 — Chikungunya and Zika clinical
-#   Figure S1 — Annual incidence maps by year, one panel per disease
-#   Figure S2 — LISA clusters (A) and Mann-Kendall trend classes (B), per disease
+#   Figure S1 — Annual incidence, one combined map per year (FigureS1_<year>) + overview grid
+#   Figure S2 — LISA clusters (A) and Mann-Kendall trends (B), each one combined map
 # Locate the project root (the folder holding R/utils.R) from this file, Rscript --file= or the working dir.
 .root <- local({
   cand <- c(unlist(lapply(rev(sys.frames()), function(e) get0("ofile", envir = e, inherits = FALSE))),
@@ -127,15 +127,20 @@ main <- function() {
   combo <- load_img(file.path(OUT_DIR, "geo_07_combined_map.png"))
   composite("Figure6_combined_map.png", 8, 8 / ratio(combo), 1, 1, list(cell(combo, 1, 1)))
 
-  # ── Supplementary maps: S1 temporal maps (one panel per disease), S2 LISA (A) + trend (B) ──
-  td <- load_img(file.path(OUT_DIR, "geo_02_temporal_dengue.png"))
-  tc <- load_img(file.path(OUT_DIR, "geo_03_temporal_chikv.png"))
-  tz <- load_img(file.path(OUT_DIR, "geo_04_temporal_zikv.png"))
+  # ── Figure S1: one map per year (the year is tagged on each map) + an overview grid ──
+  yrs <- sort(as.integer(sub("^geo_02_temporal_([0-9]{4})\\.png$", "\\1",
+                             list.files(OUT_DIR, pattern = "^geo_02_temporal_[0-9]{4}\\.png$"))))
+  ty <- lapply(yrs, function(y) load_img(file.path(OUT_DIR, sprintf("geo_02_temporal_%d.png", y))))
+  for (i in seq_along(yrs))
+    composite(sprintf("FigureS1_%d.png", yrs[i]), 8, 8 / ratio(ty[[i]]), 1, 1, list(cell(ty[[i]], 1, 1)))
+  nc <- 4; nr <- ceiling(length(yrs) / nc)
+  composite("FigureS1_overview.png", 6 * nc, 6 * nr / ratio(ty[[1]]), rep(1, nr), rep(1, nc),
+            lapply(seq_along(yrs), function(i) cell(ty[[i]], (i - 1) %/% nc + 1, (i - 1) %% nc + 1)))
+
+  # ── Figure S2: LISA clusters (A) and Mann-Kendall trends (B) ──
   lisa <- load_img(file.path(OUT_DIR, "geo_05_lisa_clusters.png"))
   trend <- load_img(file.path(OUT_DIR, "geo_06_trend_map.png"))
-  composite("FigureS1_temporal_maps.png", 18, 6 / ratio(td) + 0.3, 1, rep(1, 3),
-            list(cell(td, 1, 1), cell(tc, 1, 2), cell(tz, 1, 3)))
-  composite("FigureS2_lisa_trend.png", 18, 9 / ratio(lisa) + 0.3, 1, rep(1, 2),
+  composite("FigureS2_lisa_trend.png", 16, 8 / ratio(lisa) + 0.3, 1, rep(1, 2),
             list(cell(lisa, 1, 1, "A"), cell(trend, 1, 2, "B")))
 
   # ── Figure 7: Dengue clinical 2x2 ──

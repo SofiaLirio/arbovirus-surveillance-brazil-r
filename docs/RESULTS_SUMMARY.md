@@ -1,5 +1,9 @@
 # Arbovirus Surveillance in Brazil — Results Summary (Normalized DB pipeline)
 
+> **Historical document.** This summary describes the original 2016–2025 analysis; its figure file
+> names (e.g. `Figure6a`–`Figure6d`) refer to that version. For the current figures see the
+> "Figures" section of the [README](../README.md) and [`FIGURE_CAPTIONS.md`](FIGURE_CAPTIONS.md).
+
 **Run date:** 2026-10-01
 **Data window:** 2016–2025 (CHIKV starts 2017; ZIKV and DENV start 2016)
 **Spatial unit:** 27 Brazilian federative units

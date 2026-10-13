@@ -1,9 +1,10 @@
 # ================================================================================
 #  GEOSPATIAL ANALYSIS — NORMALIZED DB version
 # ================================================================================
-#  Combined three-disease incidence map (Figure 6), temporal maps, global Moran's I,
-#  LISA clusters and Mann-Kendall trend maps. Reads the normalized DB and writes to
-#  <repo>/outputs/.
+#  Global Moran's I, LISA clusters and Mann-Kendall trends per state, and every map
+#  figure: mean incidence (Figure 6), annual incidence per year (Figure S1), LISA and
+#  trend maps (Figure S2) -- all drawn as one map with the three diseases as symbols.
+#  Reads the normalized DB and writes to <repo>/outputs/.
 # ================================================================================
 # Locate the project root (the folder holding R/utils.R) from this file, Rscript --file= or the working dir.
 .root <- local({
@@ -17,16 +18,12 @@
 })
 source(file.path(.root, "R", "utils.R"))
 source(path_root("pipelines", "data_loader.R"))
-quiet_library("ggplot2", "patchwork", "sf")
+quiet_library("ggplot2", "sf")
 
 ALPHA <- 0.05
 # Fixed seed so Moran / LISA permutation p-values (and LISA categories) are reproducible
 PERM_SEED <- 12345
 
-COLORS <- c(Dengue = "#C0392B", Chikungunya = "#E67E22", Zika = "#2980B9")
-CMAPS  <- c(Dengue = "Reds", Chikungunya = "Oranges", Zika = "Blues")
-LISA_COLORS <- c(HH = "#D7191C", LL = "#2C7BB6", HL = "#FDAE61", LH = "#ABD9E9", NS = "#EEEEEE")
-XLIM <- c(-74, -33); YLIM <- c(-34, 6)
 Q_MAP <- c("1" = "HH", "2" = "LH", "3" = "LL", "4" = "HL")
 
 compute_mean_inc <- function(annual) {
@@ -83,75 +80,89 @@ run_mann_kendall <- function(annual) {
   })
 }
 
-# ---- map helpers --------------------------------------------------------------------------------
-map_theme <- function(base = 9) {
-  theme_void(base_size = base, base_family = PLOT_FONT) +
-    theme(plot.title = element_text(face = "bold", hjust = 0.5), plot.background = element_rect(fill = "white", colour = NA))
-}
-map_extent <- function() coord_sf(xlim = XLIM, ylim = YLIM, expand = FALSE, datum = NA)
-state_labels <- function(g, size = 4.5) {
-  d <- sf::st_drop_geometry(g)
-  d <- d[!is.na(d$Abbr), ]
-  geom_text(data = d, aes(centroid_x, centroid_y, label = Abbr), size = size / .pt, fontface = "bold",
-            family = PLOT_FONT, inherit.aes = FALSE)
-}
-virus_title <- function(virus, size = 11) theme(plot.title = element_text(colour = COLORS[[virus]], face = "bold", size = size, hjust = 0.5))
-
-# ---- combined map: the three diseases on one map --------------------------------------------------
-# One symbol per disease and UF (circle = dengue, triangle = chikungunya, square = Zika), filled by the
-# natural-breaks (Jenks, k = 5) class of the population-weighted mean annual incidence, computed per
-# disease. UF polygons stay neutral; states too small for three symbols get them offshore with a leader.
+# ---- symbol maps: the three diseases on one map ---------------------------------------------------
+# Every map figure is one map of Brazil with one symbol per disease and UF (circle = dengue,
+# triangle = chikungunya, square = Zika), filled by a category. UF polygons stay neutral; states
+# too small for three symbols get them offshore with a leader line.
 MAP_SHAPE <- c(Dengue = 21, Chikungunya = 24, Zika = 22)
 MAP_SIZE  <- c(Dengue = 2.6, Chikungunya = 2.4, Zika = 2.4)     # the triangle reads larger at equal size
-CLASS_FILL <- viridisLite::viridis(5, direction = -1)            # colour-blind-safe, light -> dark in grayscale
 MAP_XLIM <- c(-74.5, -28.0); MAP_YLIM <- c(-34.2, 5.8)
 SYMBOL_DX <- 1.05                                                # spacing of the three symbols (degrees)
 OFFSHORE <- data.frame(Abbr = c("RN", "PB", "PE", "AL", "SE", "ES", "RJ"),
                        ax = c(-31.4, -31.4, -31.4, -31.4, -31.4, -36.4, -40.2),
                        ay = c(-4.9, -6.6, -8.3, -10.0, -11.7, -20.2, -24.8))
 GO_ANCHOR <- c(-50.9, -17.1)   # GO's symbols step south-west so DF (inside GO) keeps its own row
+MAP_KEY <- paste("Circle = dengue, triangle = chikungunya, square = Zika; symbols for RN, PB, PE, AL, SE, ES and RJ",
+                 "are drawn offshore with a leader line to the state.")
 
-# list(symbols = one row per UF x disease with class and symbol position, bounds = class limits per disease)
-combined_map_data <- function(gdf_states, mean_inc) {
+# Fill categories. Incidence classes: viridis (colour-blind-safe, light -> dark in grayscale).
+# LISA / trend: hues separated in lightness as well (CIELAB L* 25 / 46 / 71 / 84 / 100 and
+# 38 / 68 / 100), so the categories stay distinct in grayscale; non-significant = white.
+CLASS_FILL <- setNames(viridisLite::viridis(5, direction = -1), 1:5)
+CLASS_LABELS <- c("1 (lowest)", "2", "3", "4", "5 (highest)")
+LISA_FILL <- c(HH = "#7f0000", LL = "#2171b5", HL = "#fc9272", LH = "#a8d8f8", NS = "#ffffff")
+LISA_LABELS <- c(HH = "HH (high-high cluster)", LL = "LL (low-low cluster)", HL = "HL (high-low outlier)",
+                 LH = "LH (low-high outlier)", NS = "Not significant")
+TREND_FILL <- c(increasing = "#b2182b", decreasing = "#6baed6", "no trend" = "#ffffff")
+TREND_LABELS <- c(increasing = "Increasing (p < 0.05)", decreasing = "Decreasing (p < 0.05)", "no trend" = "No significant trend")
+
+# Where each UF's three symbols sit: the polygon centroid, or the offshore / shifted anchor.
+symbol_anchors <- function(gdf_states) {
   cen <- as.data.table(sf::st_drop_geometry(gdf_states))[, .(Location_Name, Abbr, cx = centroid_x, cy = centroid_y)]
   cen[, `:=`(ax = cx, ay = cy, Offshore = FALSE)]
   cen[OFFSHORE, on = "Abbr", `:=`(ax = i.ax, ay = i.ay, Offshore = TRUE)]
   cen[Abbr == "GO", `:=`(ax = GO_ANCHOR[1], ay = GO_ANCHOR[2])]
   cen[Abbr == "DF", ay := cy + 0.25]
-  sym <- list(); bnd <- list()
-  for (virus in names(mean_inc)) {
-    d <- mean_inc[[virus]][!is.na(Mean_Inc)]
-    nb <- natural_breaks(d$Mean_Inc, 5)
-    sym[[virus]] <- d[, .(Location_Name, Mean_Inc, Virus = virus, Class = digitize_right(Mean_Inc, nb$bins) + 1L)]
-    bnd[[virus]] <- data.table(Virus = virus, Class = seq_len(nb$k), Lower = c(min(d$Mean_Inc), nb$bins[-nb$k]), Upper = nb$bins)
-  }
-  sym <- merge(cen, rbindlist(sym), by = "Location_Name")
+  cen
+}
+# d: one row per UF x disease (Location_Name, Virus, ...); adds the symbol position x, y.
+place_symbols <- function(anchors, d) {
+  sym <- merge(anchors, d, by = "Location_Name")
   sym[, Virus := factor(Virus, names(MAP_SHAPE))]
   sym[, `:=`(x = ax + (as.integer(Virus) - 2) * SYMBOL_DX, y = ay)]
-  list(symbols = sym[order_c(Location_Name, as.integer(Virus))], bounds = rbindlist(bnd))
+  sym[order_c(Location_Name, as.integer(Virus))]
+}
+# Natural-breaks (k = 5) classes of `col`, computed per disease over every row of d.
+jenks_classes <- function(d, col) {
+  sym <- list(); bnd <- list()
+  for (virus in unique(d$Virus)) {
+    s <- d[Virus == virus & !is.na(get(col))]
+    v <- s[[col]]; nb <- natural_breaks(v, 5)
+    sym[[virus]] <- s[, Class := digitize_right(v, nb$bins) + 1L]
+    bnd[[virus]] <- data.table(Virus = virus, Class = seq_len(nb$k), Lower = c(min(v), nb$bins[-nb$k]), Upper = nb$bins)
+  }
+  list(rows = rbindlist(sym), bounds = rbindlist(bnd))
+}
+# "Class bounds ..." note printed on the map, plus one formatted string per disease for the captions.
+bounds_note <- function(bounds) {
+  f0 <- function(x) formatC(x, format = "f", digits = 0, big.mark = ",")
+  bt <- bounds[, .(s = paste(sprintf("%s–%s", f0(Lower), f0(Upper)), collapse = "  |  ")), by = Virus]
+  list(text = paste0("Class bounds, cases per 100,000 (class 1 → 5)\n", paste(sprintf("%s:  %s", bt$Virus, bt$s), collapse = "\n")),
+       by_virus = bt)
 }
 
-plot_combined_map <- function(gdf_states, mean_inc, moran_global) {
-  md <- combined_map_data(gdf_states, mean_inc)
-  sym <- md$symbols
+# The map itself. sym: placed symbols with a factor column Fill whose levels are names(fill_values).
+# note: text in the bottom-right ocean; tag: panel identifier in the top-left corner (e.g. the year).
+symbol_map <- function(gdf_states, sym, fill_values, fill_name, fill_labels, note = NULL, tag = NULL) {
   uf <- unique(sym[, .(Abbr, cx, cy, ax, ay, Offshore)])
   lead <- uf[Offshore == TRUE]
   lab <- uf[, .(Abbr, lx = ifelse(Offshore, ax + SYMBOL_DX * 1.75, ax), ly = ifelse(Offshore, ay, ay - 0.95), hj = ifelse(Offshore, 0, 0.5))]
-  f0 <- function(x) formatC(x, format = "f", digits = 0, big.mark = ",")
-  bt <- md$bounds[, .(s = paste(sprintf("%s–%s", f0(Lower), f0(Upper)), collapse = "  |  ")), by = Virus]
-  bounds_txt <- paste0("Class bounds, cases per 100,000 (class 1 → 5)\n", paste(sprintf("%s:  %s", bt$Virus, bt$s), collapse = "\n"))
   p <- ggplot() +
     geom_sf(data = gdf_states, fill = "#ececec", colour = "#9a9a9a", linewidth = 0.18) +
     geom_segment(data = lead, aes(cx, cy, xend = ax - SYMBOL_DX * 1.6, yend = ay), colour = "#7a7a7a", linewidth = 0.25) +
     geom_point(data = lead, aes(cx, cy), size = 0.5, colour = "#7a7a7a") +
-    geom_point(data = sym, aes(x, y, shape = Virus, fill = factor(Class, 1:5), size = Virus), colour = "#333333", stroke = 0.35) +
-    geom_text(data = lab, aes(lx, ly, label = Abbr, hjust = hj), size = 6 / .pt, colour = "#333333", family = PLOT_FONT) +
-    annotate("text", x = -46.5, y = -33.6, label = bounds_txt, hjust = 0, vjust = 0, size = 6.4 / .pt, colour = "#333333",
-             family = PLOT_FONT, lineheight = 1.1) +
-    scale_shape_manual(values = MAP_SHAPE, name = "Disease") +
+    geom_point(data = sym, aes(x, y, shape = Virus, fill = Fill, size = Virus), colour = "#333333", stroke = 0.35,
+               show.legend = TRUE) +   # keep legend keys for categories absent from a map (e.g. a quiet year)
+    geom_text(data = lab, aes(lx, ly, label = Abbr, hjust = hj), size = 6 / .pt, colour = "#333333", family = PLOT_FONT)
+  if (!is.null(note))
+    p <- p + annotate("text", x = -46.5, y = -33.6, label = note, hjust = 0, vjust = 0, size = 6.4 / .pt, colour = "#333333",
+                      family = PLOT_FONT, lineheight = 1.1)
+  if (!is.null(tag))
+    p <- p + annotate("text", x = -73.6, y = 5.2, label = tag, hjust = 0, vjust = 1, size = 15 / .pt, fontface = "bold",
+                      colour = "#333333", family = PLOT_FONT)
+  p + scale_shape_manual(values = MAP_SHAPE, name = "Disease") +
     scale_size_manual(values = MAP_SIZE, guide = "none") +
-    scale_fill_manual(values = setNames(CLASS_FILL, 1:5), drop = FALSE, name = "Mean annual incidence\n(natural-breaks class)",
-                      labels = c("1 (lowest)", "2", "3", "4", "5 (highest)")) +
+    scale_fill_manual(values = fill_values, drop = FALSE, name = fill_name, labels = fill_labels) +
     guides(shape = guide_legend(order = 1, override.aes = list(fill = "#bdbdbd", size = 3)),
            fill = guide_legend(order = 2, override.aes = list(shape = 22, size = 4, colour = "#333333"))) +
     coord_sf(xlim = MAP_XLIM, ylim = MAP_YLIM, expand = FALSE, datum = NA) +
@@ -161,98 +172,97 @@ plot_combined_map <- function(gdf_states, mean_inc, moran_global) {
           legend.box.just = "left", legend.spacing.y = unit(6, "pt"), legend.title = element_text(size = 8, face = "bold"),
           legend.text = element_text(size = 7.5), legend.key.size = unit(11, "pt"),
           legend.background = element_rect(fill = "white", colour = NA))
+}
+save_map <- function(p, fname) {
+  save_png(p, file.path(OUTPUT_DIR, fname), 8, 7.4, dpi = 200)
+  cat(sprintf("    Saved -> %s\n", fname))
+}
+note_counts <- function(fname, sym, col, labels) {   # e.g. "HH 8 | LL 4 | ..." per disease
+  for (virus in levels(sym$Virus)) {
+    n <- table(factor(sym[Virus == virus][[col]], names(labels)))
+    caption_note(fname, "States per category", paste(sprintf("%s %d", names(n), as.integer(n)), collapse = " | "), virus)
+  }
+}
+
+# ---- Figure 6: mean annual incidence ----
+# list(symbols = one row per UF x disease with class and symbol position, bounds = class limits per disease)
+combined_map_data <- function(gdf_states, mean_inc) {
+  d <- rbindlist(lapply(names(mean_inc), function(v) mean_inc[[v]][, .(Location_Name, Mean_Inc, Virus = v)]))
+  jc <- jenks_classes(d, "Mean_Inc")
+  list(symbols = place_symbols(symbol_anchors(gdf_states), jc$rows), bounds = jc$bounds)
+}
+
+plot_combined_map <- function(gdf_states, mean_inc, moran_global) {
+  md <- combined_map_data(gdf_states, mean_inc)
+  sym <- md$symbols[, Fill := factor(Class, 1:5)]
+  bn <- bounds_note(md$bounds)
+  p <- symbol_map(gdf_states, sym, CLASS_FILL, "Mean annual incidence\n(natural-breaks class)", CLASS_LABELS, note = bn$text)
   fname <- "geo_07_combined_map.png"
   for (virus in names(moran_global)) {
     mr <- moran_global[[virus]]
     caption_note(fname, "Global Moran's I (p, 999 permutations)", sprintf("%.3f (p = %.3f)", mr$I, mr$p_sim), virus)
   }
-  for (virus in bt$Virus) caption_note(fname, "Class bounds, cases per 100,000 (class 1 -> 5)", bt[Virus == virus]$s, virus)
-  caption_note(fname, "Key", paste("Circle = dengue, triangle = chikungunya, square = Zika; fill = natural-breaks (Jenks, k = 5) class of",
-                                   "the population-weighted mean annual incidence, computed separately for each disease; symbols for",
-                                   "RN, PB, PE, AL, SE, ES and RJ are drawn offshore with a leader line to the state."))
-  save_png(p, file.path(OUTPUT_DIR, fname), 8, 7.4, dpi = 200)
-  cat(sprintf("    Saved -> %s\n", fname))
+  for (virus in bn$by_virus$Virus) caption_note(fname, "Class bounds, cases per 100,000 (class 1 -> 5)", bn$by_virus[Virus == virus]$s, virus)
+  caption_note(fname, "Key", paste("Fill = natural-breaks (Jenks, k = 5) class of the population-weighted mean annual incidence,",
+                                   "computed separately for each disease.", MAP_KEY))
+  save_map(p, fname)
+}
+
+# ---- Figure S1: annual incidence, one map per year ----
+# Classes are computed per disease over all state-years pooled, so a colour means the same
+# incidence range in every year.
+temporal_map_data <- function(gdf_states, annual) {
+  d <- rbindlist(lapply(names(annual), function(v) annual[[v]][, .(Location_Name, Year, Annual_Inc_100k, Virus = v)]))
+  jc <- jenks_classes(d, "Annual_Inc_100k")
+  list(symbols = place_symbols(symbol_anchors(gdf_states), jc$rows), bounds = jc$bounds)
 }
 
 plot_temporal_evolution <- function(gdf_states, annual) {
-  slugs <- list(Dengue = c("dengue", "02"), Chikungunya = c("chikv", "03"), Zika = c("zikv", "04"))
-  for (virus in names(annual)) {
-    ann <- annual[[virus]]
-    sl <- slugs[[virus]]
-    years <- sort(unique(ann$Year)); n <- length(years)
-    ncols <- 4; nrows <- (n + ncols - 1) %/% ncols
-    vmax <- unname(quantile(ann$Annual_Inc_100k, 0.97, na.rm = TRUE))
-    long <- do.call(rbind, lapply(years, function(yr) {
-      g <- states_with(gdf_states, ann[Year == yr, .(Location_Name, Inc = Annual_Inc_100k)])
-      g$Year <- yr
-      g
-    }))
-    labd <- sf::st_drop_geometry(long)
-    p <- ggplot(long) + geom_sf(aes(fill = Inc), colour = "#666666", linewidth = 0.25 / 2.13) +
-      geom_text(data = labd, aes(centroid_x, centroid_y, label = Abbr), size = 4.5 / .pt, fontface = "bold", family = PLOT_FONT) +
-      facet_wrap(~Year, ncol = ncols) + map_extent() +
-      scale_fill_gradientn(colours = mpl_colours(CMAPS[[virus]]), limits = c(0, vmax), oob = scales::squish,
-                           na.value = "#DDDDDD", name = "Incidence / 100k",
-                           guide = guide_colourbar(title.position = "bottom", title.hjust = 0.5, barwidth = unit(6.7, "in"),
-                                                   barheight = unit(0.25, "in"), frame.colour = "black")) +
-      labs(title = virus) + map_theme(9) + virus_title(virus, 13) +
-      theme(strip.text = element_text(face = "bold", size = 9, margin = margin(2, 0, 2, 0)),
-            legend.position = "bottom", legend.justification = c(0.9, 0), legend.text = element_text(size = 7),
-            legend.title = element_text(size = 9))
-    fname <- sprintf("geo_%s_temporal_%s.png", sl[2], sl[1])
-    caption_note(fname, "Former title", sprintf("%s — Annual Incidence per 100,000 by State", virus))
-    save_png(p, file.path(OUTPUT_DIR, fname), ncols * 4.0, nrows * 3.8, dpi = 130)
-    cat(sprintf("    Saved -> %s\n", fname))
+  md <- temporal_map_data(gdf_states, annual)
+  md$symbols[, Fill := factor(Class, 1:5)]
+  bn <- bounds_note(md$bounds)
+  years <- sort(unique(md$symbols$Year))
+  for (yr in years) {
+    p <- symbol_map(gdf_states, md$symbols[Year == yr], CLASS_FILL, "Annual incidence\n(natural-breaks class)", CLASS_LABELS,
+                    note = bn$text, tag = as.character(yr))
+    save_map(p, sprintf("geo_02_temporal_%d.png", yr))
   }
+  fname <- "geo_02_temporal_YYYY.png"   # one row per item for the 11 yearly maps (Figure S1)
+  for (virus in bn$by_virus$Virus)
+    caption_note(fname, "Class bounds, cases per 100,000 (class 1 -> 5; all years pooled)", bn$by_virus[Virus == virus]$s, virus)
+  gaps <- CJ(Location_Name = unique(md$symbols$Location_Name), Year = years, Virus = names(MAP_SHAPE))[!md$symbols, on = c("Location_Name", "Year", "Virus")]
+  if (nrow(gaps)) caption_note(fname, "No symbol (no SINAN records)",
+                               paste(gaps[, sprintf("%s %d (%s)", Location_Name, Year, Virus)], collapse = "; "))
+  caption_note(fname, "Key", paste("One map per year; fill = natural-breaks (Jenks, k = 5) class of the annual incidence per",
+                                   "100,000, computed per disease over all state-years (2016-2026; 2026 annualised from January-September).",
+                                   MAP_KEY))
 }
 
-plot_lisa_clusters <- function(lisa_results) {
-  lv <- c("HH", "LL", "HL", "LH", "NS")
-  lab <- c(HH = "HH — High cluster", LL = "LL — Low cluster", HL = "HL — High outlier",
-           LH = "LH — Low outlier", NS = "NS — Not significant")
-  panels <- lapply(names(lisa_results), function(virus) {
-    g <- lisa_results[[virus]]
-    g$LISA_Cat <- factor(g$LISA_Cat, lv)
-    ggplot(g) + geom_sf(aes(fill = LISA_Cat), colour = "#555555", linewidth = 0.35 / 2.13, show.legend = TRUE) + state_labels(g) + map_extent() +
-      scale_fill_manual(values = LISA_COLORS, labels = lab, limits = lv, drop = FALSE, name = "LISA Category") +
-      labs(title = virus) + map_theme(9) + virus_title(virus, 11)
-  })
-  p <- wrap_plots(panels, nrow = 1, guides = "collect") & theme(legend.position = "right", legend.justification = c(1, 0),
-    legend.text = element_text(size = 8), legend.title = element_text(size = 8.5),
-    legend.background = element_rect(colour = "grey80", fill = "white"), legend.margin = margin(4, 6, 4, 6))
-  caption_note("geo_05_lisa_clusters.png", "Former title", "LISA Cluster Maps — Local Moran's I (999 permutations, alpha = 0.05)")
-  caption_note("geo_05_lisa_clusters.png", "Key (former title)",
-               "HH = high-high cluster; LL = low-low cluster; HL/LH = spatial outliers; NS = not significant")
-  save_png(p, file.path(OUTPUT_DIR, "geo_05_lisa_clusters.png"), 19, 7.5)
-  cat("    Saved -> geo_05_lisa_clusters.png\n")
+# ---- Figure S2A: LISA clusters ----
+plot_lisa_clusters <- function(gdf_states, lisa_results) {
+  d <- rbindlist(lapply(names(lisa_results), function(v)
+    data.table(Location_Name = lisa_results[[v]]$Location_Name, Virus = v, LISA_Cat = lisa_results[[v]]$LISA_Cat)))
+  sym <- place_symbols(symbol_anchors(gdf_states), d)[, Fill := factor(LISA_Cat, names(LISA_FILL))]
+  p <- symbol_map(gdf_states, sym, LISA_FILL, "Local Moran's I (LISA)\np < 0.05, 999 permutations", LISA_LABELS)
+  fname <- "geo_05_lisa_clusters.png"
+  note_counts(fname, sym, "LISA_Cat", LISA_LABELS)
+  caption_note(fname, "Key", paste("Fill = LISA category of the population-weighted mean annual incidence (KNN k = 5 weights);",
+                                   "HH/LL = high/low clusters, HL/LH = spatial outliers, white = not significant.", MAP_KEY))
+  save_map(p, fname)
 }
 
-TREND_PALETTE <- data.frame(
-  trend = c("increasing", "decreasing", "increasing", "decreasing", "no trend", "no trend"),
-  sig = c(TRUE, TRUE, FALSE, FALSE, FALSE, TRUE),
-  col = c("#B2182B", "#2166AC", "#FDDBC7", "#D1E5F0", "#CCCCCC", "#CCCCCC"),
-  label = c("Increasing (sig.)", "Decreasing (sig.)", "Increasing (NS)", "Decreasing (NS)", "No trend", "No trend"))
-
+# ---- Figure S2B: Mann-Kendall trends ----
+# The Mann-Kendall test labels a state increasing/decreasing only when p < 0.05, so three categories occur.
 plot_trend_map <- function(gdf_states, mk_results) {
-  labels <- unique(TREND_PALETTE$label)
-  cols <- setNames(TREND_PALETTE$col[match(labels, TREND_PALETTE$label)], labels)
-  panels <- lapply(names(mk_results), function(virus) {
-    g <- states_with(gdf_states, mk_results[[virus]][, .(Location_Name, Trend, Significant)])
-    g$Trend[is.na(g$Trend)] <- "no trend"
-    g$Significant[is.na(g$Significant)] <- FALSE
-    key <- match(paste(tolower(g$Trend), g$Significant), paste(TREND_PALETTE$trend, TREND_PALETTE$sig))
-    g$lab <- factor(ifelse(is.na(key), "No trend", TREND_PALETTE$label[key]), labels)
-    ggplot(g) + geom_sf(aes(fill = lab), colour = "#555555", linewidth = 0.35 / 2.13, show.legend = TRUE) + state_labels(g) + map_extent() +
-      scale_fill_manual(values = cols, limits = labels, drop = FALSE, name = NULL) +
-      labs(title = virus) + map_theme(9) + virus_title(virus, 11)
-  })
-  p <- wrap_plots(panels, nrow = 1, guides = "collect") & theme(legend.position = "right", legend.justification = c(1, 0),
-    legend.text = element_text(size = 8), legend.background = element_rect(colour = "grey80", fill = "white"),
-    legend.margin = margin(4, 6, 4, 6))
-  caption_note("geo_06_trend_map.png", "Former title", "Mann-Kendall Trend Classification by State")
-  caption_note("geo_06_trend_map.png", "Key (former title)", "Solid = p < 0.05; pale = not significant")
-  save_png(p, file.path(OUTPUT_DIR, "geo_06_trend_map.png"), 19, 7.5)
-  cat("    Saved -> geo_06_trend_map.png\n")
+  d <- rbindlist(lapply(names(mk_results), function(v) mk_results[[v]][, .(Location_Name, Virus = v, Trend = tolower(Trend), Significant)]))
+  d[!(Significant %in% TRUE) | !(Trend %in% c("increasing", "decreasing")), Trend := "no trend"]
+  sym <- place_symbols(symbol_anchors(gdf_states), d)[, Fill := factor(Trend, names(TREND_FILL))]
+  p <- symbol_map(gdf_states, sym, TREND_FILL, "Mann-Kendall trend\n(annual incidence)", TREND_LABELS)
+  fname <- "geo_06_trend_map.png"
+  note_counts(fname, sym, "Trend", TREND_LABELS)
+  caption_note(fname, "Key", paste("Fill = Mann-Kendall trend of the annual incidence per state, 2016-2026 (p < 0.05); white = no",
+                                   "significant trend.", MAP_KEY))
+  save_map(p, fname)
 }
 
 # State-years with no SINAN records: not drawn in the temporal maps (grey polygon) or the py_02
@@ -303,7 +313,7 @@ main <- function() {
   cat("\n[6/6] Generating maps\n")
   plot_combined_map(gdf_states, mean_inc, moran_global)
   plot_temporal_evolution(gdf_states, annual)
-  plot_lisa_clusters(lisa_results)
+  plot_lisa_clusters(gdf_states, lisa_results)
   plot_trend_map(gdf_states, mk_results)
   cat("\n  Exporting...\n")
   export_stats(mean_inc, mk_results, lisa_results, moran_global)

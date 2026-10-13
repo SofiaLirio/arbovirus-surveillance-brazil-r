@@ -78,6 +78,8 @@ run <- function() {
       scale_linetype_manual(values = c(Observed = "solid", "Epidemic threshold" = "dashed"), breaks = c("Observed", "Epidemic threshold"), name = NULL) +
       scale_linewidth_manual(values = c(Observed = 1.3 / 2.13, "Epidemic threshold" = 1 / 2.13), breaks = c("Observed", "Epidemic threshold"), name = NULL) +
       scale_shape_manual(values = c("Epidemic month" = 16), name = NULL) +
+      guides(colour = guide_legend(order = 1), linetype = guide_legend(order = 1), linewidth = guide_legend(order = 1),
+             shape = guide_legend(order = 2)) +   # fixed legend order (otherwise it depends on an internal hash)
       labs(title = virus, x = if (r == length(datasets)) "Date" else NULL,
            y = "per 100k") + theme_adv()
     if (r == 1) p + theme(legend.position = "inside", legend.position.inside = c(0.01, 0.98), legend.justification = c(0, 1),

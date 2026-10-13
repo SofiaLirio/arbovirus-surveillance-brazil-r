@@ -186,7 +186,10 @@ CATEGORY_LABEL <- c(M = "Male", F = "Female", "Not accomplished" = "Not performe
                     Chikungunya = "Confirmed", "Clinic-epidemiological" = "Clinical-epidemiological",
                     "1º Trimester" = "1st trimester", "2º Trimester" = "2nd trimester", "3º Trimester" = "3rd trimester",
                     "Pregnancy age ignored" = "Pregnant, trimester unknown", "Death by other cause" = "Death (other cause)",
-                    "Other causes" = "Death (other cause)", "Death in investigation" = "Death under investigation")
+                    "Other causes" = "Death (other cause)", "Death in investigation" = "Death under investigation",
+                    "Non pregnant" = "Not pregnant")
+# Labels that only apply to one table (keyed like VARIABLE_LABEL); they take precedence over CATEGORY_LABEL.
+TABLE_CATEGORY_LABEL <- list(Hospitalization = c(Positive = "Hospitalized", Negative = "Not hospitalized"))
 # Legend title naming the variable of each table (first word of the pzfx table title); it identifies
 # the panel now that there is no plot title (ELISA and IgM share the same categories).
 VARIABLE_LABEL <- c(ELISA = "ELISA result", IgM = "IgM result", Hospitalization = "Hospitalization", Sex = "Sex",
@@ -218,7 +221,9 @@ plot_proportion <- function(df, virus, table_title, slug) {
   totals <- rowSums(m, na.rm = TRUE); totals[totals == 0] <- NA
   pct <- m / totals * 100
   years <- as.integer(df$Year)
-  lab <- ifelse(cats %in% names(CATEGORY_LABEL), unname(CATEGORY_LABEL[cats]), cats)
+  key <- strsplit(table_title, " ")[[1]][1]
+  labels <- c(TABLE_CATEGORY_LABEL[[key]], CATEGORY_LABEL[setdiff(names(CATEGORY_LABEL), names(TABLE_CATEGORY_LABEL[[key]]))])
+  lab <- ifelse(cats %in% names(labels), unname(labels[cats]), cats)
   slot <- seq_along(cats); hit <- lab %in% names(CATEGORY_SLOT); slot[hit] <- CATEGORY_SLOT[lab[hit]]
   lv <- lab[order(slot)]
   long <- data.frame(Year = rep(years, length(cats)), Cat = factor(rep(lab, each = nrow(df)), lv), pct = as.vector(pct))
@@ -227,7 +232,6 @@ plot_proportion <- function(df, virus, table_title, slug) {
   end$lab <- sprintf("%s %s", end$Cat, ifelse(end$pct < 1, "<1%", sprintf("%.0f%%", end$pct)))
   end$ylab <- spread_labels(end$pct, 4.5)
   cols <- setNames(PROP_PALETTE[sort(slot)], lv); shapes <- setNames(PROP_SHAPES[sort(slot)], lv)
-  key <- strsplit(table_title, " ")[[1]][1]
   var_lab <- if (key %in% names(VARIABLE_LABEL)) VARIABLE_LABEL[[key]] else key
   note_title(fname, virus, table_title)
   p <- ggplot(long, aes(Year, pct, colour = Cat, fill = Cat, shape = Cat, group = Cat)) +
