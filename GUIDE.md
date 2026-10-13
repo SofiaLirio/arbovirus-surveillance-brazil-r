@@ -42,7 +42,7 @@ raw/  ──etl/──▶  db/ + clinical_tables/  ──pipelines/──▶  ou
 | `pipelines/` | All analysis code | Yes, to change analyses |
 | `outputs/` | Result tables and individual plots | No, it is regenerated |
 | `figures/` | Final composite figures (Figure 1–8, S1–S2, GLM figures) | No, it is regenerated |
-| `alt_results/` | 5 alternative-view figures | No, it is regenerated |
+| `alt_results/` | 3 alternative-view figures | No, it is regenerated |
 | `source_data/` | The numbers behind each figure, one Excel file per figure | No, it is regenerated |
 | `clinical_tables/` | Sex, age, outcome, serotype and similar breakdowns, 2016–2026 | No, it is regenerated |
 | `tools/` | Re-download raw data; compare with old archives | Optional |

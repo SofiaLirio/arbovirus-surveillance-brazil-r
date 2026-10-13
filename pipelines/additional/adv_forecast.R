@@ -215,6 +215,7 @@ run <- function() {
       geom_line(data = d, aes(Date, Pred, colour = "Forecast"), linewidth = 1.8 / 2.13)
     p <- p + scale_colour_manual(values = c(Actual = "#2c3e50", Forecast = "#e67e22"), breaks = c("Actual", "Forecast"), name = NULL) +
       scale_fill_manual(values = c("95% PI" = "#e67e22"), name = NULL) +
+      guides(colour = guide_legend(order = 1), fill = guide_legend(order = 2)) +   # fixed legend order
       labs(title = virus, x = if (r == length(datasets)) "Date" else NULL,
            y = "per 100k") + theme_adv()
     if (r == 1) p + theme(legend.position = "inside", legend.position.inside = c(0.01, 0.98), legend.justification = c(0, 1),

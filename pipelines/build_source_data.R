@@ -255,11 +255,8 @@ main <- function() {
                                    Symbol = c(Dengue = "circle", Chikungunya = "triangle", Zika = "square")[as.character(Virus)],
                                    Symbol_lon = x, Symbol_lat = y, Offshore_with_leader = Offshore)]
   fig6_bounds <- merge(cmap$bounds, moran_df[, .(Virus, Moran_I = I, p_sim)], by = "Virus", sort = FALSE)
-  c_rows <- lapply(names(annual), function(virus) {
-    ann <- annual[[virus]]
-    ann[, .(Location_Name, Year, Annual_Inc_100k, Virus = virus,
-            Colour_scale_max_p97 = stats::quantile(ann$Annual_Inc_100k, 0.97, na.rm = TRUE, names = FALSE))]
-  })
+  tmap <- geo$temporal_map_data(gdf_states, annual)     # the symbols drawn by plot_temporal_evolution
+  figs1 <- tmap$symbols[, .(Virus = as.character(Virus), Location_Name, Abbr, Year, Annual_Inc_100k, Class)][order_c(Virus, Location_Name, Year)]
   lisa <- geo$run_lisa(gdf_states, mean_inc)
   lisa_all <- rbindlist(lapply(names(lisa), function(v) as.data.table(sf::st_drop_geometry(lisa[[v]]))[, Virus := v]), fill = TRUE)
   check_equal("LISA == geo_spatial_stats/LISA_Clusters", lisa_all, saved_geo$LISA_Clusters, c("Virus", "Location_Name"),
@@ -271,14 +268,20 @@ main <- function() {
           "compute_mean_inc; combined_map_data / plot_combined_map (arbovirus_geospatial.R)"),
     sheet("Fig6_class_bounds", fig6_bounds, "Natural-breaks (Jenks, k = 5) class bounds per disease, and global Moran's I",
           "natural_breaks (R/stats.R); run_moran")))
-  supp_maps <- list(   # per-disease maps, now Supplementary Figures S1 and S2
-    sheet("FigS1_temporal_maps", rbindlist(c_rows),
-          "Annual incidence per state and year (one small map per year); colour scale capped at the 97th percentile",
-          "plot_temporal_evolution (arbovirus_geospatial.R)"),
+  POS_NOTE <- "symbol positions as in Figure6.xlsx/Fig6_combined_map"
+  supp_maps <- list(   # Supplementary Figures S1 and S2, drawn like Figure 6
+    sheet("FigS1_temporal_maps", figs1,
+          paste("Annual incidence per state and year (one map per year, FigureS1_<year>) and its natural-breaks class (1-5),",
+                "computed per disease over all state-years;", POS_NOTE),
+          "temporal_map_data / plot_temporal_evolution (arbovirus_geospatial.R)"),
+    sheet("FigS1_class_bounds", tmap$bounds, "Natural-breaks (Jenks, k = 5) class bounds per disease, all years pooled",
+          "natural_breaks (R/stats.R)"),
     sheet("FigS2A_lisa", lisa_all[, .(Virus, Location_Name, Region, Mean_Inc, Local_I, LISA_p, LISA_Quadrant, LISA_Cat, q_value, LISA_Cat_FDR)],
-          "Local Moran's I clusters (map colour = LISA_Cat; 999 permutations, seed 12345)", "run_lisa (arbovirus_geospatial.R)"),
+          paste("Local Moran's I clusters (symbol fill = LISA_Cat; 999 permutations, seed 12345);", POS_NOTE),
+          "run_lisa; plot_lisa_clusters (arbovirus_geospatial.R)"),
     sheet("FigS2B_trend_map", mk2[, .(Virus, Location_Name, Trend, Tau, p_value, Sen_Slope, Significant, q_value, Significant_FDR)],
-          "Mann-Kendall trend class per state (solid = p < 0.05)", "plot_trend_map (arbovirus_geospatial.R)"))
+          paste("Mann-Kendall trend per state (symbol fill = Trend, p < 0.05; 'no trend' = white);", POS_NOTE),
+          "run_mann_kendall; plot_trend_map (arbovirus_geospatial.R)"))
 
   # ── GLM figures ──
   cat("GLM figures ...\n")

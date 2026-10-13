@@ -13,8 +13,6 @@ adv_spatial_regression.R,spatial_regression.png,Supplementary,right,Former title
 adv_spatial_regression.R,spatial_regression.png,Supplementary,right,Key (former title),Red bar = residual Moran's I with p < 0.05
 alt_results.R,trend01_slope_first_last.png,Supplementary,,Former title,"Slope chart — first vs last year of surveillance, coloured states are MK-significant (p<0.05)"
 alt_results.R,trend03_sen_dotbar.png,Supplementary,,Former title,Mann-Kendall Sen slopes by state — sorted dot-and-bar
-alt_results.R,spat01_choropleth_facet.png,Supplementary,,Former title,Choropleth small-multiples — mean annual incidence per 100k
-alt_results.R,spat02_lisa_facet.png,Supplementary,,Former title,LISA cluster categories — faceted by disease
 alt_results.R,glm02_caterpillar_temp_irr.png,Supplementary,,Former title,"Caterpillar plot — per-state temperature IRR (NegBin), sorted"
 arbovirus_geospatial.R,geo_07_combined_map.png,Figure 6,Dengue,"Global Moran's I (p, 999 permutations)",0.516 (p = 0.001)
 arbovirus_geospatial.R,geo_07_combined_map.png,Figure 6,Chikungunya,"Global Moran's I (p, 999 permutations)",0.004 (p = 0.285)
@@ -22,14 +20,20 @@ arbovirus_geospatial.R,geo_07_combined_map.png,Figure 6,Zika,"Global Moran's I (
 arbovirus_geospatial.R,geo_07_combined_map.png,Figure 6,Dengue,"Class bounds, cases per 100,000 (class 1 -> 5)","71–129  |  129–397  |  397–762  |  762–1,212  |  1,212–1,782"
 arbovirus_geospatial.R,geo_07_combined_map.png,Figure 6,Chikungunya,"Class bounds, cases per 100,000 (class 1 -> 5)",6–67  |  67–136  |  136–197  |  197–325  |  325–498
 arbovirus_geospatial.R,geo_07_combined_map.png,Figure 6,Zika,"Class bounds, cases per 100,000 (class 1 -> 5)",2–20  |  20–42  |  42–72  |  72–98  |  98–137
-arbovirus_geospatial.R,geo_07_combined_map.png,Figure 6,,Key,"Circle = dengue, triangle = chikungunya, square = Zika; fill = natural-breaks (Jenks, k = 5) class of the population-weighted mean annual incidence, computed separately for each disease; symbols for RN, PB, PE, AL, SE, ES and RJ are drawn offshore with a leader line to the state."
-arbovirus_geospatial.R,geo_02_temporal_dengue.png,Figure S1,,Former title,"Dengue — Annual Incidence per 100,000 by State"
-arbovirus_geospatial.R,geo_03_temporal_chikv.png,Figure S1,,Former title,"Chikungunya — Annual Incidence per 100,000 by State"
-arbovirus_geospatial.R,geo_04_temporal_zikv.png,Figure S1,,Former title,"Zika — Annual Incidence per 100,000 by State"
-arbovirus_geospatial.R,geo_05_lisa_clusters.png,Figure S2A,,Former title,"LISA Cluster Maps — Local Moran's I (999 permutations, alpha = 0.05)"
-arbovirus_geospatial.R,geo_05_lisa_clusters.png,Figure S2A,,Key (former title),HH = high-high cluster; LL = low-low cluster; HL/LH = spatial outliers; NS = not significant
-arbovirus_geospatial.R,geo_06_trend_map.png,Figure S2B,,Former title,Mann-Kendall Trend Classification by State
-arbovirus_geospatial.R,geo_06_trend_map.png,Figure S2B,,Key (former title),Solid = p < 0.05; pale = not significant
+arbovirus_geospatial.R,geo_07_combined_map.png,Figure 6,,Key,"Fill = natural-breaks (Jenks, k = 5) class of the population-weighted mean annual incidence, computed separately for each disease. Circle = dengue, triangle = chikungunya, square = Zika; symbols for RN, PB, PE, AL, SE, ES and RJ are drawn offshore with a leader line to the state."
+arbovirus_geospatial.R,geo_02_temporal_YYYY.png,Figure S1,Dengue,"Class bounds, cases per 100,000 (class 1 -> 5; all years pooled)","1–517  |  517–1,363  |  1,363–2,868  |  2,868–5,477  |  5,477–9,354"
+arbovirus_geospatial.R,geo_02_temporal_YYYY.png,Figure S1,Chikungunya,"Class bounds, cases per 100,000 (class 1 -> 5; all years pooled)","2–96  |  96–319  |  319–731  |  731–1,199  |  1,199–1,726"
+arbovirus_geospatial.R,geo_02_temporal_YYYY.png,Figure S1,Zika,"Class bounds, cases per 100,000 (class 1 -> 5; all years pooled)",0–32  |  32–106  |  106–256  |  256–490  |  490–784
+arbovirus_geospatial.R,geo_02_temporal_YYYY.png,Figure S1,,No symbol (no SINAN records),Espirito Santo 2021 (Chikungunya); Espirito Santo 2021 (Zika)
+arbovirus_geospatial.R,geo_02_temporal_YYYY.png,Figure S1,,Key,"One map per year; fill = natural-breaks (Jenks, k = 5) class of the annual incidence per 100,000, computed per disease over all state-years (2016-2026; 2026 annualised from January-September). Circle = dengue, triangle = chikungunya, square = Zika; symbols for RN, PB, PE, AL, SE, ES and RJ are drawn offshore with a leader line to the state."
+arbovirus_geospatial.R,geo_05_lisa_clusters.png,Figure S2A,Dengue,States per category,HH 8 | LL 4 | HL 1 | LH 1 | NS 13
+arbovirus_geospatial.R,geo_05_lisa_clusters.png,Figure S2A,Chikungunya,States per category,HH 1 | LL 0 | HL 1 | LH 1 | NS 24
+arbovirus_geospatial.R,geo_05_lisa_clusters.png,Figure S2A,Zika,States per category,HH 1 | LL 1 | HL 0 | LH 1 | NS 24
+arbovirus_geospatial.R,geo_05_lisa_clusters.png,Figure S2A,,Key,"Fill = LISA category of the population-weighted mean annual incidence (KNN k = 5 weights); HH/LL = high/low clusters, HL/LH = spatial outliers, white = not significant. Circle = dengue, triangle = chikungunya, square = Zika; symbols for RN, PB, PE, AL, SE, ES and RJ are drawn offshore with a leader line to the state."
+arbovirus_geospatial.R,geo_06_trend_map.png,Figure S2B,Dengue,States per category,increasing 2 | decreasing 0 | no trend 25
+arbovirus_geospatial.R,geo_06_trend_map.png,Figure S2B,Chikungunya,States per category,increasing 3 | decreasing 0 | no trend 24
+arbovirus_geospatial.R,geo_06_trend_map.png,Figure S2B,Zika,States per category,increasing 0 | decreasing 6 | no trend 21
+arbovirus_geospatial.R,geo_06_trend_map.png,Figure S2B,,Key,"Fill = Mann-Kendall trend of the annual incidence per state, 2016-2026 (p < 0.05); white = no significant trend. Circle = dengue, triangle = chikungunya, square = Zika; symbols for RN, PB, PE, AL, SE, ES and RJ are drawn offshore with a leader line to the state."
 arbovirus_pipeline_en.R,py_01_annual_incidence.png,Figure 1A,,Former title,"Annual Arbovirus Incidence in Brazil (per 100,000 inhabitants)"
 arbovirus_pipeline_en.R,py_02_heatmap_state_year.png,Supplementary,,Former title,"Annual Incidence by State (per 100,000 inhabitants)"
 arbovirus_pipeline_en.R,py_03_boxplot_regional.png,Figure 1B,,Former title,Monthly Incidence Distribution by Region
