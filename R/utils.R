@@ -163,8 +163,19 @@ write_xlsx_sheets <- function(sheets, path) {
     for (j in seq_along(d)) if (is.factor(d[[j]])) d[[j]] <- as.character(d[[j]])
     d
   })
-  writexl::write_xlsx(sheets, path)
+  # writexl stamps the creation time into the file, so rewriting an unchanged table would still
+  # produce a different file on every run; keep the existing file when every cell is the same.
+  tmp <- tempfile(fileext = ".xlsx")
+  on.exit(unlink(tmp))
+  writexl::write_xlsx(sheets, tmp)
+  if (!(file.exists(path) && xlsx_same_values(tmp, path))) file.copy(tmp, path, overwrite = TRUE)
   invisible(path)
+}
+xlsx_same_values <- function(a, b) {
+  sa <- readxl::excel_sheets(a)
+  sb <- tryCatch(readxl::excel_sheets(b), error = function(e) NULL)
+  identical(sa, sb) && all(vapply(sa, function(s)
+    identical(readxl::read_excel(a, s, col_types = "text"), readxl::read_excel(b, s, col_types = "text")), logical(1)))
 }
 
 # ---------------------------------------------------------------------------------------------

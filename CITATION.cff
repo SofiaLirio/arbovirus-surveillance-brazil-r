@@ -1,0 +1,26 @@
+cff-version: 1.2.0
+message: "If you use this software or its results, please cite it as below, and cite the data sources listed in docs/DATA_SOURCES.md (SINAN/OpenDataSUS, INMET, IBGE)."
+type: software
+title: "Arbovirus surveillance in Brazil, 2016-2026: reproducible R pipeline"
+abstract: >-
+  Reproducible R pipeline for dengue, chikungunya and Zika notifications in the
+  27 Brazilian federative units, monthly, 2016-2026: ETL from the raw SINAN,
+  INMET and IBGE files, descriptive and trend analyses, climate correlations
+  and regression models, spatial autocorrelation, advanced analyses and
+  publication figures with journal-style source data.
+authors:
+  - alias: eduramosalves
+version: 1.0.0
+date-released: "2026-10-13"
+license: MIT
+repository-code: "https://github.com/eduramosalves/arbovirus-surveillance-brazil-r"
+url: "https://github.com/eduramosalves/arbovirus-surveillance-brazil-r"
+keywords:
+  - dengue
+  - chikungunya
+  - zika
+  - arbovirus
+  - Brazil
+  - epidemiology
+  - spatial analysis
+  - R

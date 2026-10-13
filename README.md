@@ -133,6 +133,16 @@ Figures carry no in-plot titles. Text for the captions is generated with them:
   values left out of each clinical figure (n and %), plus ready-to-use caption sentences;
 - `outputs/figure_exclusions_state_years.csv`: state-years without SINAN records.
 
+Draft captions for every figure, with a methods/limitations paragraph, are in
+[`docs/FIGURE_CAPTIONS.md`](docs/FIGURE_CAPTIONS.md).
+
+## License and data
+The code is released under the [MIT License](LICENSE); see [`CITATION.cff`](CITATION.cff) to cite it.
+The tables in `db/` and `clinical_tables/`, and the results and figures, are derived from Brazilian
+federal open data (SINAN/OpenDataSUS, INMET, IBGE), published under the Política de Dados Abertos
+(Decreto 8.777/2016). Cite those publishers and the access date (see
+[`docs/DATA_SOURCES.md`](docs/DATA_SOURCES.md)).
+
 ---
 
 ## How the data was built (provenance & definitions)
