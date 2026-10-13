@@ -46,6 +46,7 @@ py_round <- function(x, digits = 0) {
 # Vectorised across groups: step p updates the p-th non-missing value of every group at once.
 kahan_by <- function(x, g, G = max(g), fun = c("sum", "mean")) {
   fun <- match.arg(fun)
+  force(G)   # avalia max(g) com o g ORIGINAL, antes do filtro de NA abaixo (no-op quando G e passado)
   ok <- !is.na(x)
   x <- x[ok]; g <- g[ok]
   s <- numeric(G); comp <- numeric(G); n <- integer(G)
