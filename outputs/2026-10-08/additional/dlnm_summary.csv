@@ -1,0 +1,4 @@
+Virus,Temp_optimum_C,IRR_at_optimum,overdispersion_alpha,dispersion,n,note
+Dengue,27.23,1.178,1.0342,1.448,3309,lags 0-2 only; linear lag basis
+Chikungunya,25.63,1.0,1.1117,1.564,3295,lags 0-2 only; linear lag basis
+Zika,29.62,1.34,1.0266,2.028,3268,lags 0-2 only; linear lag basis

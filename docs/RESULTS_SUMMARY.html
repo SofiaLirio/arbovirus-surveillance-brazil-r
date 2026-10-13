@@ -1,0 +1,657 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Arbovirus Surveillance in Brazil — Results Summary</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<style>
+:root{
+  --bg:#0f172a;--panel:#111c33;--panel2:#1a2647;--ink:#e6edf6;--muted:#94a3b8;
+  --acc:#60a5fa;--acc2:#22d3ee;--ok:#34d399;--warn:#fbbf24;--bad:#f87171;
+  --border:#22335a;--code:#0b1224;
+  --denv:#ef4444;--chikv:#f59e0b;--zikv:#10b981;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,sans-serif;
+  font-size:15px;line-height:1.55}
+a{color:var(--acc);text-decoration:none}
+a:hover{text-decoration:underline}
+.layout{display:grid;grid-template-columns:260px 1fr;min-height:100vh}
+nav.toc{
+  position:sticky;top:0;align-self:start;height:100vh;overflow-y:auto;
+  background:#0a1226;border-right:1px solid var(--border);padding:24px 18px;
+}
+nav.toc h2{font-size:13px;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);margin:0 0 12px}
+nav.toc ol{list-style:none;padding:0;margin:0;counter-reset:s}
+nav.toc li{counter-increment:s;margin:4px 0}
+nav.toc li a{display:block;padding:6px 8px;border-radius:6px;color:#cbd5e1;font-size:14px}
+nav.toc li a::before{content:counter(s)". ";color:var(--muted)}
+nav.toc li a:hover{background:#152346;color:#fff;text-decoration:none}
+nav.toc li a.active{background:#1e3a8a;color:#fff}
+main{padding:32px 48px 80px;max-width:1100px}
+header.hero{padding:24px 28px;background:linear-gradient(135deg,#1e3a8a,#0c4a6e);border-radius:14px;
+  border:1px solid var(--border);margin-bottom:28px}
+header.hero h1{margin:0 0 8px;font-size:26px}
+header.hero .meta{display:flex;gap:22px;flex-wrap:wrap;color:#cfe1ff;font-size:14px}
+header.hero .meta b{color:#fff}
+section{background:var(--panel);border:1px solid var(--border);border-radius:12px;padding:22px 26px;margin-bottom:24px}
+section h2{margin:0 0 14px;font-size:20px;color:#fff;display:flex;align-items:center;gap:10px}
+section h2 .num{display:inline-flex;width:30px;height:30px;align-items:center;justify-content:center;
+  background:#1e3a8a;color:#fff;border-radius:8px;font-size:13px;font-weight:700}
+section h3{font-size:15px;color:#cbd5e1;margin:18px 0 10px}
+table{width:100%;border-collapse:collapse;font-size:13.5px;margin:8px 0 4px}
+th,td{padding:8px 10px;text-align:left;border-bottom:1px solid var(--border)}
+th{background:#152346;color:#cbd5e1;font-weight:600;cursor:pointer;user-select:none;position:relative}
+th.sortable::after{content:"⇅";opacity:.4;margin-left:4px;font-size:10px}
+th.asc::after{content:"▲";opacity:1}
+th.desc::after{content:"▼";opacity:1}
+tbody tr:hover{background:#162447}
+.pill{display:inline-block;padding:1px 8px;border-radius:999px;font-size:11px;font-weight:600}
+.pill.denv{background:rgba(239,68,68,.18);color:#fca5a5}
+.pill.chikv{background:rgba(245,158,11,.18);color:#fcd34d}
+.pill.zikv{background:rgba(16,185,129,.18);color:#6ee7b7}
+.pill.ok{background:rgba(52,211,153,.15);color:var(--ok)}
+.pill.no{background:rgba(248,113,113,.15);color:var(--bad)}
+.grid{display:grid;gap:16px}
+.grid.cols-2{grid-template-columns:repeat(2,1fr)}
+.grid.cols-3{grid-template-columns:repeat(3,1fr)}
+.kpi{background:var(--panel2);border:1px solid var(--border);border-radius:10px;padding:14px 16px}
+.kpi .lbl{font-size:12px;text-transform:uppercase;color:var(--muted);letter-spacing:.08em}
+.kpi .val{font-size:22px;font-weight:700;color:#fff;margin-top:4px}
+.kpi.denv{border-left:4px solid var(--denv)}
+.kpi.chikv{border-left:4px solid var(--chikv)}
+.kpi.zikv{border-left:4px solid var(--zikv)}
+.chart-wrap{background:var(--panel2);border:1px solid var(--border);border-radius:10px;padding:14px;margin:12px 0}
+.chart-wrap h4{margin:0 0 8px;font-size:14px;color:#cbd5e1;font-weight:600}
+.chart-box{position:relative;height:300px}
+.figures{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:12px;margin-top:8px}
+.fig{cursor:pointer;background:var(--panel2);border:1px solid var(--border);border-radius:8px;overflow:hidden;
+  transition:transform .15s,border-color .15s}
+.fig:hover{transform:translateY(-2px);border-color:var(--acc)}
+.fig img{width:100%;height:140px;object-fit:cover;display:block;background:#fff}
+.fig .cap{padding:6px 10px;font-size:12px;color:#cbd5e1}
+details{background:var(--panel2);border:1px solid var(--border);border-radius:8px;padding:10px 14px;margin:8px 0}
+details summary{cursor:pointer;color:#cbd5e1;font-weight:600;font-size:14px}
+details[open] summary{color:#fff;margin-bottom:8px}
+.callout{border-left:4px solid var(--acc);background:rgba(96,165,250,.07);padding:10px 14px;border-radius:6px;font-size:14px;color:#cbd5e1;margin:10px 0}
+.callout.warn{border-color:var(--warn);background:rgba(251,191,36,.08)}
+.callout.ok{border-color:var(--ok);background:rgba(52,211,153,.08)}
+.tabs{display:flex;gap:6px;border-bottom:1px solid var(--border);margin-bottom:12px}
+.tab{padding:8px 14px;cursor:pointer;color:var(--muted);border-bottom:2px solid transparent;font-size:14px;font-weight:600}
+.tab.on{color:#fff;border-color:var(--acc)}
+.tabpanel{display:none}.tabpanel.on{display:block}
+code{background:var(--code);padding:1px 6px;border-radius:4px;font-size:13px;color:#fcd34d}
+.modal{position:fixed;inset:0;background:rgba(0,0,0,.85);display:none;align-items:center;justify-content:center;z-index:100;padding:20px}
+.modal.on{display:flex}
+.modal img{max-width:95vw;max-height:90vh;border-radius:8px;background:#fff}
+.modal .close{position:absolute;top:18px;right:24px;color:#fff;font-size:34px;cursor:pointer;background:none;border:none}
+.tau-bar{display:inline-block;height:8px;background:#1e3a8a;border-radius:4px;vertical-align:middle;margin-left:6px}
+.signal{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:5px;vertical-align:middle}
+@media (max-width:900px){
+  .layout{grid-template-columns:1fr}
+  nav.toc{position:static;height:auto;border-right:0;border-bottom:1px solid var(--border)}
+  main{padding:20px}
+  .grid.cols-2,.grid.cols-3{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<div class="layout">
+<nav class="toc" id="toc">
+  <h2>Contents</h2>
+  <ol>
+    <li><a href="#sec-1">Data scope</a></li>
+    <li><a href="#sec-2">Descriptive statistics</a></li>
+    <li><a href="#sec-3">Temporal trend (Mann-Kendall)</a></li>
+    <li><a href="#sec-4">Climate correlations</a></li>
+    <li><a href="#sec-5">Spatial autocorrelation</a></li>
+    <li><a href="#sec-6">GLM regression</a></li>
+    <li><a href="#sec-7">Methodological notes</a></li>
+    <li><a href="#sec-8">Output files</a></li>
+    <li><a href="#sec-9">Quick takeaways</a></li>
+    <li><a href="#sec-fig">Figure gallery</a></li>
+  </ol>
+</nav>
+
+<main>
+<header class="hero">
+  <h1>Arbovirus Surveillance in Brazil — Results Summary</h1>
+  <div style="color:#cfe1ff;margin-bottom:14px">Normalized DB pipeline</div>
+  <div class="meta">
+    <div><b>Run date:</b> 2026-10-01</div>
+    <div><b>Data window:</b> 2016–2025 <span style="color:#94a3b8">(CHIKV from 2017)</span></div>
+    <div><b>Spatial:</b> 27 Brazilian federative units</div>
+    <div><b>Temporal:</b> monthly</div>
+    <div><b>Pipelines:</b> 9/9 ✓</div>
+  </div>
+</header>
+
+<!-- SECTION 1 -->
+<section id="sec-1">
+  <h2><span class="num">1</span> Data scope</h2>
+  <div class="grid cols-3">
+    <div class="kpi denv"><div class="lbl">Dengue</div><div class="val">16,347,701</div><div style="color:#94a3b8;font-size:12px">cases · 2016–2025 · mean ≈ 624/100k/yr</div></div>
+    <div class="kpi chikv"><div class="lbl">Chikungunya</div><div class="val">2,012,359</div><div style="color:#94a3b8;font-size:12px">cases · 2017–2025 · mean ≈ 131/100k/yr</div></div>
+    <div class="kpi zikv"><div class="lbl">Zika</div><div class="val">546,633</div><div style="color:#94a3b8;font-size:12px">cases · 2016–2025 · mean ≈ 40/100k/yr</div></div>
+  </div>
+
+  <table data-sortable>
+    <thead><tr><th class="sortable">Disease</th><th class="sortable">Years</th><th class="sortable">States</th><th class="sortable">Monthly obs</th><th class="sortable">Total cases</th></tr></thead>
+    <tbody>
+      <tr><td><span class="pill denv">Dengue</span></td><td>2016–2025</td><td>27</td><td data-v="3240">3,240</td><td data-v="16347701">16,347,701</td></tr>
+      <tr><td><span class="pill chikv">Chikungunya</span></td><td>2017–2025</td><td>27</td><td data-v="2916">2,916</td><td data-v="2012359">2,012,359</td></tr>
+      <tr><td><span class="pill zikv">Zika</span></td><td>2016–2025</td><td>27</td><td data-v="3240">3,240</td><td data-v="546633">546,633</td></tr>
+    </tbody>
+  </table>
+
+  <div class="chart-wrap">
+    <h4>Total cases by disease (2016–2025)</h4>
+    <div class="chart-box"><canvas id="chart-cases"></canvas></div>
+  </div>
+</section>
+
+<!-- SECTION 2 -->
+<section id="sec-2">
+  <h2><span class="num">2</span> Descriptive statistics — 95% CIs</h2>
+  <p style="color:#cbd5e1">CIs on the mean of monthly counts and incidence (pooled across all states × months). Normal-approximation vs 1,000-resample percentile bootstrap.</p>
+
+  <div class="tabs">
+    <div class="tab on" data-tab="t-cases">Monthly cases</div>
+    <div class="tab" data-tab="t-inc">Monthly incidence /100k</div>
+  </div>
+
+  <div class="tabpanel on" id="t-cases">
+    <table data-sortable>
+      <thead><tr><th class="sortable">Disease</th><th class="sortable">Mean</th><th>Normal-approx 95% CI</th><th>Bootstrap 95% CI</th><th class="sortable">n</th></tr></thead>
+      <tbody>
+        <tr><td><span class="pill denv">DENV</span></td><td data-v="5045.6">5,045.6</td><td>4,153.1 – 5,938.1</td><td>4,282.1 – 6,036.4</td><td data-v="3240">3,240</td></tr>
+        <tr><td><span class="pill chikv">CHIKV</span></td><td data-v="691.1">691.1</td><td>596.3 – 785.8</td><td>603.4 – 786.1</td><td data-v="2912">2,912</td></tr>
+        <tr><td><span class="pill zikv">ZIKV</span></td><td data-v="169.9">169.9</td><td>138.4 – 201.4</td><td>139.3 – 203.9</td><td data-v="3218">3,218</td></tr>
+      </tbody>
+    </table>
+    <div class="chart-wrap"><h4>Mean monthly cases — CI methods compared</h4><div class="chart-box"><canvas id="chart-ci-cases"></canvas></div></div>
+  </div>
+
+  <div class="tabpanel" id="t-inc">
+    <table data-sortable>
+      <thead><tr><th class="sortable">Disease</th><th class="sortable">Mean</th><th>Normal-approx 95% CI</th><th>Bootstrap 95% CI</th><th class="sortable">n</th></tr></thead>
+      <tbody>
+        <tr><td><span class="pill denv">DENV</span></td><td data-v="51.99">51.99</td><td>46.85 – 57.13</td><td>47.15 – 57.25</td><td data-v="3240">3,240</td></tr>
+        <tr><td><span class="pill chikv">CHIKV</span></td><td data-v="10.91">10.91</td><td>9.79 – 12.03</td><td>9.82 – 11.98</td><td data-v="2912">2,912</td></tr>
+        <tr><td><span class="pill zikv">ZIKV</span></td><td data-v="3.34">3.34</td><td>2.94 – 3.73</td><td>2.95 – 3.74</td><td data-v="3218">3,218</td></tr>
+      </tbody>
+    </table>
+    <div class="chart-wrap"><h4>Mean monthly incidence per 100k — CI methods compared</h4><div class="chart-box"><canvas id="chart-ci-inc"></canvas></div></div>
+  </div>
+
+  <div class="callout">For <b>DENV</b>, the bootstrap CI is shifted ~100 cases higher — the underlying distribution is heavily right-skewed (large epidemic peaks). CHIKV and ZIKV CIs are nearly identical between methods.</div>
+</section>
+
+<!-- SECTION 3 -->
+<section id="sec-3">
+  <h2><span class="num">3</span> Temporal trend — Mann-Kendall</h2>
+  <p style="color:#cbd5e1">Annual incidence per state. Raw p&lt;0.05 alongside Benjamini–Hochberg FDR (27 states per disease).</p>
+
+  <table data-sortable>
+    <thead><tr><th class="sortable">Disease</th><th class="sortable">Significant (raw)</th><th class="sortable">↑ Increasing</th><th class="sortable">↓ Decreasing</th><th class="sortable">After FDR</th><th class="sortable">Smallest q</th></tr></thead>
+    <tbody>
+      <tr><td><span class="pill denv">Dengue</span></td><td data-v="3">3 / 27</td><td data-v="3">3</td><td data-v="0">0</td><td data-v="0"><b>0 / 27</b></td><td data-v="0.098">0.098</td></tr>
+      <tr><td><span class="pill chikv">Chikungunya</span></td><td data-v="3">3 / 27</td><td data-v="3">3</td><td data-v="0">0</td><td data-v="0"><b>0 / 27</b></td><td data-v="0.132">0.132</td></tr>
+      <tr><td><span class="pill zikv">Zika</span></td><td data-v="3">3 / 27</td><td data-v="0">0</td><td data-v="3">3</td><td data-v="0"><b>0 / 27</b></td><td data-v="0.286">0.286</td></tr>
+    </tbody>
+  </table>
+
+  <div class="chart-wrap"><h4>Trend direction across 27 states (raw p&lt;0.05)</h4><div class="chart-box"><canvas id="chart-mk"></canvas></div></div>
+
+  <h3>States with raw p&lt;0.05 — none survive FDR</h3>
+  <div class="grid cols-3">
+    <details open><summary><span class="pill denv">Dengue ↑</span> Southern increase (suggestive)</summary>
+      <ul style="padding-left:18px;margin:8px 0;color:#cbd5e1">
+        <li>Rio Grande do Sul (τ=0.73, q=0.098, Sen=+82.6/yr)</li>
+        <li>Santa Catarina (τ=0.69, q=0.098, Sen=+108.8/yr)</li>
+        <li>São Paulo (τ=0.51, q=0.44, Sen=+161.2/yr)</li>
+      </ul></details>
+    <details open><summary><span class="pill chikv">Chikungunya ↑</span> Southern increase (suggestive)</summary>
+      <ul style="padding-left:18px;margin:8px 0;color:#cbd5e1">
+        <li>Santa Catarina (τ=0.78, q=0.13)</li>
+        <li>Mato Grosso do Sul (τ=0.61, q=0.26)</li>
+        <li>Rio Grande do Sul (τ=0.61, q=0.26)</li>
+      </ul></details>
+    <details open><summary><span class="pill zikv">Zika ↓</span> Post-2016 decline (suggestive)</summary>
+      <ul style="padding-left:18px;margin:8px 0;color:#cbd5e1">
+        <li>Alagoas (τ=−0.56, p=0.032, q=0.29)</li>
+        <li>Distrito Federal (τ=−0.56, p=0.032, q=0.29)</li>
+        <li>Piauí (τ=−0.56, p=0.032, q=0.29)</li>
+      </ul></details>
+  </div>
+  <div class="callout warn">Three raw-significant states out of 27 is about what chance produces at α=0.05 (~1.35 expected), and none survive FDR. With 9–10 annual points per state, Mann-Kendall has little power: the southern increases (RS, SC; q≈0.1) are suggestive, not established.</div>
+</section>
+
+<!-- SECTION 4 -->
+<section id="sec-4">
+  <h2><span class="num">4</span> Climate correlations — Spearman (lags 0–2 months)</h2>
+  <table data-sortable>
+    <thead><tr><th class="sortable">Disease</th><th class="sortable">Variable</th><th class="sortable">Tests</th><th class="sortable">Significant (raw)</th><th class="sortable">Significant (FDR)</th><th class="sortable">Mean ρ</th></tr></thead>
+    <tbody>
+      <tr><td><span class="pill denv">Dengue</span></td><td>Temperature</td><td data-v="81">81</td><td data-v="40">40</td><td data-v="35">35</td><td data-v="0.17">+0.17</td></tr>
+      <tr><td><span class="pill denv">Dengue</span></td><td>Rainfall</td><td data-v="81">81</td><td data-v="10">10</td><td data-v="0">0</td><td data-v="-0.02">−0.02</td></tr>
+      <tr><td><span class="pill chikv">Chikungunya</span></td><td>Temperature</td><td data-v="81">81</td><td data-v="43">43</td><td data-v="35">35</td><td data-v="0.15">+0.15</td></tr>
+      <tr><td><span class="pill chikv">Chikungunya</span></td><td>Rainfall</td><td data-v="81">81</td><td data-v="19">19</td><td data-v="3">3</td><td data-v="0.02">+0.02</td></tr>
+      <tr><td><span class="pill zikv">Zika</span></td><td>Temperature</td><td data-v="81">81</td><td data-v="27">27</td><td data-v="22">22</td><td data-v="0.07">+0.07</td></tr>
+      <tr><td><span class="pill zikv">Zika</span></td><td>Rainfall</td><td data-v="81">81</td><td data-v="14">14</td><td data-v="1">1</td><td data-v="0.02">+0.02</td></tr>
+    </tbody>
+  </table>
+
+  <div class="chart-wrap"><h4>Significant climate correlations / 81 tests (after FDR)</h4><div class="chart-box"><canvas id="chart-spearman"></canvas></div></div>
+
+  <div class="callout">Positive temperature correlations survive FDR in most cases (22–35 of 81 tests); rainfall correlations largely do not (0–3 of 81). These unadjusted monthly correlations include the shared seasonal cycle — Section 6 gives the season-adjusted effect. Explicit 2-month rain lag (<code>rain[t] → incidence[t+2]</code>): 3–5 raw-significant states per disease, 0–2 after FDR.</div>
+</section>
+
+<!-- SECTION 5 -->
+<section id="sec-5">
+  <h2><span class="num">5</span> Spatial autocorrelation</h2>
+  <h3>Global Moran's I (KNN k=5 on polygon centroids, 999 permutations, fixed seed)</h3>
+  <table data-sortable>
+    <thead><tr><th class="sortable">Disease</th><th class="sortable">I</th><th class="sortable">p_sim</th><th>Result</th></tr></thead>
+    <tbody>
+      <tr><td><span class="pill denv">Dengue</span></td><td data-v="0.52"><b>+0.52</b></td><td data-v="0.001">0.001</td><td><span class="pill ok">✓ strong positive clustering</span></td></tr>
+      <tr><td><span class="pill chikv">Chikungunya</span></td><td data-v="-0.07">−0.07</td><td data-v="0.42">0.42</td><td><span class="pill no">✗ no spatial structure</span></td></tr>
+      <tr><td><span class="pill zikv">Zika</span></td><td data-v="-0.01">−0.01</td><td data-v="0.34">0.34</td><td><span class="pill no">✗ no spatial structure</span></td></tr>
+    </tbody>
+  </table>
+  <p style="color:#94a3b8;font-size:13px">Both pipeline stages use the same weights, so a single Moran's I is reported.</p>
+
+  <h3>LISA clusters (Local Moran's I)</h3>
+  <div class="grid cols-3">
+    <div class="kpi denv">
+      <div class="lbl">Dengue — after FDR</div>
+      <div style="font-size:13px;color:#cbd5e1;margin-top:6px">HH core: <b>Goiás, Minas Gerais</b> · LL: Amapá · LH: Rio de Janeiro</div>
+      <div style="margin-top:8px;font-size:12px;color:var(--muted)">Raw p&lt;0.05: 8 HH (DF, ES, GO, MT, MS, MG, PR, SP), 4 LL (AP, MA, PA, RN), outliers AC (HL), RJ (LH)</div>
+    </div>
+    <div class="kpi chikv">
+      <div class="lbl">Chikungunya</div>
+      <div style="font-size:13px;color:#cbd5e1;margin-top:6px">No clusters after FDR (raw: one HL outlier, Roraima).</div>
+    </div>
+    <div class="kpi zikv">
+      <div class="lbl">Zika</div>
+      <div style="font-size:13px;color:#cbd5e1;margin-top:6px">No clusters after FDR (raw: HH Mato Grosso, LL Paraná, LH Pará).</div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 6 -->
+<section id="sec-6">
+  <h2><span class="num">6</span> Count-data regression (GLM)</h2>
+  <p style="color:#cbd5e1">Model: <code>Cases ~ Temp_Avg + Rain_mm + C(Month) + C(Location_Name) + offset(log Population)</code> — state and month fixed effects, so climate IRRs compare months that are warmer or wetter than usual for that calendar month in that state. Poisson / NegBin SEs are cluster-robust by state.</p>
+
+  <div class="tabs">
+    <div class="tab on" data-tab="g-denv">Dengue</div>
+    <div class="tab" data-tab="g-chikv">Chikungunya</div>
+    <div class="tab" data-tab="g-zikv">Zika</div>
+  </div>
+
+  <div class="tabpanel on" id="g-denv">
+    <table>
+      <thead><tr><th>Model</th><th>Temp IRR per °C (95% CI)</th><th>Rain IRR per mm (95% CI)</th><th>Dispersion</th></tr></thead>
+      <tbody>
+        <tr><td>Poisson (cluster SE)</td><td>2.155 (1.656–2.804)***</td><td>1.005 (1.001–1.008)**</td><td>φ = 8,376</td></tr>
+        <tr><td>Quasi-Poisson</td><td>2.155 (2.012–2.308)***</td><td>1.005 (1.002–1.007)***</td><td>φ = 8,376</td></tr>
+        <tr style="background:#162447"><td><b>NegBin (cluster SE)</b></td><td><b>1.415 (1.175–1.703)***</b></td><td><b>1.006 (1.001–1.011)*</b></td><td>α = 1.23</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="tabpanel" id="g-chikv">
+    <table>
+      <thead><tr><th>Model</th><th>Temp IRR per °C (95% CI)</th><th>Rain IRR per mm (95% CI)</th><th>Dispersion</th></tr></thead>
+      <tbody>
+        <tr><td>Poisson (cluster SE)</td><td>1.355 (1.024–1.794)*</td><td>1.008 (0.998–1.018) <i>ns</i></td><td>φ = 1,784</td></tr>
+        <tr><td>Quasi-Poisson</td><td>1.355 (1.240–1.481)***</td><td>1.008 (1.004–1.012)***</td><td>φ = 1,784</td></tr>
+        <tr style="background:#162447"><td><b>NegBin (cluster SE)</b></td><td><b>1.062 (0.798–1.414)</b> <i>ns</i></td><td>1.001 (0.997–1.005) <i>ns</i></td><td>α = 1.18</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="tabpanel" id="g-zikv">
+    <table>
+      <thead><tr><th>Model</th><th>Temp IRR per °C (95% CI)</th><th>Rain IRR per mm (95% CI)</th><th>Dispersion</th></tr></thead>
+      <tbody>
+        <tr><td>Poisson (cluster SE)</td><td>0.926 (0.717–1.198) <i>ns</i></td><td>1.001 (0.994–1.008) <i>ns</i></td><td>φ = 790</td></tr>
+        <tr><td>Quasi-Poisson</td><td>0.926 (0.813–1.056) <i>ns</i></td><td>1.001 (0.996–1.006) <i>ns</i></td><td>φ = 790</td></tr>
+        <tr style="background:#162447"><td><b>NegBin (cluster SE)</b></td><td><b>0.971 (0.798–1.180)</b> <i>ns</i></td><td>1.001 (0.997–1.004) <i>ns</i></td><td>α = 1.19</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p style="color:#94a3b8;font-size:13px">*** p&lt;0.001 · ** p&lt;0.01 · * p&lt;0.05 · ns not significant. Pooled AIC: NegBin 52,653 / 38,474 / 34,839 vs Poisson 19.1 M / 3.17 M / 1.19 M.</p>
+
+  <div class="chart-wrap"><h4>Temperature IRR (NegBin, month + state FE, cluster-robust 95% CI) — per +1 °C above the seasonal norm</h4><div class="chart-box"><canvas id="chart-irr"></canvas></div></div>
+
+  <h3>Dispersion overview (per-state models)</h3>
+  <table>
+    <thead><tr><th>Family</th><th>Median dispersion</th><th>Range</th></tr></thead>
+    <tbody>
+      <tr><td>Poisson</td><td>φ = 412.8</td><td>9.7 – 44,556</td></tr>
+      <tr><td>Quasi-Poisson</td><td>φ = 412.8</td><td>9.7 – 44,556</td></tr>
+      <tr><td>Negative Binomial</td><td>α = 0.78</td><td>0.29 – 2.41</td></tr>
+    </tbody>
+  </table>
+
+  <h3>Per-state NegBin models (month FE, HAC SEs)</h3>
+  <table>
+    <thead><tr><th>Disease</th><th>Temp significant (raw / FDR)</th><th>Rain significant (raw / FDR)</th></tr></thead>
+    <tbody>
+      <tr><td><span class="pill denv">Dengue</span></td><td>17 / 17 of 27</td><td>8 / 5 of 27</td></tr>
+      <tr><td><span class="pill chikv">Chikungunya</span></td><td>9 / 7 of 27</td><td>6 / 5 of 27</td></tr>
+      <tr><td><span class="pill zikv">Zika</span></td><td>10 / 6 of 27</td><td>9 / 2 of 27</td></tr>
+    </tbody>
+  </table>
+
+  <details open>
+    <summary>Interpretation</summary>
+    <ul style="color:#cbd5e1;padding-left:18px">
+      <li><b>Poisson is inappropriate</b>: residual dispersion is 10× to 44,000× the Poisson assumption and its AIC is orders of magnitude worse. Its point estimates are dominated by the largest epidemic months (Dengue 2.16 vs NegBin 1.42).</li>
+      <li><b>Quasi-Poisson</b> keeps Poisson's point estimates and its SEs still ignore within-state autocorrelation — shown for comparison only.</li>
+      <li><b>Dengue</b> (NegBin): a month 1 °C warmer than usual → <b>~1.4× the case rate (+41%, 95% CI +18% to +70%)</b>; +10 mm rain → ~6% higher rate (p≈0.02). Significant per-state in 17/27 states after FDR.</li>
+      <li><b>Chikungunya and Zika</b>: no significant pooled temperature or rainfall effect once seasonality is removed and SEs account for clustering — the earlier associations were driven by the shared seasonal cycle and understated SEs.</li>
+    </ul>
+    <p style="color:#94a3b8;font-size:13px">Model history: earlier versions reported NegBin temperature IRRs of 2.10 (Dengue) and 1.32 (Chikungunya) from Nelder–Mead fits that never converged. NegBin α is now estimated by profile likelihood (as R's <code>MASS::glm.nb</code>); all 165 NegBin models converge. Adding month FE and robust SEs leaves Dengue essentially unchanged (1.41) while Chikungunya (1.08→1.06) and Zika (0.89→0.97) lose significance.</p>
+  </details>
+</section>
+
+<!-- SECTION 7 -->
+<section id="sec-7">
+  <h2><span class="num">7</span> Methodological notes</h2>
+  <details><summary>1. Column rename</summary><p style="color:#cbd5e1">The original <code>Annual_Incidence</code> column in the normalized DB was actually monthly incidence per 100k inhabitants. Renamed to <code>Monthly_Inc_per100k</code> in <code>db/normalized_fact_cases.csv</code>. Values unchanged.</p></details>
+  <details><summary>2. CI 95%</summary><p style="color:#cbd5e1">Normal-approximation and bootstrap CIs are both computed by <code>bootstrap_ci.py</code> and exported to <code>outputs/bootstrap_ci_95_*.csv</code>.</p></details>
+  <details><summary>3. Year window</summary><p style="color:#cbd5e1">All diseases truncated to ≥2016 for comparability; CHIKV naturally begins 2017.</p></details>
+  <details><summary>4. Seasonality and autocorrelation</summary><p style="color:#cbd5e1">GLMs include month fixed effects. SEs are cluster-robust by state (pooled) or HAC with 3 lags (per-state). Quasi-Poisson uses Pearson-scaled SEs with t-distribution p-values and CIs (as R's <code>quasipoisson</code>).</p></details>
+  <details><summary>5. Multiple testing</summary><p style="color:#cbd5e1">Benjamini–Hochberg q-values within each family of 27 state tests (per virus; per virus × variable for Spearman; per virus × term for per-state GLMs). Raw p-values are kept alongside.</p></details>
+  <details><summary>6. Spatial weights</summary><p style="color:#cbd5e1">KNN k=5 on polygon centroids, shared by both spatial stages. Permutation tests use a fixed seed for reproducibility.</p></details>
+  <details><summary>7. Missing months</summary><p style="color:#cbd5e1">Annual totals are annualised over reported months (<code>Total_Cases × 12 / Months_Reported</code>) rather than treating missing months as zero.</p></details>
+</section>
+
+<!-- SECTION 8 -->
+<section id="sec-8">
+  <h2><span class="num">8</span> Output files</h2>
+  <p style="color:#94a3b8">Tables and plots in <code>outputs/</code>; composite, GLM and alternative-view figures in <code>figures/</code>.</p>
+  <h3>Statistical tables</h3>
+  <table>
+    <thead><tr><th>File</th><th>Contents</th></tr></thead>
+    <tbody>
+      <tr><td><code>outputs/py_statistical_results.xlsx</code></td><td>Annual incidence, Mann-Kendall, Spearman, Global Moran, Rain Lag-2 — with FDR q-values</td></tr>
+      <tr><td><code>outputs/geo_spatial_stats.xlsx</code></td><td>Mean incidence, MK, LISA clusters (raw and FDR), Global Moran</td></tr>
+      <tr><td><code>outputs/ci_comparison.xlsx</code></td><td>Normal-approx vs bootstrap CIs side-by-side</td></tr>
+      <tr><td><code>outputs/glm_poisson_results.xlsx</code></td><td>Poisson — 3 specs + diagnostics</td></tr>
+      <tr><td><code>outputs/glm_quasi_poisson_results.xlsx</code></td><td>Quasi-Poisson — 3 specs + diagnostics</td></tr>
+      <tr><td><code>outputs/glm_negbin_results.xlsx</code></td><td>Negative Binomial — 3 specs + diagnostics (incl. <code>converged</code>)</td></tr>
+      <tr><td><code>outputs/glm_*_per_state.csv</code></td><td>Per-state GLM coefficients incl. month effects (1,134 rows each)</td></tr>
+      <tr><td><code>outputs/glm_*_lagged.csv</code></td><td>Per-state GLMs with Temp/Rain lag-0/1/2 (1,458 rows each)</td></tr>
+      <tr><td><code>outputs/glm_*_pooled_fe.csv</code></td><td>Pooled national GLM with state + month fixed effects (120 rows each)</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- SECTION 9 -->
+<section id="sec-9">
+  <h2><span class="num">9</span> Quick takeaways</h2>
+  <div class="grid cols-2">
+    <div class="callout ok"><b>1. Dengue dominates</b> by case volume (16.3M), is the only arbovirus with significant <b>spatial clustering</b> (Moran's I=0.52; GO/MG core after FDR) and has a robust temperature signal: <b>~1.4× rate per +1 °C above the seasonal norm</b> (95% CI 1.18–1.70).</div>
+    <div class="callout"><b>2. Chikungunya and Zika</b> show no robust climate association once seasonality and within-state correlation are accounted for.</div>
+    <div class="callout warn"><b>3. No state-level trend survives FDR.</b> Southern increases in Dengue and Chikungunya (RS, SC) are the strongest candidates (q≈0.1) but need a longer series to confirm.</div>
+    <div class="callout"><b>4. NegBin is the right model family</b> (Poisson over-dispersion 10×–44,000×). Use the NegBin outputs with their robust SEs and FDR q-values for inference.</div>
+  </div>
+</section>
+
+<!-- FIGURE GALLERY -->
+<section id="sec-fig">
+  <h2><span class="num">10</span> Figure gallery</h2>
+  <div class="tabs">
+    <div class="tab on" data-tab="fg-pub">Publication figures</div>
+    <div class="tab" data-tab="fg-alt">Alternative views</div>
+    <div class="tab" data-tab="fg-glm">GLM</div>
+    <div class="tab" data-tab="fg-py">Stats pipeline</div>
+    <div class="tab" data-tab="fg-geo">Geospatial</div>
+    <div class="tab" data-tab="fg-clin">Clinical / demo</div>
+  </div>
+
+  <div class="tabpanel on" id="fg-pub"><div class="figures" id="gal-pub"></div></div>
+  <div class="tabpanel" id="fg-alt"><div class="figures" id="gal-alt"></div></div>
+  <div class="tabpanel" id="fg-glm"><div class="figures" id="gal-glm"></div></div>
+  <div class="tabpanel" id="fg-py"><div class="figures" id="gal-py"></div></div>
+  <div class="tabpanel" id="fg-geo"><div class="figures" id="gal-geo"></div></div>
+  <div class="tabpanel" id="fg-clin"><div class="figures" id="gal-clin"></div></div>
+</section>
+
+</main>
+</div>
+
+<div class="modal" id="modal"><button class="close" id="modal-close">×</button><img id="modal-img" src=""></div>
+
+<script>
+// --- Colors
+const C = {denv:'#ef4444',chikv:'#f59e0b',zikv:'#10b981',denvA:'rgba(239,68,68,.6)',chikvA:'rgba(245,158,11,.6)',zikvA:'rgba(16,185,129,.6)'};
+Chart.defaults.color = '#cbd5e1';
+Chart.defaults.borderColor = '#22335a';
+Chart.defaults.font.family = '-apple-system,Segoe UI,sans-serif';
+
+// --- Section 1: total cases bar
+new Chart(document.getElementById('chart-cases'),{
+  type:'bar',
+  data:{labels:['Dengue','Chikungunya','Zika'],
+    datasets:[{label:'Total cases',data:[16347701,2012359,546633],
+      backgroundColor:[C.denvA,C.chikvA,C.zikvA],borderColor:[C.denv,C.chikv,C.zikv],borderWidth:1.5}]},
+  options:{indexAxis:'y',responsive:true,maintainAspectRatio:false,
+    plugins:{legend:{display:false}},
+    scales:{x:{type:'logarithmic',ticks:{callback:v=>v.toLocaleString()}}}}
+});
+
+// --- Section 2: CI cases
+function ciChart(id,means,nlo,nhi,blo,bhi,title){
+  new Chart(document.getElementById(id),{
+    type:'bar',
+    data:{labels:['DENV','CHIKV','ZIKV'],
+      datasets:[
+        {label:'Normal-approx CI',data:means.map((m,i)=>[nlo[i],nhi[i]]),
+          backgroundColor:'rgba(96,165,250,.35)',borderColor:'#60a5fa',borderWidth:1.5,borderSkipped:false},
+        {label:'Bootstrap CI',data:means.map((m,i)=>[blo[i],bhi[i]]),
+          backgroundColor:'rgba(34,211,238,.35)',borderColor:'#22d3ee',borderWidth:1.5,borderSkipped:false},
+        {label:'Mean',type:'scatter',data:means.map((m,i)=>({x:['DENV','CHIKV','ZIKV'][i],y:m})),
+          backgroundColor:'#fff',borderColor:'#fff',pointRadius:6,pointStyle:'rectRot'}
+      ]},
+    options:{responsive:true,maintainAspectRatio:false,
+      scales:{y:{type:'logarithmic'}},plugins:{legend:{position:'top'}}}
+  });
+}
+ciChart('chart-ci-cases',[5045.6,691.1,169.9],[4153.1,596.4,138.4],[5938.1,785.7,201.4],[4282.1,603.4,139.3],[6036.4,786.1,203.9]);
+ciChart('chart-ci-inc',[51.99,10.91,3.34],[46.85,9.79,2.94],[57.13,12.03,3.73],[47.15,9.82,2.95],[57.25,11.98,3.74]);
+
+// --- Section 3: Mann-Kendall stacked
+new Chart(document.getElementById('chart-mk'),{
+  type:'bar',
+  data:{labels:['Dengue','Chikungunya','Zika'],
+    datasets:[
+      {label:'↑ Increasing',data:[3,3,0],backgroundColor:'#34d399'},
+      {label:'↓ Decreasing',data:[0,0,3],backgroundColor:'#f87171'},
+      {label:'No trend',data:[24,24,24],backgroundColor:'#475569'}]},
+  options:{responsive:true,maintainAspectRatio:false,
+    scales:{x:{stacked:true},y:{stacked:true,title:{display:true,text:'States (out of 27)'}}},
+    plugins:{legend:{position:'top'}}}
+});
+
+// --- Section 4: spearman significant
+new Chart(document.getElementById('chart-spearman'),{
+  type:'bar',
+  data:{labels:['Dengue','Chikungunya','Zika'],
+    datasets:[
+      {label:'Temperature',data:[35,35,22],backgroundColor:'#fb923c',borderColor:'#ea580c',borderWidth:1.5},
+      {label:'Rainfall',data:[0,3,1],backgroundColor:'#60a5fa',borderColor:'#2563eb',borderWidth:1.5}]},
+  options:{responsive:true,maintainAspectRatio:false,
+    scales:{y:{title:{display:true,text:'FDR-significant tests / 81'},max:81}},
+    plugins:{legend:{position:'top'}}}
+});
+
+// --- Section 6: IRR (NegBin) with CI
+new Chart(document.getElementById('chart-irr'),{
+  type:'bar',
+  data:{labels:['Dengue','Chikungunya','Zika'],
+    datasets:[
+      {label:'NegBin temp IRR 95% CI (cluster-robust)',data:[[1.175,1.703],[0.798,1.414],[0.798,1.180]],
+        backgroundColor:[C.denvA,C.chikvA,C.zikvA],borderColor:[C.denv,C.chikv,C.zikv],borderWidth:2,borderSkipped:false},
+      {label:'Point estimate',type:'scatter',data:[{x:'Dengue',y:1.415},{x:'Chikungunya',y:1.062},{x:'Zika',y:0.971}],
+        backgroundColor:'#fff',pointRadius:7,pointStyle:'rectRot'}
+    ]},
+  options:{responsive:true,maintainAspectRatio:false,
+    scales:{y:{title:{display:true,text:'IRR per +1°C'},suggestedMin:0.7,suggestedMax:1.8}},
+    plugins:{legend:{position:'top'},
+      annotation:{}}}
+});
+
+// --- Tabs
+document.querySelectorAll('.tabs').forEach(g=>{
+  g.querySelectorAll('.tab').forEach(t=>t.addEventListener('click',()=>{
+    g.querySelectorAll('.tab').forEach(x=>x.classList.remove('on'));
+    t.classList.add('on');
+    const parent = g.parentElement;
+    parent.querySelectorAll(':scope > .tabpanel').forEach(p=>p.classList.remove('on'));
+    document.getElementById(t.dataset.tab).classList.add('on');
+  }));
+});
+
+// --- Sortable tables
+document.querySelectorAll('table[data-sortable]').forEach(tbl=>{
+  const heads = tbl.querySelectorAll('th.sortable');
+  heads.forEach((th,idx)=>{
+    th.addEventListener('click',()=>{
+      const dir = th.classList.contains('asc')?'desc':'asc';
+      heads.forEach(h=>h.classList.remove('asc','desc'));
+      th.classList.add(dir);
+      const tb = tbl.querySelector('tbody');
+      const rows = [...tb.querySelectorAll('tr')];
+      rows.sort((a,b)=>{
+        const av = a.children[idx].dataset.v ?? a.children[idx].innerText;
+        const bv = b.children[idx].dataset.v ?? b.children[idx].innerText;
+        const an = parseFloat(av), bn = parseFloat(bv);
+        const both = !isNaN(an) && !isNaN(bn);
+        const cmp = both ? an-bn : String(av).localeCompare(String(bv));
+        return dir==='asc'?cmp:-cmp;
+      });
+      rows.forEach(r=>tb.appendChild(r));
+    });
+  });
+});
+
+// --- Figure galleries
+const galleries = {
+  'gal-pub':[
+    ['figures/Figure1_incidence_regional.png','Figure 1 — Incidence by region'],
+    ['figures/Figure2_trend_analysis.png','Figure 2 — Trend analysis'],
+    ['figures/Figure3_climate_correlations.png','Figure 3 — Climate correlations'],
+    ['figures/Figure4_spatial_autocorrelation.png','Figure 4 — Spatial autocorrelation'],
+    ['figures/Figure5_demographics.png','Figure 5 — Demographics'],
+    ['figures/Figure6a_choropleth_mean.png','Figure 6a — Choropleth mean'],
+    ['figures/Figure6b_jenks_classification.png','Figure 6b — Jenks classification'],
+    ['figures/Figure6c_temporal_maps.png','Figure 6c — Temporal maps'],
+    ['figures/Figure6d_lisa_trend.png','Figure 6d — LISA clusters + trend map'],
+    ['figures/Figure6_combined.png','Figure 6 — Combined maps (A–D)'],
+    ['figures/Figure7_dengue_clinical.png','Figure 7 — Dengue clinical'],
+    ['figures/Figure8_chikv_zika_clinical.png','Figure 8 — CHIKV/ZIKV clinical'],
+  ],
+  'gal-alt':[
+    ['figures/trend01_slope_first_last.png','Trend 1 — Slope chart (first vs last year)'],
+    ['figures/trend03_sen_dotbar.png','Trend 3 — Sen-slope dot-and-bar'],
+    ['figures/spat01_choropleth_facet.png','Spatial 1 — Choropleth small-multiples'],
+    ['figures/spat02_lisa_facet.png','Spatial 2 — LISA categories faceted'],
+    ['figures/glm02_caterpillar_temp_irr.png','GLM 02 — Per-state Temp IRR caterpillar'],
+  ],
+  'gal-glm':[
+    ['figures/glm_fig1_pooled_climate_irr.png','GLM 1 — Pooled climate IRR'],
+    ['figures/glm_fig2_per_state_heatmap.png','GLM 2 — Per-state heatmap'],
+    ['figures/glm_fig3_lag_profile.png','GLM 3 — Lag profile'],
+    ['figures/glm_fig4_aic_comparison.png','GLM 4 — AIC comparison'],
+    ['figures/glm_fig5_forest_significant.png','GLM 5 — Forest plot (significant)'],
+  ],
+  'gal-py':[
+    ['outputs/py_01_annual_incidence.png','py_01 Annual incidence'],
+    ['outputs/py_02_heatmap_state_year.png','py_02 Heatmap state×year'],
+    ['outputs/py_03_boxplot_regional.png','py_03 Regional boxplot'],
+    ['outputs/py_03b_boxplot_disease_comparison.png','py_03b Disease comparison'],
+    ['outputs/py_04_mannkendall_tau.png','py_04 Mann-Kendall τ'],
+    ['outputs/py_05_sens_slope.png','py_05 Sen\'s slope'],
+    ['outputs/py_06_spearman_summary.png','py_06 Spearman summary'],
+    ['outputs/py_06b_spearman_rho_only.png','py_06b Spearman ρ'],
+    ['outputs/py_06c_spearman_rain_lag2.png','py_06c Rain lag-2'],
+    ['outputs/py_06d_rain_significant_states.png','py_06d Rain significant states'],
+    ['outputs/py_07_spearman_state_bestlag.png','py_07 Best lag by state'],
+    ['outputs/py_08_lag_profile_region.png','py_08 Lag profile by region'],
+    ['outputs/py_09_map_jenks.png','py_09 Jenks map'],
+    ['outputs/py_10_moran_scatterplot.png','py_10 Moran scatterplot'],
+  ],
+  'gal-geo':[
+    ['outputs/geo_01_choropleth_mean.png','geo_01 Choropleth mean'],
+    ['outputs/geo_02_temporal_dengue.png','geo_02 Temporal Dengue'],
+    ['outputs/geo_03_temporal_chikv.png','geo_03 Temporal CHIKV'],
+    ['outputs/geo_04_temporal_zikv.png','geo_04 Temporal ZIKV'],
+    ['outputs/geo_05_lisa_clusters.png','geo_05 LISA clusters'],
+    ['outputs/geo_06_trend_map.png','geo_06 Trend map'],
+  ],
+  'gal-clin':[
+    ['outputs/Dengue_01b_monthly_heatmap.png','Dengue · monthly heatmap'],
+    ['outputs/Dengue_02_ELISA.png','Dengue · ELISA'],
+    ['outputs/Dengue_02_IgM.png','Dengue · IgM'],
+    ['outputs/Dengue_02_hospitalization.png','Dengue · hospitalization'],
+    ['outputs/Dengue_03_serotype.png','Dengue · serotype'],
+    ['outputs/Dengue_03_sex.png','Dengue · sex'],
+    ['outputs/Dengue_04_age_group_violin.png','Dengue · age violin'],
+    ['outputs/Dengue_05_federative_unit_totals.png','Dengue · FU totals'],
+    ['outputs/Chikungunya_01b_monthly_heatmap.png','CHIKV · monthly heatmap'],
+    ['outputs/Chikungunya_03_classification.png','CHIKV · classification'],
+    ['outputs/Chikungunya_03_criteria.png','CHIKV · criteria'],
+    ['outputs/Chikungunya_03_evolution.png','CHIKV · evolution'],
+    ['outputs/Chikungunya_03_sex.png','CHIKV · sex'],
+    ['outputs/Chikungunya_04_age_group_violin.png','CHIKV · age violin'],
+    ['outputs/Chikungunya_05_federative_unit_totals.png','CHIKV · FU totals'],
+    ['outputs/Zika_01b_monthly_heatmap.png','Zika · monthly heatmap'],
+    ['outputs/Zika_03_classification.png','Zika · classification'],
+    ['outputs/Zika_03_criteria.png','Zika · criteria'],
+    ['outputs/Zika_03_evolution.png','Zika · evolution'],
+    ['outputs/Zika_03_pregnancy.png','Zika · pregnancy'],
+    ['outputs/Zika_03_sex.png','Zika · sex'],
+    ['outputs/Zika_04_age_group_violin.png','Zika · age violin'],
+    ['outputs/Zika_05_federative_unit_totals.png','Zika · FU totals'],
+  ],
+};
+Object.entries(galleries).forEach(([id,items])=>{
+  const el = document.getElementById(id);
+  items.forEach(([src,cap])=>{
+    const d = document.createElement('div');
+    d.className='fig';
+    d.innerHTML = `<img loading="lazy" src="${src}" alt="${cap}"><div class="cap">${cap}</div>`;
+    d.addEventListener('click',()=>openModal(src));
+    el.appendChild(d);
+  });
+});
+
+// --- Lightbox
+const modal = document.getElementById('modal');
+const modalImg = document.getElementById('modal-img');
+function openModal(src){modalImg.src=src;modal.classList.add('on');}
+document.getElementById('modal-close').addEventListener('click',()=>modal.classList.remove('on'));
+modal.addEventListener('click',e=>{if(e.target===modal)modal.classList.remove('on');});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')modal.classList.remove('on');});
+
+// --- Active TOC highlighting (scroll spy)
+const sections = [...document.querySelectorAll('section[id]')];
+const tocLinks = [...document.querySelectorAll('nav.toc a')];
+const linkMap = Object.fromEntries(tocLinks.map(a=>[a.getAttribute('href').slice(1),a]));
+const obs = new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      tocLinks.forEach(a=>a.classList.remove('active'));
+      (linkMap[e.target.id]||{}).classList?.add('active');
+    }
+  });
+},{rootMargin:'-40% 0px -55% 0px'});
+sections.forEach(s=>obs.observe(s));
+</script>
+</body>
+</html>

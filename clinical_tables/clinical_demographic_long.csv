@@ -1,0 +1,2293 @@
+Disease,Year,Dimension,Category,Count
+CHIKV,2016,age_group,1-4,7253
+CHIKV,2016,age_group,10-14,16983
+CHIKV,2016,age_group,15-19,21359
+CHIKV,2016,age_group,20-29,52688
+CHIKV,2016,age_group,30-39,57053
+CHIKV,2016,age_group,40-49,50523
+CHIKV,2016,age_group,5-9,12436
+CHIKV,2016,age_group,50-59,41766
+CHIKV,2016,age_group,60-69,27756
+CHIKV,2016,age_group,70-79,15999
+CHIKV,2016,age_group,80+,7051
+CHIKV,2016,age_group,<1,5725
+CHIKV,2016,age_group,Ignorado/NA,10
+CHIKV,2017,age_group,1-4,0
+CHIKV,2017,age_group,10-14,0
+CHIKV,2017,age_group,15-19,0
+CHIKV,2017,age_group,20-29,0
+CHIKV,2017,age_group,30-39,0
+CHIKV,2017,age_group,40-49,0
+CHIKV,2017,age_group,5-9,0
+CHIKV,2017,age_group,50-59,0
+CHIKV,2017,age_group,60-69,0
+CHIKV,2017,age_group,70-79,0
+CHIKV,2017,age_group,80+,0
+CHIKV,2017,age_group,<1,0
+CHIKV,2017,age_group,Ignorado/NA,247662
+CHIKV,2018,age_group,1-4,0
+CHIKV,2018,age_group,10-14,0
+CHIKV,2018,age_group,15-19,0
+CHIKV,2018,age_group,20-29,0
+CHIKV,2018,age_group,30-39,0
+CHIKV,2018,age_group,40-49,0
+CHIKV,2018,age_group,5-9,0
+CHIKV,2018,age_group,50-59,0
+CHIKV,2018,age_group,60-69,0
+CHIKV,2018,age_group,70-79,0
+CHIKV,2018,age_group,80+,0
+CHIKV,2018,age_group,<1,0
+CHIKV,2018,age_group,Ignorado/NA,118779
+CHIKV,2019,age_group,1-4,0
+CHIKV,2019,age_group,10-14,0
+CHIKV,2019,age_group,15-19,0
+CHIKV,2019,age_group,20-29,0
+CHIKV,2019,age_group,30-39,0
+CHIKV,2019,age_group,40-49,0
+CHIKV,2019,age_group,5-9,0
+CHIKV,2019,age_group,50-59,0
+CHIKV,2019,age_group,60-69,0
+CHIKV,2019,age_group,70-79,0
+CHIKV,2019,age_group,80+,0
+CHIKV,2019,age_group,<1,0
+CHIKV,2019,age_group,Ignorado/NA,178147
+CHIKV,2020,age_group,1-4,0
+CHIKV,2020,age_group,10-14,0
+CHIKV,2020,age_group,15-19,0
+CHIKV,2020,age_group,20-29,0
+CHIKV,2020,age_group,30-39,0
+CHIKV,2020,age_group,40-49,0
+CHIKV,2020,age_group,5-9,0
+CHIKV,2020,age_group,50-59,0
+CHIKV,2020,age_group,60-69,0
+CHIKV,2020,age_group,70-79,0
+CHIKV,2020,age_group,80+,0
+CHIKV,2020,age_group,<1,0
+CHIKV,2020,age_group,Ignorado/NA,102496
+CHIKV,2021,age_group,1-4,3328
+CHIKV,2021,age_group,10-14,6433
+CHIKV,2021,age_group,15-19,7189
+CHIKV,2021,age_group,20-29,21268
+CHIKV,2021,age_group,30-39,23809
+CHIKV,2021,age_group,40-49,22657
+CHIKV,2021,age_group,5-9,5559
+CHIKV,2021,age_group,50-59,18311
+CHIKV,2021,age_group,60-69,11002
+CHIKV,2021,age_group,70-79,5484
+CHIKV,2021,age_group,80+,2088
+CHIKV,2021,age_group,<1,1811
+CHIKV,2021,age_group,Ignorado/NA,52
+CHIKV,2022,age_group,1-4,6927
+CHIKV,2022,age_group,10-14,15183
+CHIKV,2022,age_group,15-19,16928
+CHIKV,2022,age_group,20-29,47622
+CHIKV,2022,age_group,30-39,49547
+CHIKV,2022,age_group,40-49,46684
+CHIKV,2022,age_group,5-9,12172
+CHIKV,2022,age_group,50-59,36641
+CHIKV,2022,age_group,60-69,22453
+CHIKV,2022,age_group,70-79,12086
+CHIKV,2022,age_group,80+,4947
+CHIKV,2022,age_group,<1,3113
+CHIKV,2022,age_group,Ignorado/NA,28
+CHIKV,2023,age_group,1-4,5982
+CHIKV,2023,age_group,10-14,15219
+CHIKV,2023,age_group,15-19,18309
+CHIKV,2023,age_group,20-29,47066
+CHIKV,2023,age_group,30-39,45366
+CHIKV,2023,age_group,40-49,44775
+CHIKV,2023,age_group,5-9,11658
+CHIKV,2023,age_group,50-59,34464
+CHIKV,2023,age_group,60-69,23742
+CHIKV,2023,age_group,70-79,12262
+CHIKV,2023,age_group,80+,5170
+CHIKV,2023,age_group,<1,2425
+CHIKV,2023,age_group,Ignorado/NA,4
+CHIKV,2024,age_group,1-4,9313
+CHIKV,2024,age_group,10-14,23443
+CHIKV,2024,age_group,15-19,28962
+CHIKV,2024,age_group,20-29,70859
+CHIKV,2024,age_group,30-39,67582
+CHIKV,2024,age_group,40-49,71047
+CHIKV,2024,age_group,5-9,18042
+CHIKV,2024,age_group,50-59,58893
+CHIKV,2024,age_group,60-69,43091
+CHIKV,2024,age_group,70-79,22427
+CHIKV,2024,age_group,80+,8838
+CHIKV,2024,age_group,<1,3714
+CHIKV,2024,age_group,Ignorado/NA,3
+CHIKV,2025,age_group,1-4,6963
+CHIKV,2025,age_group,10-14,15114
+CHIKV,2025,age_group,15-19,18206
+CHIKV,2025,age_group,20-29,43882
+CHIKV,2025,age_group,30-39,42904
+CHIKV,2025,age_group,40-49,41228
+CHIKV,2025,age_group,5-9,12328
+CHIKV,2025,age_group,50-59,32025
+CHIKV,2025,age_group,60-69,22493
+CHIKV,2025,age_group,70-79,11271
+CHIKV,2025,age_group,80+,4288
+CHIKV,2025,age_group,<1,3049
+CHIKV,2025,age_group,Ignorado/NA,2
+CHIKV,2026,age_group,1-4,3878
+CHIKV,2026,age_group,10-14,8843
+CHIKV,2026,age_group,15-19,10744
+CHIKV,2026,age_group,20-29,24334
+CHIKV,2026,age_group,30-39,21145
+CHIKV,2026,age_group,40-49,20000
+CHIKV,2026,age_group,5-9,6903
+CHIKV,2026,age_group,50-59,15570
+CHIKV,2026,age_group,60-69,10703
+CHIKV,2026,age_group,70-79,5764
+CHIKV,2026,age_group,80+,2303
+CHIKV,2026,age_group,<1,1643
+CHIKV,2016,classification,Chikungunya,89546
+CHIKV,2016,classification,Dengue,1
+CHIKV,2016,classification,Dengue c/ complicacoes (antigo),32131
+CHIKV,2016,classification,Dengue classico (schema antigo),70727
+CHIKV,2016,classification,Descartado,45368
+CHIKV,2016,classification,Ignorado/NA,41356
+CHIKV,2016,classification,Inconclusivo,37473
+CHIKV,2017,classification,Chikungunya,166345
+CHIKV,2017,classification,Dengue c/ complicacoes (antigo),12
+CHIKV,2017,classification,Dengue classico (schema antigo),22
+CHIKV,2017,classification,Descartado,59634
+CHIKV,2017,classification,Ignorado/NA,21633
+CHIKV,2017,classification,Inconclusivo,16
+CHIKV,2018,classification,Chikungunya,74562
+CHIKV,2018,classification,Descartado,30687
+CHIKV,2018,classification,Ignorado/NA,13530
+CHIKV,2019,classification,Chikungunya,103579
+CHIKV,2019,classification,Dengue,1
+CHIKV,2019,classification,Descartado,46348
+CHIKV,2019,classification,Ignorado/NA,28218
+CHIKV,2019,classification,Inconclusivo,1
+CHIKV,2020,classification,Chikungunya,43973
+CHIKV,2020,classification,Descartado,28498
+CHIKV,2020,classification,Ignorado/NA,30025
+CHIKV,2021,classification,Chikungunya,69195
+CHIKV,2021,classification,Descartado,41659
+CHIKV,2021,classification,Ignorado/NA,18136
+CHIKV,2021,classification,Inconclusivo,1
+CHIKV,2022,classification,Chikungunya,148605
+CHIKV,2022,classification,Dengue c/ complicacoes (antigo),1
+CHIKV,2022,classification,Dengue classico (schema antigo),2
+CHIKV,2022,classification,Descartado,99579
+CHIKV,2022,classification,Ignorado/NA,26069
+CHIKV,2022,classification,Inconclusivo,1
+CHIKV,2022,classification,codigo_0,74
+CHIKV,2023,classification,Chikungunya,130196
+CHIKV,2023,classification,Descartado,108044
+CHIKV,2023,classification,Ignorado/NA,27817
+CHIKV,2023,classification,codigo_0,385
+CHIKV,2024,classification,Chikungunya,232047
+CHIKV,2024,classification,Descartado,162176
+CHIKV,2024,classification,Ignorado/NA,31991
+CHIKV,2025,classification,Chikungunya,110477
+CHIKV,2025,classification,Descartado,127054
+CHIKV,2025,classification,Ignorado/NA,16173
+CHIKV,2025,classification,Inconclusivo,1
+CHIKV,2025,classification,codigo_0,48
+CHIKV,2026,classification,Chikungunya,56161
+CHIKV,2026,classification,Descartado,64684
+CHIKV,2026,classification,Ignorado/NA,10912
+CHIKV,2026,classification,codigo_0,73
+CHIKV,2016,criterion,Clinico-epidemiologico,184260
+CHIKV,2016,criterion,Em investigacao,3741
+CHIKV,2016,criterion,Ignorado/NA,76706
+CHIKV,2016,criterion,Laboratorial,51895
+CHIKV,2017,criterion,Clinico-epidemiologico,146798
+CHIKV,2017,criterion,Em investigacao,4493
+CHIKV,2017,criterion,Ignorado/NA,20469
+CHIKV,2017,criterion,Laboratorial,75902
+CHIKV,2018,criterion,Clinico-epidemiologico,62163
+CHIKV,2018,criterion,Em investigacao,2446
+CHIKV,2018,criterion,Ignorado/NA,12680
+CHIKV,2018,criterion,Laboratorial,41490
+CHIKV,2019,criterion,Clinico-epidemiologico,92393
+CHIKV,2019,criterion,Em investigacao,3632
+CHIKV,2019,criterion,Ignorado/NA,27166
+CHIKV,2019,criterion,Laboratorial,54956
+CHIKV,2020,criterion,Clinico-epidemiologico,32937
+CHIKV,2020,criterion,Em investigacao,2010
+CHIKV,2020,criterion,Ignorado/NA,28931
+CHIKV,2020,criterion,Laboratorial,38618
+CHIKV,2021,criterion,Clinico-epidemiologico,55950
+CHIKV,2021,criterion,Em investigacao,1419
+CHIKV,2021,criterion,Ignorado/NA,17522
+CHIKV,2021,criterion,Laboratorial,54100
+CHIKV,2022,criterion,Clinico-epidemiologico,137526
+CHIKV,2022,criterion,Em investigacao,1909
+CHIKV,2022,criterion,Ignorado/NA,25387
+CHIKV,2022,criterion,Laboratorial,109427
+CHIKV,2022,criterion,codigo_0,82
+CHIKV,2023,criterion,Clinico-epidemiologico,122048
+CHIKV,2023,criterion,Em investigacao,3743
+CHIKV,2023,criterion,Ignorado/NA,25759
+CHIKV,2023,criterion,Laboratorial,114584
+CHIKV,2023,criterion,codigo_0,308
+CHIKV,2024,criterion,Clinico-epidemiologico,175841
+CHIKV,2024,criterion,Em investigacao,6062
+CHIKV,2024,criterion,Ignorado/NA,28987
+CHIKV,2024,criterion,Laboratorial,215193
+CHIKV,2024,criterion,codigo_0,131
+CHIKV,2025,criterion,Clinico-epidemiologico,86689
+CHIKV,2025,criterion,Em investigacao,3976
+CHIKV,2025,criterion,Ignorado/NA,13664
+CHIKV,2025,criterion,Laboratorial,149357
+CHIKV,2025,criterion,codigo_0,67
+CHIKV,2026,criterion,Clinico-epidemiologico,38521
+CHIKV,2026,criterion,Em investigacao,1800
+CHIKV,2026,criterion,Ignorado/NA,9822
+CHIKV,2026,criterion,Laboratorial,81613
+CHIKV,2026,criterion,codigo_0,74
+CHIKV,2016,evolution,Cura,213552
+CHIKV,2016,evolution,Ignorado,10481
+CHIKV,2016,evolution,Ignorado/NA,91767
+CHIKV,2016,evolution,Obito em investigacao,101
+CHIKV,2016,evolution,Obito pelo agravo,332
+CHIKV,2016,evolution,Obito por outras causas,369
+CHIKV,2017,evolution,Cura,210831
+CHIKV,2017,evolution,Ignorado,4884
+CHIKV,2017,evolution,Ignorado/NA,31257
+CHIKV,2017,evolution,Obito em investigacao,44
+CHIKV,2017,evolution,Obito pelo agravo,263
+CHIKV,2017,evolution,Obito por outras causas,383
+CHIKV,2018,evolution,Cura,91218
+CHIKV,2018,evolution,Ignorado,8395
+CHIKV,2018,evolution,Ignorado/NA,18724
+CHIKV,2018,evolution,Obito em investigacao,26
+CHIKV,2018,evolution,Obito pelo agravo,91
+CHIKV,2018,evolution,Obito por outras causas,325
+CHIKV,2019,evolution,Cura,117093
+CHIKV,2019,evolution,Ignorado,19556
+CHIKV,2019,evolution,Ignorado/NA,41060
+CHIKV,2019,evolution,Obito em investigacao,36
+CHIKV,2019,evolution,Obito pelo agravo,101
+CHIKV,2019,evolution,Obito por outras causas,301
+CHIKV,2020,evolution,Cura,62752
+CHIKV,2020,evolution,Ignorado,5289
+CHIKV,2020,evolution,Ignorado/NA,34238
+CHIKV,2020,evolution,Obito em investigacao,21
+CHIKV,2020,evolution,Obito pelo agravo,30
+CHIKV,2020,evolution,Obito por outras causas,166
+CHIKV,2021,evolution,Cura,91291
+CHIKV,2021,evolution,Ignorado,13553
+CHIKV,2021,evolution,Ignorado/NA,23966
+CHIKV,2021,evolution,Obito em investigacao,12
+CHIKV,2021,evolution,Obito pelo agravo,16
+CHIKV,2021,evolution,Obito por outras causas,153
+CHIKV,2022,evolution,Cura,225474
+CHIKV,2022,evolution,Ignorado,9056
+CHIKV,2022,evolution,Ignorado/NA,39194
+CHIKV,2022,evolution,Obito em investigacao,20
+CHIKV,2022,evolution,Obito pelo agravo,112
+CHIKV,2022,evolution,Obito por outras causas,309
+CHIKV,2022,evolution,codigo_0,166
+CHIKV,2023,evolution,Cura,200669
+CHIKV,2023,evolution,Ignorado,22151
+CHIKV,2023,evolution,Ignorado/NA,41842
+CHIKV,2023,evolution,Obito em investigacao,46
+CHIKV,2023,evolution,Obito pelo agravo,124
+CHIKV,2023,evolution,Obito por outras causas,372
+CHIKV,2023,evolution,codigo_0,1238
+CHIKV,2024,evolution,Cura,347598
+CHIKV,2024,evolution,Ignorado,24564
+CHIKV,2024,evolution,Ignorado/NA,52624
+CHIKV,2024,evolution,Obito em investigacao,69
+CHIKV,2024,evolution,Obito pelo agravo,247
+CHIKV,2024,evolution,Obito por outras causas,653
+CHIKV,2024,evolution,codigo_0,459
+CHIKV,2025,evolution,Cura,210610
+CHIKV,2025,evolution,Ignorado,12670
+CHIKV,2025,evolution,Ignorado/NA,29586
+CHIKV,2025,evolution,Obito em investigacao,39
+CHIKV,2025,evolution,Obito pelo agravo,131
+CHIKV,2025,evolution,Obito por outras causas,503
+CHIKV,2025,evolution,codigo_0,214
+CHIKV,2026,evolution,Cura,101011
+CHIKV,2026,evolution,Ignorado,13597
+CHIKV,2026,evolution,Ignorado/NA,16807
+CHIKV,2026,evolution,Obito em investigacao,35
+CHIKV,2026,evolution,Obito pelo agravo,53
+CHIKV,2026,evolution,Obito por outras causas,199
+CHIKV,2026,evolution,codigo_0,128
+CHIKV,2016,federative_unit,Acre,1112
+CHIKV,2016,federative_unit,Alagoas,19901
+CHIKV,2016,federative_unit,Amapa,1180
+CHIKV,2016,federative_unit,Amazonas,1115
+CHIKV,2016,federative_unit,Bahia,56170
+CHIKV,2016,federative_unit,Ceara,50304
+CHIKV,2016,federative_unit,Distrito Federal,1094
+CHIKV,2016,federative_unit,Espirito Santo,562
+CHIKV,2016,federative_unit,Goias,550
+CHIKV,2016,federative_unit,Maranhao,14677
+CHIKV,2016,federative_unit,Mato Grosso,1511
+CHIKV,2016,federative_unit,Mato Grosso do Sul,421
+CHIKV,2016,federative_unit,Minas Gerais,2421
+CHIKV,2016,federative_unit,Para,4614
+CHIKV,2016,federative_unit,Paraiba,20855
+CHIKV,2016,federative_unit,Parana,2714
+CHIKV,2016,federative_unit,Pernambuco,63161
+CHIKV,2016,federative_unit,Piaui,3082
+CHIKV,2016,federative_unit,Rio Grande do Norte,27392
+CHIKV,2016,federative_unit,Rio Grande do Sul,664
+CHIKV,2016,federative_unit,Rio de Janeiro,19652
+CHIKV,2016,federative_unit,Rondonia,1879
+CHIKV,2016,federative_unit,Roraima,296
+CHIKV,2016,federative_unit,Santa Catarina,1014
+CHIKV,2016,federative_unit,Sao Paulo,7063
+CHIKV,2016,federative_unit,Sergipe,11007
+CHIKV,2016,federative_unit,Tocantins,2191
+CHIKV,2017,federative_unit,Acre,363
+CHIKV,2017,federative_unit,Alagoas,666
+CHIKV,2017,federative_unit,Amapa,660
+CHIKV,2017,federative_unit,Amazonas,601
+CHIKV,2017,federative_unit,Bahia,11550
+CHIKV,2017,federative_unit,Ceara,140406
+CHIKV,2017,federative_unit,Distrito Federal,448
+CHIKV,2017,federative_unit,Espirito Santo,1693
+CHIKV,2017,federative_unit,Goias,662
+CHIKV,2017,federative_unit,Maranhao,7971
+CHIKV,2017,federative_unit,Mato Grosso,3929
+CHIKV,2017,federative_unit,Mato Grosso do Sul,568
+CHIKV,2017,federative_unit,Minas Gerais,20853
+CHIKV,2017,federative_unit,Para,11867
+CHIKV,2017,federative_unit,Paraiba,1992
+CHIKV,2017,federative_unit,Parana,828
+CHIKV,2017,federative_unit,Pernambuco,5543
+CHIKV,2017,federative_unit,Piaui,8190
+CHIKV,2017,federative_unit,Rio Grande do Norte,2454
+CHIKV,2017,federative_unit,Rio Grande do Sul,407
+CHIKV,2017,federative_unit,Rio de Janeiro,5959
+CHIKV,2017,federative_unit,Rondonia,863
+CHIKV,2017,federative_unit,Roraima,6760
+CHIKV,2017,federative_unit,Santa Catarina,427
+CHIKV,2017,federative_unit,Sao Paulo,4489
+CHIKV,2017,federative_unit,Sergipe,802
+CHIKV,2017,federative_unit,Tocantins,6711
+CHIKV,2018,federative_unit,Acre,640
+CHIKV,2018,federative_unit,Alagoas,424
+CHIKV,2018,federative_unit,Amapa,620
+CHIKV,2018,federative_unit,Amazonas,205
+CHIKV,2018,federative_unit,Bahia,4547
+CHIKV,2018,federative_unit,Ceara,5612
+CHIKV,2018,federative_unit,Distrito Federal,211
+CHIKV,2018,federative_unit,Espirito Santo,1500
+CHIKV,2018,federative_unit,Goias,522
+CHIKV,2018,federative_unit,Maranhao,952
+CHIKV,2018,federative_unit,Mato Grosso,14360
+CHIKV,2018,federative_unit,Mato Grosso do Sul,821
+CHIKV,2018,federative_unit,Minas Gerais,13461
+CHIKV,2018,federative_unit,Para,12350
+CHIKV,2018,federative_unit,Paraiba,1488
+CHIKV,2018,federative_unit,Parana,645
+CHIKV,2018,federative_unit,Pernambuco,3658
+CHIKV,2018,federative_unit,Piaui,929
+CHIKV,2018,federative_unit,Rio Grande do Norte,3714
+CHIKV,2018,federative_unit,Rio Grande do Sul,295
+CHIKV,2018,federative_unit,Rio de Janeiro,45405
+CHIKV,2018,federative_unit,Rondonia,464
+CHIKV,2018,federative_unit,Roraima,508
+CHIKV,2018,federative_unit,Santa Catarina,403
+CHIKV,2018,federative_unit,Sao Paulo,3561
+CHIKV,2018,federative_unit,Sergipe,95
+CHIKV,2018,federative_unit,Tocantins,1389
+CHIKV,2019,federative_unit,Acre,151
+CHIKV,2019,federative_unit,Alagoas,2475
+CHIKV,2019,federative_unit,Amapa,191
+CHIKV,2019,federative_unit,Amazonas,206
+CHIKV,2019,federative_unit,Bahia,13180
+CHIKV,2019,federative_unit,Ceara,5772
+CHIKV,2019,federative_unit,Distrito Federal,482
+CHIKV,2019,federative_unit,Espirito Santo,3400
+CHIKV,2019,federative_unit,Goias,346
+CHIKV,2019,federative_unit,Maranhao,976
+CHIKV,2019,federative_unit,Mato Grosso,889
+CHIKV,2019,federative_unit,Mato Grosso do Sul,698
+CHIKV,2019,federative_unit,Minas Gerais,5050
+CHIKV,2019,federative_unit,Para,6261
+CHIKV,2019,federative_unit,Paraiba,2059
+CHIKV,2019,federative_unit,Parana,837
+CHIKV,2019,federative_unit,Pernambuco,8962
+CHIKV,2019,federative_unit,Piaui,1226
+CHIKV,2019,federative_unit,Rio Grande do Norte,15491
+CHIKV,2019,federative_unit,Rio Grande do Sul,343
+CHIKV,2019,federative_unit,Rio de Janeiro,99390
+CHIKV,2019,federative_unit,Rondonia,576
+CHIKV,2019,federative_unit,Roraima,510
+CHIKV,2019,federative_unit,Santa Catarina,703
+CHIKV,2019,federative_unit,Sao Paulo,5557
+CHIKV,2019,federative_unit,Sergipe,714
+CHIKV,2019,federative_unit,Tocantins,1702
+CHIKV,2020,federative_unit,Acre,275
+CHIKV,2020,federative_unit,Alagoas,291
+CHIKV,2020,federative_unit,Amapa,44
+CHIKV,2020,federative_unit,Amazonas,124
+CHIKV,2020,federative_unit,Bahia,47109
+CHIKV,2020,federative_unit,Ceara,3760
+CHIKV,2020,federative_unit,Distrito Federal,1569
+CHIKV,2020,federative_unit,Espirito Santo,4883
+CHIKV,2020,federative_unit,Goias,182
+CHIKV,2020,federative_unit,Maranhao,250
+CHIKV,2020,federative_unit,Mato Grosso,804
+CHIKV,2020,federative_unit,Mato Grosso do Sul,426
+CHIKV,2020,federative_unit,Minas Gerais,5126
+CHIKV,2020,federative_unit,Para,1968
+CHIKV,2020,federative_unit,Paraiba,2432
+CHIKV,2020,federative_unit,Parana,706
+CHIKV,2020,federative_unit,Pernambuco,8685
+CHIKV,2020,federative_unit,Piaui,295
+CHIKV,2020,federative_unit,Rio Grande do Norte,7813
+CHIKV,2020,federative_unit,Rio Grande do Sul,266
+CHIKV,2020,federative_unit,Rio de Janeiro,5923
+CHIKV,2020,federative_unit,Rondonia,1079
+CHIKV,2020,federative_unit,Roraima,155
+CHIKV,2020,federative_unit,Santa Catarina,668
+CHIKV,2020,federative_unit,Sao Paulo,2239
+CHIKV,2020,federative_unit,Sergipe,4997
+CHIKV,2020,federative_unit,Tocantins,427
+CHIKV,2021,federative_unit,Acre,666
+CHIKV,2021,federative_unit,Alagoas,824
+CHIKV,2021,federative_unit,Amapa,203
+CHIKV,2021,federative_unit,Amazonas,370
+CHIKV,2021,federative_unit,Bahia,17911
+CHIKV,2021,federative_unit,Ceara,5350
+CHIKV,2021,federative_unit,Distrito Federal,334
+CHIKV,2021,federative_unit,Goias,1042
+CHIKV,2021,federative_unit,Maranhao,274
+CHIKV,2021,federative_unit,Mato Grosso,345
+CHIKV,2021,federative_unit,Mato Grosso do Sul,525
+CHIKV,2021,federative_unit,Minas Gerais,7721
+CHIKV,2021,federative_unit,Para,946
+CHIKV,2021,federative_unit,Paraiba,12345
+CHIKV,2021,federative_unit,Parana,366
+CHIKV,2021,federative_unit,Pernambuco,36486
+CHIKV,2021,federative_unit,Piaui,480
+CHIKV,2021,federative_unit,Rio Grande do Norte,5923
+CHIKV,2021,federative_unit,Rio Grande do Sul,673
+CHIKV,2021,federative_unit,Rio de Janeiro,1165
+CHIKV,2021,federative_unit,Rondonia,433
+CHIKV,2021,federative_unit,Roraima,341
+CHIKV,2021,federative_unit,Santa Catarina,530
+CHIKV,2021,federative_unit,Sao Paulo,26810
+CHIKV,2021,federative_unit,Sergipe,5784
+CHIKV,2021,federative_unit,Tocantins,1144
+CHIKV,2022,federative_unit,Acre,203
+CHIKV,2022,federative_unit,Alagoas,12255
+CHIKV,2022,federative_unit,Amapa,170
+CHIKV,2022,federative_unit,Amazonas,471
+CHIKV,2022,federative_unit,Bahia,25090
+CHIKV,2022,federative_unit,Ceara,80295
+CHIKV,2022,federative_unit,Distrito Federal,1021
+CHIKV,2022,federative_unit,Espirito Santo,3091
+CHIKV,2022,federative_unit,Goias,6015
+CHIKV,2022,federative_unit,Maranhao,3426
+CHIKV,2022,federative_unit,Mato Grosso,466
+CHIKV,2022,federative_unit,Mato Grosso do Sul,4345
+CHIKV,2022,federative_unit,Minas Gerais,17048
+CHIKV,2022,federative_unit,Para,1583
+CHIKV,2022,federative_unit,Paraiba,24342
+CHIKV,2022,federative_unit,Parana,428
+CHIKV,2022,federative_unit,Pernambuco,35515
+CHIKV,2022,federative_unit,Piaui,12300
+CHIKV,2022,federative_unit,Rio Grande do Norte,19554
+CHIKV,2022,federative_unit,Rio Grande do Sul,756
+CHIKV,2022,federative_unit,Rio de Janeiro,1673
+CHIKV,2022,federative_unit,Rondonia,517
+CHIKV,2022,federative_unit,Roraima,442
+CHIKV,2022,federative_unit,Santa Catarina,850
+CHIKV,2022,federative_unit,Sao Paulo,4950
+CHIKV,2022,federative_unit,Sergipe,8386
+CHIKV,2022,federative_unit,Tocantins,9139
+CHIKV,2023,federative_unit,Acre,304
+CHIKV,2023,federative_unit,Alagoas,1044
+CHIKV,2023,federative_unit,Amapa,135
+CHIKV,2023,federative_unit,Amazonas,582
+CHIKV,2023,federative_unit,Bahia,23186
+CHIKV,2023,federative_unit,Ceara,9398
+CHIKV,2023,federative_unit,Distrito Federal,1173
+CHIKV,2023,federative_unit,Espirito Santo,18249
+CHIKV,2023,federative_unit,Goias,3999
+CHIKV,2023,federative_unit,Maranhao,4270
+CHIKV,2023,federative_unit,Mato Grosso,711
+CHIKV,2023,federative_unit,Mato Grosso do Sul,15656
+CHIKV,2023,federative_unit,Minas Gerais,130426
+CHIKV,2023,federative_unit,Para,2375
+CHIKV,2023,federative_unit,Paraiba,2201
+CHIKV,2023,federative_unit,Parana,3862
+CHIKV,2023,federative_unit,Pernambuco,7453
+CHIKV,2023,federative_unit,Piaui,5238
+CHIKV,2023,federative_unit,Rio Grande do Norte,3637
+CHIKV,2023,federative_unit,Rio Grande do Sul,578
+CHIKV,2023,federative_unit,Rio de Janeiro,3416
+CHIKV,2023,federative_unit,Rondonia,984
+CHIKV,2023,federative_unit,Roraima,503
+CHIKV,2023,federative_unit,Santa Catarina,944
+CHIKV,2023,federative_unit,Sao Paulo,9959
+CHIKV,2023,federative_unit,Sergipe,4708
+CHIKV,2023,federative_unit,Tocantins,11451
+CHIKV,2024,federative_unit,Acre,848
+CHIKV,2024,federative_unit,Alagoas,676
+CHIKV,2024,federative_unit,Amapa,853
+CHIKV,2024,federative_unit,Amazonas,482
+CHIKV,2024,federative_unit,Bahia,28134
+CHIKV,2024,federative_unit,Ceara,9802
+CHIKV,2024,federative_unit,Distrito Federal,1363
+CHIKV,2024,federative_unit,Espirito Santo,22983
+CHIKV,2024,federative_unit,Goias,14456
+CHIKV,2024,federative_unit,Maranhao,2617
+CHIKV,2024,federative_unit,Mato Grosso,25693
+CHIKV,2024,federative_unit,Mato Grosso do Sul,33793
+CHIKV,2024,federative_unit,Minas Gerais,196968
+CHIKV,2024,federative_unit,Para,6990
+CHIKV,2024,federative_unit,Paraiba,5676
+CHIKV,2024,federative_unit,Parana,2066
+CHIKV,2024,federative_unit,Pernambuco,15538
+CHIKV,2024,federative_unit,Piaui,1322
+CHIKV,2024,federative_unit,Rio Grande do Norte,6110
+CHIKV,2024,federative_unit,Rio Grande do Sul,912
+CHIKV,2024,federative_unit,Rio de Janeiro,7138
+CHIKV,2024,federative_unit,Rondonia,2241
+CHIKV,2024,federative_unit,Roraima,738
+CHIKV,2024,federative_unit,Santa Catarina,1091
+CHIKV,2024,federative_unit,Sao Paulo,31333
+CHIKV,2024,federative_unit,Sergipe,2535
+CHIKV,2024,federative_unit,Tocantins,3856
+CHIKV,2025,federative_unit,Acre,1387
+CHIKV,2025,federative_unit,Alagoas,4747
+CHIKV,2025,federative_unit,Amapa,254
+CHIKV,2025,federative_unit,Amazonas,489
+CHIKV,2025,federative_unit,Bahia,4740
+CHIKV,2025,federative_unit,Ceara,6020
+CHIKV,2025,federative_unit,Distrito Federal,417
+CHIKV,2025,federative_unit,Espirito Santo,6029
+CHIKV,2025,federative_unit,Goias,3633
+CHIKV,2025,federative_unit,Maranhao,1576
+CHIKV,2025,federative_unit,Mato Grosso,66556
+CHIKV,2025,federative_unit,Mato Grosso do Sul,50493
+CHIKV,2025,federative_unit,Minas Gerais,27654
+CHIKV,2025,federative_unit,Para,3228
+CHIKV,2025,federative_unit,Paraiba,3721
+CHIKV,2025,federative_unit,Parana,11683
+CHIKV,2025,federative_unit,Pernambuco,7673
+CHIKV,2025,federative_unit,Piaui,986
+CHIKV,2025,federative_unit,Rio Grande do Norte,4674
+CHIKV,2025,federative_unit,Rio Grande do Sul,1500
+CHIKV,2025,federative_unit,Rio de Janeiro,4261
+CHIKV,2025,federative_unit,Rondonia,10365
+CHIKV,2025,federative_unit,Roraima,312
+CHIKV,2025,federative_unit,Santa Catarina,2999
+CHIKV,2025,federative_unit,Sao Paulo,25438
+CHIKV,2025,federative_unit,Sergipe,1236
+CHIKV,2025,federative_unit,Tocantins,1682
+CHIKV,2026,federative_unit,Acre,342
+CHIKV,2026,federative_unit,Alagoas,3471
+CHIKV,2026,federative_unit,Amapa,144
+CHIKV,2026,federative_unit,Amazonas,246
+CHIKV,2026,federative_unit,Bahia,12895
+CHIKV,2026,federative_unit,Ceara,6632
+CHIKV,2026,federative_unit,Distrito Federal,492
+CHIKV,2026,federative_unit,Espirito Santo,975
+CHIKV,2026,federative_unit,Goias,13286
+CHIKV,2026,federative_unit,Maranhao,1803
+CHIKV,2026,federative_unit,Mato Grosso,2588
+CHIKV,2026,federative_unit,Mato Grosso do Sul,35313
+CHIKV,2026,federative_unit,Minas Gerais,21642
+CHIKV,2026,federative_unit,Para,1401
+CHIKV,2026,federative_unit,Paraiba,1888
+CHIKV,2026,federative_unit,Parana,1476
+CHIKV,2026,federative_unit,Pernambuco,7017
+CHIKV,2026,federative_unit,Piaui,615
+CHIKV,2026,federative_unit,Rio Grande do Norte,1775
+CHIKV,2026,federative_unit,Rio Grande do Sul,415
+CHIKV,2026,federative_unit,Rio de Janeiro,4644
+CHIKV,2026,federative_unit,Rondonia,2500
+CHIKV,2026,federative_unit,Roraima,136
+CHIKV,2026,federative_unit,Santa Catarina,674
+CHIKV,2026,federative_unit,Sao Paulo,7540
+CHIKV,2026,federative_unit,Sergipe,940
+CHIKV,2026,federative_unit,Tocantins,980
+CHIKV,2016,sex,Feminino,199388
+CHIKV,2016,sex,Ignorado,254
+CHIKV,2016,sex,Ignorado/NA,4
+CHIKV,2016,sex,Masculino,116956
+CHIKV,2017,sex,Feminino,152113
+CHIKV,2017,sex,Ignorado,162
+CHIKV,2017,sex,Ignorado/NA,1
+CHIKV,2017,sex,Masculino,95386
+CHIKV,2018,sex,Feminino,72444
+CHIKV,2018,sex,Ignorado,123
+CHIKV,2018,sex,Ignorado/NA,2
+CHIKV,2018,sex,Masculino,46210
+CHIKV,2019,sex,Feminino,107761
+CHIKV,2019,sex,Ignorado,405
+CHIKV,2019,sex,Masculino,69981
+CHIKV,2020,sex,Feminino,61125
+CHIKV,2020,sex,Ignorado,141
+CHIKV,2020,sex,Masculino,41230
+CHIKV,2021,sex,Feminino,76717
+CHIKV,2021,sex,Ignorado,132
+CHIKV,2021,sex,Ignorado/NA,5
+CHIKV,2021,sex,Masculino,52137
+CHIKV,2022,sex,Feminino,166195
+CHIKV,2022,sex,Ignorado,266
+CHIKV,2022,sex,Ignorado/NA,2
+CHIKV,2022,sex,Masculino,107868
+CHIKV,2023,sex,Feminino,156668
+CHIKV,2023,sex,Ignorado,483
+CHIKV,2023,sex,Masculino,109291
+CHIKV,2024,sex,Feminino,251700
+CHIKV,2024,sex,Ignorado,392
+CHIKV,2024,sex,Ignorado/NA,2
+CHIKV,2024,sex,Masculino,174120
+CHIKV,2025,sex,Feminino,148482
+CHIKV,2025,sex,Ignorado,161
+CHIKV,2025,sex,Masculino,105110
+CHIKV,2026,sex,Feminino,75596
+CHIKV,2026,sex,Ignorado,75
+CHIKV,2026,sex,Masculino,56159
+DENV,2016,age_group,1-4,0
+DENV,2016,age_group,10-14,0
+DENV,2016,age_group,15-19,0
+DENV,2016,age_group,20-29,0
+DENV,2016,age_group,30-39,0
+DENV,2016,age_group,40-49,0
+DENV,2016,age_group,5-9,0
+DENV,2016,age_group,50-59,0
+DENV,2016,age_group,60-69,0
+DENV,2016,age_group,70-79,0
+DENV,2016,age_group,80+,0
+DENV,2016,age_group,<1,0
+DENV,2016,age_group,Ignorado/NA,1515533
+DENV,2017,age_group,1-4,0
+DENV,2017,age_group,10-14,0
+DENV,2017,age_group,15-19,0
+DENV,2017,age_group,20-29,0
+DENV,2017,age_group,30-39,0
+DENV,2017,age_group,40-49,0
+DENV,2017,age_group,5-9,0
+DENV,2017,age_group,50-59,0
+DENV,2017,age_group,60-69,0
+DENV,2017,age_group,70-79,0
+DENV,2017,age_group,80+,0
+DENV,2017,age_group,<1,0
+DENV,2017,age_group,Ignorado/NA,243248
+DENV,2018,age_group,1-4,0
+DENV,2018,age_group,10-14,0
+DENV,2018,age_group,15-19,0
+DENV,2018,age_group,20-29,0
+DENV,2018,age_group,30-39,0
+DENV,2018,age_group,40-49,0
+DENV,2018,age_group,5-9,0
+DENV,2018,age_group,50-59,0
+DENV,2018,age_group,60-69,0
+DENV,2018,age_group,70-79,0
+DENV,2018,age_group,80+,0
+DENV,2018,age_group,<1,0
+DENV,2018,age_group,Ignorado/NA,265460
+DENV,2019,age_group,1-4,0
+DENV,2019,age_group,10-14,0
+DENV,2019,age_group,15-19,0
+DENV,2019,age_group,20-29,0
+DENV,2019,age_group,30-39,0
+DENV,2019,age_group,40-49,0
+DENV,2019,age_group,5-9,0
+DENV,2019,age_group,50-59,0
+DENV,2019,age_group,60-69,0
+DENV,2019,age_group,70-79,0
+DENV,2019,age_group,80+,0
+DENV,2019,age_group,<1,0
+DENV,2019,age_group,Ignorado/NA,1554126
+DENV,2020,age_group,1-4,25093
+DENV,2020,age_group,10-14,61865
+DENV,2020,age_group,15-19,77180
+DENV,2020,age_group,20-29,186551
+DENV,2020,age_group,30-39,175150
+DENV,2020,age_group,40-49,147646
+DENV,2020,age_group,5-9,45855
+DENV,2020,age_group,50-59,115440
+DENV,2020,age_group,60-69,67399
+DENV,2020,age_group,70-79,30103
+DENV,2020,age_group,80+,10974
+DENV,2020,age_group,<1,13090
+DENV,2020,age_group,Ignorado/NA,117
+DENV,2021,age_group,1-4,18195
+DENV,2021,age_group,10-14,37759
+DENV,2021,age_group,15-19,42376
+DENV,2021,age_group,20-29,104009
+DENV,2021,age_group,30-39,97679
+DENV,2021,age_group,40-49,82086
+DENV,2021,age_group,5-9,32406
+DENV,2021,age_group,50-59,60997
+DENV,2021,age_group,60-69,35548
+DENV,2021,age_group,70-79,15660
+DENV,2021,age_group,80+,5633
+DENV,2021,age_group,<1,7562
+DENV,2021,age_group,Ignorado/NA,139
+DENV,2022,age_group,1-4,40431
+DENV,2022,age_group,10-14,99786
+DENV,2022,age_group,15-19,114563
+DENV,2022,age_group,20-29,261326
+DENV,2022,age_group,30-39,237447
+DENV,2022,age_group,40-49,206084
+DENV,2022,age_group,5-9,79507
+DENV,2022,age_group,50-59,162577
+DENV,2022,age_group,60-69,105296
+DENV,2022,age_group,70-79,52650
+DENV,2022,age_group,80+,20022
+DENV,2022,age_group,<1,13899
+DENV,2022,age_group,Ignorado/NA,11507
+DENV,2023,age_group,1-4,42068
+DENV,2023,age_group,10-14,123378
+DENV,2023,age_group,15-19,142700
+DENV,2023,age_group,20-29,318570
+DENV,2023,age_group,30-39,277578
+DENV,2023,age_group,40-49,242915
+DENV,2023,age_group,5-9,94707
+DENV,2023,age_group,50-59,183177
+DENV,2023,age_group,60-69,122546
+DENV,2023,age_group,70-79,60004
+DENV,2023,age_group,80+,23649
+DENV,2023,age_group,<1,14609
+DENV,2023,age_group,Ignorado/NA,55
+DENV,2024,age_group,1-4,158446
+DENV,2024,age_group,10-14,447652
+DENV,2024,age_group,15-19,542643
+DENV,2024,age_group,20-29,1204789
+DENV,2024,age_group,30-39,1061884
+DENV,2024,age_group,40-49,998333
+DENV,2024,age_group,5-9,346851
+DENV,2024,age_group,50-59,785150
+DENV,2024,age_group,60-69,557844
+DENV,2024,age_group,70-79,292661
+DENV,2024,age_group,80+,116966
+DENV,2024,age_group,<1,51593
+DENV,2024,age_group,Ignorado/NA,112
+DENV,2025,age_group,1-4,43353
+DENV,2025,age_group,10-14,100855
+DENV,2025,age_group,15-19,134790
+DENV,2025,age_group,20-29,304651
+DENV,2025,age_group,30-39,277066
+DENV,2025,age_group,40-49,254715
+DENV,2025,age_group,5-9,86538
+DENV,2025,age_group,50-59,191776
+DENV,2025,age_group,60-69,136181
+DENV,2025,age_group,70-79,70734
+DENV,2025,age_group,80+,28646
+DENV,2025,age_group,<1,13903
+DENV,2025,age_group,Ignorado/NA,7
+DENV,2026,age_group,1-4,17983
+DENV,2026,age_group,10-14,35461
+DENV,2026,age_group,15-19,47968
+DENV,2026,age_group,20-29,100941
+DENV,2026,age_group,30-39,75701
+DENV,2026,age_group,40-49,62286
+DENV,2026,age_group,5-9,31348
+DENV,2026,age_group,50-59,42155
+DENV,2026,age_group,60-69,26623
+DENV,2026,age_group,70-79,13022
+DENV,2026,age_group,80+,5322
+DENV,2026,age_group,<1,6508
+DENV,2026,age_group,Ignorado/NA,5
+DENV,2016,classification,Dengue,1054457
+DENV,2016,classification,Dengue c/ complicacoes (antigo),54
+DENV,2016,classification,Dengue c/ sinais de alarme,9674
+DENV,2016,classification,Dengue classico (schema antigo),36368
+DENV,2016,classification,Dengue grave,1034
+DENV,2016,classification,FHD (antigo),13
+DENV,2016,classification,Ignorado/NA,1339
+DENV,2016,classification,Inconclusivo,412591
+DENV,2016,classification,SCD (antigo),3
+DENV,2017,classification,Dengue,164396
+DENV,2017,classification,Dengue c/ sinais de alarme,2864
+DENV,2017,classification,Dengue grave,344
+DENV,2017,classification,Ignorado/NA,475
+DENV,2017,classification,Inconclusivo,75169
+DENV,2018,classification,Dengue,193422
+DENV,2018,classification,Dengue c/ sinais de alarme,4536
+DENV,2018,classification,Dengue grave,444
+DENV,2018,classification,Ignorado/NA,524
+DENV,2018,classification,Inconclusivo,66534
+DENV,2019,classification,Dengue,1289767
+DENV,2019,classification,Dengue c/ sinais de alarme,20386
+DENV,2019,classification,Dengue grave,1591
+DENV,2019,classification,Ignorado/NA,2636
+DENV,2019,classification,Inconclusivo,239746
+DENV,2020,classification,Dengue,782498
+DENV,2020,classification,Dengue c/ sinais de alarme,9578
+DENV,2020,classification,Dengue grave,934
+DENV,2020,classification,Ignorado/NA,1571
+DENV,2020,classification,Inconclusivo,161882
+DENV,2021,classification,Dengue,450359
+DENV,2021,classification,Dengue c/ sinais de alarme,4909
+DENV,2021,classification,Dengue grave,450
+DENV,2021,classification,Ignorado/NA,902
+DENV,2021,classification,Inconclusivo,83197
+DENV,2021,classification,codigo_0,232
+DENV,2022,classification,Dengue,1233766
+DENV,2022,classification,Dengue c/ sinais de alarme,18924
+DENV,2022,classification,Dengue grave,1548
+DENV,2022,classification,Ignorado/NA,1482
+DENV,2022,classification,Inconclusivo,149045
+DENV,2022,classification,codigo_0,330
+DENV,2023,classification,Dengue,1401419
+DENV,2023,classification,Dengue c/ sinais de alarme,23668
+DENV,2023,classification,Dengue grave,1686
+DENV,2023,classification,Ignorado/NA,3384
+DENV,2023,classification,Inconclusivo,207687
+DENV,2023,classification,codigo_0,8112
+DENV,2024,classification,Dengue,5904136
+DENV,2024,classification,Dengue c/ sinais de alarme,101392
+DENV,2024,classification,Dengue grave,8831
+DENV,2024,classification,Ignorado/NA,7924
+DENV,2024,classification,Inconclusivo,542641
+DENV,2025,classification,Dengue,1444481
+DENV,2025,classification,Dengue c/ sinais de alarme,35105
+DENV,2025,classification,Dengue grave,2687
+DENV,2025,classification,Ignorado/NA,1181
+DENV,2025,classification,Inconclusivo,158115
+DENV,2025,classification,codigo_0,1646
+DENV,2026,classification,Dengue,349185
+DENV,2026,classification,Dengue c/ sinais de alarme,11892
+DENV,2026,classification,Dengue grave,768
+DENV,2026,classification,Ignorado/NA,30185
+DENV,2026,classification,Inconclusivo,69202
+DENV,2026,classification,codigo_0,4091
+DENV,2016,criterion,Clinico-epidemiologico,771014
+DENV,2016,criterion,Em investigacao,18895
+DENV,2016,criterion,Ignorado/NA,398656
+DENV,2016,criterion,Laboratorial,326968
+DENV,2017,criterion,Clinico-epidemiologico,121666
+DENV,2017,criterion,Em investigacao,5684
+DENV,2017,criterion,Ignorado/NA,72585
+DENV,2017,criterion,Laboratorial,43313
+DENV,2018,criterion,Clinico-epidemiologico,131930
+DENV,2018,criterion,Em investigacao,8260
+DENV,2018,criterion,Ignorado/NA,63496
+DENV,2018,criterion,Laboratorial,61774
+DENV,2019,criterion,Clinico-epidemiologico,879099
+DENV,2019,criterion,Em investigacao,24810
+DENV,2019,criterion,Ignorado/NA,228366
+DENV,2019,criterion,Laboratorial,421851
+DENV,2020,criterion,Clinico-epidemiologico,469197
+DENV,2020,criterion,Em investigacao,11915
+DENV,2020,criterion,Ignorado/NA,155558
+DENV,2020,criterion,Laboratorial,319793
+DENV,2021,criterion,Clinico-epidemiologico,200046
+DENV,2021,criterion,Em investigacao,7530
+DENV,2021,criterion,Ignorado/NA,80644
+DENV,2021,criterion,Laboratorial,251587
+DENV,2021,criterion,codigo_0,242
+DENV,2022,criterion,Clinico-epidemiologico,665413
+DENV,2022,criterion,Em investigacao,10006
+DENV,2022,criterion,Ignorado/NA,144584
+DENV,2022,criterion,Laboratorial,584788
+DENV,2022,criterion,codigo_0,304
+DENV,2023,criterion,Clinico-epidemiologico,766131
+DENV,2023,criterion,Em investigacao,22316
+DENV,2023,criterion,Ignorado/NA,199484
+DENV,2023,criterion,Laboratorial,655107
+DENV,2023,criterion,codigo_0,2918
+DENV,2024,criterion,Clinico-epidemiologico,3785749
+DENV,2024,criterion,Em investigacao,65816
+DENV,2024,criterion,Ignorado/NA,513039
+DENV,2024,criterion,Laboratorial,2199918
+DENV,2024,criterion,codigo_0,402
+DENV,2025,criterion,Clinico-epidemiologico,963025
+DENV,2025,criterion,Em investigacao,22480
+DENV,2025,criterion,Ignorado/NA,143944
+DENV,2025,criterion,Laboratorial,512128
+DENV,2025,criterion,codigo_0,1638
+DENV,2026,criterion,Clinico-epidemiologico,220414
+DENV,2026,criterion,Em investigacao,18328
+DENV,2026,criterion,Ignorado/NA,88651
+DENV,2026,criterion,Laboratorial,133807
+DENV,2026,criterion,codigo_0,4123
+DENV,2016,evolution,Cura,1007100
+DENV,2016,evolution,Ignorado,20895
+DENV,2016,evolution,Ignorado/NA,486230
+DENV,2016,evolution,Obito em investigacao,385
+DENV,2016,evolution,Obito pelo agravo,728
+DENV,2016,evolution,Obito por outras causas,195
+DENV,2017,evolution,Cura,156976
+DENV,2017,evolution,Ignorado,3751
+DENV,2017,evolution,Ignorado/NA,82150
+DENV,2017,evolution,Obito em investigacao,77
+DENV,2017,evolution,Obito pelo agravo,205
+DENV,2017,evolution,Obito por outras causas,89
+DENV,2018,evolution,Cura,179747
+DENV,2018,evolution,Ignorado,6122
+DENV,2018,evolution,Ignorado/NA,79251
+DENV,2018,evolution,Obito em investigacao,56
+DENV,2018,evolution,Obito pelo agravo,221
+DENV,2018,evolution,Obito por outras causas,63
+DENV,2019,evolution,Cura,1229736
+DENV,2019,evolution,Ignorado,30874
+DENV,2019,evolution,Ignorado/NA,292360
+DENV,2019,evolution,Obito em investigacao,159
+DENV,2019,evolution,Obito pelo agravo,850
+DENV,2019,evolution,Obito por outras causas,147
+DENV,2020,evolution,Cura,734461
+DENV,2020,evolution,Ignorado,22876
+DENV,2020,evolution,Ignorado/NA,198203
+DENV,2020,evolution,Obito em investigacao,112
+DENV,2020,evolution,Obito pelo agravo,582
+DENV,2020,evolution,Obito por outras causas,229
+DENV,2021,evolution,Cura,416828
+DENV,2021,evolution,Ignorado,21383
+DENV,2021,evolution,Ignorado/NA,101112
+DENV,2021,evolution,Obito em investigacao,55
+DENV,2021,evolution,Obito pelo agravo,279
+DENV,2021,evolution,Obito por outras causas,159
+DENV,2021,evolution,codigo_0,233
+DENV,2022,evolution,Cura,1149973
+DENV,2022,evolution,Ignorado,55181
+DENV,2022,evolution,Ignorado/NA,197939
+DENV,2022,evolution,Obito em investigacao,65
+DENV,2022,evolution,Obito pelo agravo,1056
+DENV,2022,evolution,Obito por outras causas,393
+DENV,2022,evolution,codigo_0,488
+DENV,2023,evolution,Cura,1307584
+DENV,2023,evolution,Ignorado,55166
+DENV,2023,evolution,Ignorado/NA,270961
+DENV,2023,evolution,Obito em investigacao,98
+DENV,2023,evolution,Obito pelo agravo,1192
+DENV,2023,evolution,Obito por outras causas,345
+DENV,2023,evolution,codigo_0,10610
+DENV,2024,evolution,Cura,5337488
+DENV,2024,evolution,Ignorado,257863
+DENV,2024,evolution,Ignorado/NA,959381
+DENV,2024,evolution,Obito em investigacao,341
+DENV,2024,evolution,Obito pelo agravo,6337
+DENV,2024,evolution,Obito por outras causas,1308
+DENV,2024,evolution,codigo_0,2206
+DENV,2025,evolution,Cura,1391658
+DENV,2025,evolution,Ignorado,39298
+DENV,2025,evolution,Ignorado/NA,207772
+DENV,2025,evolution,Obito em investigacao,45
+DENV,2025,evolution,Obito pelo agravo,1856
+DENV,2025,evolution,Obito por outras causas,495
+DENV,2025,evolution,codigo_0,2091
+DENV,2026,evolution,Cura,331082
+DENV,2026,evolution,Ignorado,14310
+DENV,2026,evolution,Ignorado/NA,114024
+DENV,2026,evolution,Obito em investigacao,121
+DENV,2026,evolution,Obito pelo agravo,343
+DENV,2026,evolution,Obito por outras causas,123
+DENV,2026,evolution,codigo_0,5320
+DENV,2016,federative_unit,Acre,2260
+DENV,2016,federative_unit,Alagoas,19340
+DENV,2016,federative_unit,Amapa,1832
+DENV,2016,federative_unit,Amazonas,7510
+DENV,2016,federative_unit,Bahia,67800
+DENV,2016,federative_unit,Ceara,49767
+DENV,2016,federative_unit,Distrito Federal,19595
+DENV,2016,federative_unit,Espirito Santo,43108
+DENV,2016,federative_unit,Goias,129466
+DENV,2016,federative_unit,Maranhao,23866
+DENV,2016,federative_unit,Mato Grosso,21287
+DENV,2016,federative_unit,Mato Grosso do Sul,46869
+DENV,2016,federative_unit,Minas Gerais,529017
+DENV,2016,federative_unit,Para,10871
+DENV,2016,federative_unit,Paraiba,35770
+DENV,2016,federative_unit,Parana,63175
+DENV,2016,federative_unit,Pernambuco,62627
+DENV,2016,federative_unit,Piaui,5297
+DENV,2016,federative_unit,Rio Grande do Norte,57056
+DENV,2016,federative_unit,Rio Grande do Sul,3199
+DENV,2016,federative_unit,Rio de Janeiro,88142
+DENV,2016,federative_unit,Rondonia,7908
+DENV,2016,federative_unit,Roraima,217
+DENV,2016,federative_unit,Santa Catarina,5171
+DENV,2016,federative_unit,Sao Paulo,202804
+DENV,2016,federative_unit,Sergipe,3609
+DENV,2016,federative_unit,Tocantins,7970
+DENV,2017,federative_unit,Acre,1884
+DENV,2017,federative_unit,Alagoas,2928
+DENV,2017,federative_unit,Amapa,937
+DENV,2017,federative_unit,Amazonas,3899
+DENV,2017,federative_unit,Bahia,10098
+DENV,2017,federative_unit,Ceara,39439
+DENV,2017,federative_unit,Distrito Federal,4249
+DENV,2017,federative_unit,Espirito Santo,6889
+DENV,2017,federative_unit,Goias,64068
+DENV,2017,federative_unit,Maranhao,7192
+DENV,2017,federative_unit,Mato Grosso,9391
+DENV,2017,federative_unit,Mato Grosso do Sul,2314
+DENV,2017,federative_unit,Minas Gerais,26466
+DENV,2017,federative_unit,Para,7826
+DENV,2017,federative_unit,Paraiba,3841
+DENV,2017,federative_unit,Parana,2227
+DENV,2017,federative_unit,Pernambuco,7926
+DENV,2017,federative_unit,Piaui,5300
+DENV,2017,federative_unit,Rio Grande do Norte,7484
+DENV,2017,federative_unit,Rio Grande do Sul,183
+DENV,2017,federative_unit,Rio de Janeiro,11001
+DENV,2017,federative_unit,Rondonia,2194
+DENV,2017,federative_unit,Roraima,284
+DENV,2017,federative_unit,Santa Catarina,191
+DENV,2017,federative_unit,Sao Paulo,9459
+DENV,2017,federative_unit,Sergipe,622
+DENV,2017,federative_unit,Tocantins,4956
+DENV,2018,federative_unit,Acre,7283
+DENV,2018,federative_unit,Alagoas,2212
+DENV,2018,federative_unit,Amapa,775
+DENV,2018,federative_unit,Amazonas,2325
+DENV,2018,federative_unit,Bahia,9733
+DENV,2018,federative_unit,Ceara,4175
+DENV,2018,federative_unit,Distrito Federal,2473
+DENV,2018,federative_unit,Espirito Santo,10267
+DENV,2018,federative_unit,Goias,91545
+DENV,2018,federative_unit,Maranhao,2167
+DENV,2018,federative_unit,Mato Grosso,7282
+DENV,2018,federative_unit,Mato Grosso do Sul,5617
+DENV,2018,federative_unit,Minas Gerais,29175
+DENV,2018,federative_unit,Para,3775
+DENV,2018,federative_unit,Paraiba,11007
+DENV,2018,federative_unit,Parana,1424
+DENV,2018,federative_unit,Pernambuco,11231
+DENV,2018,federative_unit,Piaui,1942
+DENV,2018,federative_unit,Rio Grande do Norte,23807
+DENV,2018,federative_unit,Rio Grande do Sul,128
+DENV,2018,federative_unit,Rio de Janeiro,14850
+DENV,2018,federative_unit,Rondonia,539
+DENV,2018,federative_unit,Roraima,111
+DENV,2018,federative_unit,Santa Catarina,185
+DENV,2018,federative_unit,Sao Paulo,18328
+DENV,2018,federative_unit,Sergipe,237
+DENV,2018,federative_unit,Tocantins,2867
+DENV,2019,federative_unit,Acre,10099
+DENV,2019,federative_unit,Alagoas,20993
+DENV,2019,federative_unit,Amapa,198
+DENV,2019,federative_unit,Amazonas,3873
+DENV,2019,federative_unit,Bahia,68115
+DENV,2019,federative_unit,Ceara,16298
+DENV,2019,federative_unit,Distrito Federal,39514
+DENV,2019,federative_unit,Espirito Santo,64853
+DENV,2019,federative_unit,Goias,120464
+DENV,2019,federative_unit,Maranhao,5638
+DENV,2019,federative_unit,Mato Grosso,11014
+DENV,2019,federative_unit,Mato Grosso do Sul,65201
+DENV,2019,federative_unit,Minas Gerais,478468
+DENV,2019,federative_unit,Para,5380
+DENV,2019,federative_unit,Paraiba,18842
+DENV,2019,federative_unit,Parana,45032
+DENV,2019,federative_unit,Pernambuco,37975
+DENV,2019,federative_unit,Piaui,8054
+DENV,2019,federative_unit,Rio Grande do Norte,32077
+DENV,2019,federative_unit,Rio Grande do Sul,1621
+DENV,2019,federative_unit,Rio de Janeiro,32043
+DENV,2019,federative_unit,Rondonia,983
+DENV,2019,federative_unit,Roraima,1591
+DENV,2019,federative_unit,Santa Catarina,2154
+DENV,2019,federative_unit,Sao Paulo,443804
+DENV,2019,federative_unit,Sergipe,6045
+DENV,2019,federative_unit,Tocantins,13797
+DENV,2020,federative_unit,Acre,7967
+DENV,2020,federative_unit,Alagoas,2426
+DENV,2020,federative_unit,Amapa,69
+DENV,2020,federative_unit,Amazonas,6177
+DENV,2020,federative_unit,Bahia,83400
+DENV,2020,federative_unit,Ceara,24140
+DENV,2020,federative_unit,Distrito Federal,50988
+DENV,2020,federative_unit,Espirito Santo,7562
+DENV,2020,federative_unit,Goias,60189
+DENV,2020,federative_unit,Maranhao,2572
+DENV,2020,federative_unit,Mato Grosso,35226
+DENV,2020,federative_unit,Mato Grosso do Sul,52471
+DENV,2020,federative_unit,Minas Gerais,82465
+DENV,2020,federative_unit,Para,3558
+DENV,2020,federative_unit,Paraiba,6886
+DENV,2020,federative_unit,Parana,264592
+DENV,2020,federative_unit,Pernambuco,20400
+DENV,2020,federative_unit,Piaui,2237
+DENV,2020,federative_unit,Rio Grande do Norte,7000
+DENV,2020,federative_unit,Rio Grande do Sul,3978
+DENV,2020,federative_unit,Rio de Janeiro,4540
+DENV,2020,federative_unit,Rondonia,3967
+DENV,2020,federative_unit,Roraima,507
+DENV,2020,federative_unit,Santa Catarina,11889
+DENV,2020,federative_unit,Sao Paulo,207427
+DENV,2020,federative_unit,Sergipe,1868
+DENV,2020,federative_unit,Tocantins,1962
+DENV,2021,federative_unit,Acre,14987
+DENV,2021,federative_unit,Alagoas,7634
+DENV,2021,federative_unit,Amapa,284
+DENV,2021,federative_unit,Amazonas,8265
+DENV,2021,federative_unit,Bahia,24996
+DENV,2021,federative_unit,Ceara,35430
+DENV,2021,federative_unit,Distrito Federal,18686
+DENV,2021,federative_unit,Espirito Santo,8726
+DENV,2021,federative_unit,Goias,61464
+DENV,2021,federative_unit,Maranhao,1321
+DENV,2021,federative_unit,Mato Grosso,22374
+DENV,2021,federative_unit,Mato Grosso do Sul,9915
+DENV,2021,federative_unit,Minas Gerais,22128
+DENV,2021,federative_unit,Para,5081
+DENV,2021,federative_unit,Paraiba,16057
+DENV,2021,federative_unit,Parana,34711
+DENV,2021,federative_unit,Pernambuco,36364
+DENV,2021,federative_unit,Piaui,4001
+DENV,2021,federative_unit,Rio Grande do Norte,3844
+DENV,2021,federative_unit,Rio Grande do Sul,10837
+DENV,2021,federative_unit,Rio de Janeiro,2697
+DENV,2021,federative_unit,Rondonia,2298
+DENV,2021,federative_unit,Roraima,111
+DENV,2021,federative_unit,Santa Catarina,18913
+DENV,2021,federative_unit,Sao Paulo,158554
+DENV,2021,federative_unit,Sergipe,770
+DENV,2021,federative_unit,Tocantins,9601
+DENV,2022,federative_unit,Acre,3425
+DENV,2022,federative_unit,Alagoas,33720
+DENV,2022,federative_unit,Amapa,290
+DENV,2022,federative_unit,Amazonas,5356
+DENV,2022,federative_unit,Bahia,35724
+DENV,2022,federative_unit,Ceara,42737
+DENV,2022,federative_unit,Distrito Federal,72660
+DENV,2022,federative_unit,Espirito Santo,11218
+DENV,2022,federative_unit,Goias,206548
+DENV,2022,federative_unit,Maranhao,6850
+DENV,2022,federative_unit,Mato Grosso,35341
+DENV,2022,federative_unit,Mato Grosso do Sul,26328
+DENV,2022,federative_unit,Minas Gerais,89041
+DENV,2022,federative_unit,Para,5912
+DENV,2022,federative_unit,Paraiba,28839
+DENV,2022,federative_unit,Parana,156187
+DENV,2022,federative_unit,Pernambuco,16106
+DENV,2022,federative_unit,Piaui,31697
+DENV,2022,federative_unit,Rio Grande do Norte,42177
+DENV,2022,federative_unit,Rio Grande do Sul,67232
+DENV,2022,federative_unit,Rio de Janeiro,11138
+DENV,2022,federative_unit,Rondonia,14252
+DENV,2022,federative_unit,Roraima,62
+DENV,2022,federative_unit,Santa Catarina,85274
+DENV,2022,federative_unit,Sao Paulo,350891
+DENV,2022,federative_unit,Sergipe,5244
+DENV,2022,federative_unit,Tocantins,20846
+DENV,2023,federative_unit,Acre,7173
+DENV,2023,federative_unit,Alagoas,4772
+DENV,2023,federative_unit,Amapa,1220
+DENV,2023,federative_unit,Amazonas,6265
+DENV,2023,federative_unit,Bahia,47419
+DENV,2023,federative_unit,Ceara,14480
+DENV,2023,federative_unit,Distrito Federal,42121
+DENV,2023,federative_unit,Espirito Santo,137303
+DENV,2023,federative_unit,Goias,70117
+DENV,2023,federative_unit,Maranhao,4799
+DENV,2023,federative_unit,Mato Grosso,28605
+DENV,2023,federative_unit,Mato Grosso do Sul,45173
+DENV,2023,federative_unit,Minas Gerais,406035
+DENV,2023,federative_unit,Para,5688
+DENV,2023,federative_unit,Paraiba,7196
+DENV,2023,federative_unit,Parana,209397
+DENV,2023,federative_unit,Pernambuco,7977
+DENV,2023,federative_unit,Piaui,7614
+DENV,2023,federative_unit,Rio Grande do Norte,7667
+DENV,2023,federative_unit,Rio Grande do Sul,38675
+DENV,2023,federative_unit,Rio de Janeiro,49917
+DENV,2023,federative_unit,Rondonia,10700
+DENV,2023,federative_unit,Roraima,224
+DENV,2023,federative_unit,Santa Catarina,142000
+DENV,2023,federative_unit,Sao Paulo,337173
+DENV,2023,federative_unit,Sergipe,2952
+DENV,2023,federative_unit,Tocantins,3294
+DENV,2024,federative_unit,Acre,6273
+DENV,2024,federative_unit,Alagoas,17994
+DENV,2024,federative_unit,Amapa,10698
+DENV,2024,federative_unit,Amazonas,8541
+DENV,2024,federative_unit,Bahia,231942
+DENV,2024,federative_unit,Ceara,12504
+DENV,2024,federative_unit,Distrito Federal,279020
+DENV,2024,federative_unit,Espirito Santo,137871
+DENV,2024,federative_unit,Goias,334182
+DENV,2024,federative_unit,Maranhao,10821
+DENV,2024,federative_unit,Mato Grosso,42742
+DENV,2024,federative_unit,Mato Grosso do Sul,18777
+DENV,2024,federative_unit,Minas Gerais,1658372
+DENV,2024,federative_unit,Para,20476
+DENV,2024,federative_unit,Paraiba,14600
+DENV,2024,federative_unit,Parana,647663
+DENV,2024,federative_unit,Pernambuco,22159
+DENV,2024,federative_unit,Piaui,15005
+DENV,2024,federative_unit,Rio Grande do Norte,17409
+DENV,2024,federative_unit,Rio Grande do Sul,224791
+DENV,2024,federative_unit,Rio de Janeiro,302190
+DENV,2024,federative_unit,Rondonia,5164
+DENV,2024,federative_unit,Roraima,626
+DENV,2024,federative_unit,Santa Catarina,336334
+DENV,2024,federative_unit,Sao Paulo,2182413
+DENV,2024,federative_unit,Sergipe,2056
+DENV,2024,federative_unit,Tocantins,4301
+DENV,2025,federative_unit,Acre,8659
+DENV,2025,federative_unit,Alagoas,8182
+DENV,2025,federative_unit,Amapa,2424
+DENV,2025,federative_unit,Amazonas,4911
+DENV,2025,federative_unit,Bahia,32451
+DENV,2025,federative_unit,Ceara,5492
+DENV,2025,federative_unit,Distrito Federal,10934
+DENV,2025,federative_unit,Espirito Santo,34326
+DENV,2025,federative_unit,Goias,105827
+DENV,2025,federative_unit,Maranhao,5489
+DENV,2025,federative_unit,Mato Grosso,35326
+DENV,2025,federative_unit,Mato Grosso do Sul,13001
+DENV,2025,federative_unit,Minas Gerais,161667
+DENV,2025,federative_unit,Para,16874
+DENV,2025,federative_unit,Paraiba,7821
+DENV,2025,federative_unit,Parana,107485
+DENV,2025,federative_unit,Pernambuco,21378
+DENV,2025,federative_unit,Piaui,9341
+DENV,2025,federative_unit,Rio Grande do Norte,9452
+DENV,2025,federative_unit,Rio Grande do Sul,85636
+DENV,2025,federative_unit,Rio de Janeiro,29441
+DENV,2025,federative_unit,Rondonia,2552
+DENV,2025,federative_unit,Roraima,439
+DENV,2025,federative_unit,Santa Catarina,25558
+DENV,2025,federative_unit,Sao Paulo,894683
+DENV,2025,federative_unit,Sergipe,792
+DENV,2025,federative_unit,Tocantins,3074
+DENV,2026,federative_unit,Acre,1896
+DENV,2026,federative_unit,Alagoas,6895
+DENV,2026,federative_unit,Amapa,560
+DENV,2026,federative_unit,Amazonas,1483
+DENV,2026,federative_unit,Bahia,24234
+DENV,2026,federative_unit,Ceara,18286
+DENV,2026,federative_unit,Distrito Federal,4082
+DENV,2026,federative_unit,Espirito Santo,20050
+DENV,2026,federative_unit,Goias,114173
+DENV,2026,federative_unit,Maranhao,13413
+DENV,2026,federative_unit,Mato Grosso,12411
+DENV,2026,federative_unit,Mato Grosso do Sul,3805
+DENV,2026,federative_unit,Minas Gerais,62305
+DENV,2026,federative_unit,Para,10156
+DENV,2026,federative_unit,Paraiba,7287
+DENV,2026,federative_unit,Parana,11213
+DENV,2026,federative_unit,Pernambuco,23019
+DENV,2026,federative_unit,Piaui,18970
+DENV,2026,federative_unit,Rio Grande do Norte,7781
+DENV,2026,federative_unit,Rio Grande do Sul,6706
+DENV,2026,federative_unit,Rio de Janeiro,7186
+DENV,2026,federative_unit,Rondonia,1542
+DENV,2026,federative_unit,Roraima,688
+DENV,2026,federative_unit,Santa Catarina,3173
+DENV,2026,federative_unit,Sao Paulo,67538
+DENV,2026,federative_unit,Sergipe,1128
+DENV,2026,federative_unit,Tocantins,15343
+DENV,2016,hospitalization,Ignorado,48972
+DENV,2016,hospitalization,Ignorado/NA,783527
+DENV,2016,hospitalization,Nao,650813
+DENV,2016,hospitalization,Sim,32221
+DENV,2017,hospitalization,Ignorado,9324
+DENV,2017,hospitalization,Ignorado/NA,100857
+DENV,2017,hospitalization,Nao,121470
+DENV,2017,hospitalization,Sim,11597
+DENV,2018,hospitalization,Ignorado,10666
+DENV,2018,hospitalization,Ignorado/NA,89427
+DENV,2018,hospitalization,Nao,150323
+DENV,2018,hospitalization,Sim,15044
+DENV,2019,hospitalization,Ignorado,40214
+DENV,2019,hospitalization,Ignorado/NA,487697
+DENV,2019,hospitalization,Nao,970158
+DENV,2019,hospitalization,Sim,56057
+DENV,2020,hospitalization,Ignorado,16160
+DENV,2020,hospitalization,Ignorado/NA,272355
+DENV,2020,hospitalization,Nao,635856
+DENV,2020,hospitalization,Sim,32092
+DENV,2021,hospitalization,Ignorado,13912
+DENV,2021,hospitalization,Ignorado/NA,148571
+DENV,2021,hospitalization,Nao,360487
+DENV,2021,hospitalization,Sim,17079
+DENV,2022,hospitalization,Ignorado,38898
+DENV,2022,hospitalization,Ignorado/NA,334868
+DENV,2022,hospitalization,Nao,981218
+DENV,2022,hospitalization,Sim,50111
+DENV,2023,hospitalization,Ignorado,32118
+DENV,2023,hospitalization,Ignorado/NA,394063
+DENV,2023,hospitalization,Nao,1166593
+DENV,2023,hospitalization,Sim,53178
+DENV,2023,hospitalization,codigo_0,4
+DENV,2024,hospitalization,Ignorado,162248
+DENV,2024,hospitalization,Ignorado/NA,1765209
+DENV,2024,hospitalization,Nao,4447212
+DENV,2024,hospitalization,Sim,190252
+DENV,2024,hospitalization,codigo_0,3
+DENV,2025,hospitalization,Ignorado,28890
+DENV,2025,hospitalization,Ignorado/NA,362266
+DENV,2025,hospitalization,Nao,1179744
+DENV,2025,hospitalization,Sim,72313
+DENV,2025,hospitalization,codigo_0,2
+DENV,2026,hospitalization,Ignorado,9907
+DENV,2026,hospitalization,Ignorado/NA,112644
+DENV,2026,hospitalization,Nao,313466
+DENV,2026,hospitalization,Sim,29305
+DENV,2026,hospitalization,codigo_0,1
+DENV,2016,ns1_result,Ignorado/NA,760276
+DENV,2016,ns1_result,Inconclusivo,360
+DENV,2016,ns1_result,Nao reagente/Negativo,11068
+DENV,2016,ns1_result,Nao realizado,646301
+DENV,2016,ns1_result,Reagente/Positivo,97528
+DENV,2017,ns1_result,Ignorado/NA,128033
+DENV,2017,ns1_result,Inconclusivo,146
+DENV,2017,ns1_result,Nao reagente/Negativo,4798
+DENV,2017,ns1_result,Nao realizado,100175
+DENV,2017,ns1_result,Reagente/Positivo,10096
+DENV,2018,ns1_result,Ignorado/NA,125337
+DENV,2018,ns1_result,Inconclusivo,129
+DENV,2018,ns1_result,Nao reagente/Negativo,5113
+DENV,2018,ns1_result,Nao realizado,123492
+DENV,2018,ns1_result,Reagente/Positivo,11389
+DENV,2019,ns1_result,Ignorado/NA,671833
+DENV,2019,ns1_result,Inconclusivo,1144
+DENV,2019,ns1_result,Nao reagente/Negativo,49509
+DENV,2019,ns1_result,Nao realizado,720087
+DENV,2019,ns1_result,Reagente/Positivo,111553
+DENV,2020,ns1_result,Ignorado/NA,418425
+DENV,2020,ns1_result,Inconclusivo,1257
+DENV,2020,ns1_result,Nao reagente/Negativo,42257
+DENV,2020,ns1_result,Nao realizado,395511
+DENV,2020,ns1_result,Reagente/Positivo,99013
+DENV,2021,ns1_result,Ignorado/NA,212198
+DENV,2021,ns1_result,Inconclusivo,437
+DENV,2021,ns1_result,Nao reagente/Negativo,20083
+DENV,2021,ns1_result,Nao realizado,205534
+DENV,2021,ns1_result,Reagente/Positivo,101783
+DENV,2021,ns1_result,codigo_0,14
+DENV,2022,ns1_result,Ignorado/NA,490505
+DENV,2022,ns1_result,Inconclusivo,936
+DENV,2022,ns1_result,Nao reagente/Negativo,48034
+DENV,2022,ns1_result,Nao realizado,525586
+DENV,2022,ns1_result,Reagente/Positivo,339998
+DENV,2022,ns1_result,codigo_0,36
+DENV,2023,ns1_result,Ignorado/NA,572876
+DENV,2023,ns1_result,Inconclusivo,3178
+DENV,2023,ns1_result,Nao reagente/Negativo,97732
+DENV,2023,ns1_result,Nao realizado,566420
+DENV,2023,ns1_result,Reagente/Positivo,405348
+DENV,2023,ns1_result,codigo_0,402
+DENV,2024,ns1_result,Ignorado/NA,2288708
+DENV,2024,ns1_result,Inconclusivo,5288
+DENV,2024,ns1_result,Nao reagente/Negativo,312168
+DENV,2024,ns1_result,Nao realizado,2007448
+DENV,2024,ns1_result,Reagente/Positivo,1950869
+DENV,2024,ns1_result,codigo_0,443
+DENV,2025,ns1_result,Ignorado/NA,1608963
+DENV,2025,ns1_result,Inconclusivo,23
+DENV,2025,ns1_result,Nao reagente/Negativo,2867
+DENV,2025,ns1_result,Nao realizado,30074
+DENV,2025,ns1_result,Reagente/Positivo,928
+DENV,2025,ns1_result,codigo_0,360
+DENV,2026,ns1_result,Ignorado/NA,182851
+DENV,2026,ns1_result,Inconclusivo,398
+DENV,2026,ns1_result,Nao reagente/Negativo,49005
+DENV,2026,ns1_result,Nao realizado,163671
+DENV,2026,ns1_result,Reagente/Positivo,68859
+DENV,2026,ns1_result,codigo_0,539
+DENV,2016,pcr_result,Ignorado/NA,809162
+DENV,2016,pcr_result,Inconclusivo,314
+DENV,2016,pcr_result,Nao reagente/Negativo,1283
+DENV,2016,pcr_result,Nao realizado,701234
+DENV,2016,pcr_result,Reagente/Positivo,3540
+DENV,2017,pcr_result,Ignorado/NA,130172
+DENV,2017,pcr_result,Inconclusivo,69
+DENV,2017,pcr_result,Nao reagente/Negativo,534
+DENV,2017,pcr_result,Nao realizado,112117
+DENV,2017,pcr_result,Reagente/Positivo,356
+DENV,2018,pcr_result,Ignorado/NA,130635
+DENV,2018,pcr_result,Inconclusivo,87
+DENV,2018,pcr_result,Nao reagente/Negativo,679
+DENV,2018,pcr_result,Nao realizado,133005
+DENV,2018,pcr_result,Reagente/Positivo,1054
+DENV,2019,pcr_result,Ignorado/NA,757019
+DENV,2019,pcr_result,Inconclusivo,517
+DENV,2019,pcr_result,Nao reagente/Negativo,3080
+DENV,2019,pcr_result,Nao realizado,781427
+DENV,2019,pcr_result,Reagente/Positivo,12083
+DENV,2020,pcr_result,Ignorado/NA,489669
+DENV,2020,pcr_result,Inconclusivo,422
+DENV,2020,pcr_result,Nao reagente/Negativo,2364
+DENV,2020,pcr_result,Nao realizado,457047
+DENV,2020,pcr_result,Reagente/Positivo,6961
+DENV,2021,pcr_result,Ignorado/NA,256154
+DENV,2021,pcr_result,Inconclusivo,255
+DENV,2021,pcr_result,Nao reagente/Negativo,1647
+DENV,2021,pcr_result,Nao realizado,277880
+DENV,2021,pcr_result,Reagente/Positivo,4101
+DENV,2021,pcr_result,codigo_0,12
+DENV,2022,pcr_result,Ignorado/NA,673054
+DENV,2022,pcr_result,Inconclusivo,617
+DENV,2022,pcr_result,Nao reagente/Negativo,4524
+DENV,2022,pcr_result,Nao realizado,706618
+DENV,2022,pcr_result,Reagente/Positivo,20271
+DENV,2022,pcr_result,codigo_0,11
+DENV,2023,pcr_result,Ignorado/NA,797307
+DENV,2023,pcr_result,Inconclusivo,748
+DENV,2023,pcr_result,Nao reagente/Negativo,8894
+DENV,2023,pcr_result,Nao realizado,791553
+DENV,2023,pcr_result,Reagente/Positivo,47286
+DENV,2023,pcr_result,codigo_0,168
+DENV,2024,pcr_result,Ignorado/NA,3596460
+DENV,2024,pcr_result,Inconclusivo,5200
+DENV,2024,pcr_result,Nao reagente/Negativo,23388
+DENV,2024,pcr_result,Nao realizado,2749353
+DENV,2024,pcr_result,Reagente/Positivo,190313
+DENV,2024,pcr_result,codigo_0,210
+DENV,2025,pcr_result,Ignorado/NA,804403
+DENV,2025,pcr_result,Inconclusivo,1398
+DENV,2025,pcr_result,Nao reagente/Negativo,10476
+DENV,2025,pcr_result,Nao realizado,777973
+DENV,2025,pcr_result,Reagente/Positivo,48816
+DENV,2025,pcr_result,codigo_0,149
+DENV,2026,pcr_result,Ignorado/NA,227488
+DENV,2026,pcr_result,Inconclusivo,694
+DENV,2026,pcr_result,Nao reagente/Negativo,5060
+DENV,2026,pcr_result,Nao realizado,198917
+DENV,2026,pcr_result,Reagente/Positivo,32972
+DENV,2026,pcr_result,codigo_0,192
+DENV,2016,serology_igm_result,Ignorado/NA,684056
+DENV,2016,serology_igm_result,Inconclusivo,2773
+DENV,2016,serology_igm_result,Nao reagente/Negativo,16292
+DENV,2016,serology_igm_result,Nao realizado,592689
+DENV,2016,serology_igm_result,Reagente/Positivo,219723
+DENV,2017,serology_igm_result,Ignorado/NA,118216
+DENV,2017,serology_igm_result,Inconclusivo,1099
+DENV,2017,serology_igm_result,Nao reagente/Negativo,3901
+DENV,2017,serology_igm_result,Nao realizado,89946
+DENV,2017,serology_igm_result,Reagente/Positivo,30086
+DENV,2018,serology_igm_result,Ignorado/NA,110487
+DENV,2018,serology_igm_result,Inconclusivo,1084
+DENV,2018,serology_igm_result,Nao reagente/Negativo,4072
+DENV,2018,serology_igm_result,Nao realizado,101185
+DENV,2018,serology_igm_result,Reagente/Positivo,48632
+DENV,2019,serology_igm_result,Ignorado/NA,591208
+DENV,2019,serology_igm_result,Inconclusivo,5856
+DENV,2019,serology_igm_result,Nao reagente/Negativo,19010
+DENV,2019,serology_igm_result,Nao realizado,640955
+DENV,2019,serology_igm_result,Reagente/Positivo,297097
+DENV,2020,serology_igm_result,Ignorado/NA,354553
+DENV,2020,serology_igm_result,Inconclusivo,3487
+DENV,2020,serology_igm_result,Nao reagente/Negativo,23597
+DENV,2020,serology_igm_result,Nao realizado,338799
+DENV,2020,serology_igm_result,Reagente/Positivo,236027
+DENV,2021,serology_igm_result,Ignorado/NA,179351
+DENV,2021,serology_igm_result,Inconclusivo,1854
+DENV,2021,serology_igm_result,Nao reagente/Negativo,14655
+DENV,2021,serology_igm_result,Nao realizado,188610
+DENV,2021,serology_igm_result,Reagente/Positivo,155531
+DENV,2021,serology_igm_result,codigo_0,48
+DENV,2022,serology_igm_result,Ignorado/NA,506050
+DENV,2022,serology_igm_result,Inconclusivo,2884
+DENV,2022,serology_igm_result,Nao reagente/Negativo,39449
+DENV,2022,serology_igm_result,Nao realizado,582673
+DENV,2022,serology_igm_result,Reagente/Positivo,273930
+DENV,2022,serology_igm_result,codigo_0,109
+DENV,2023,serology_igm_result,Ignorado/NA,632329
+DENV,2023,serology_igm_result,Inconclusivo,2988
+DENV,2023,serology_igm_result,Nao reagente/Negativo,41801
+DENV,2023,serology_igm_result,Nao realizado,677016
+DENV,2023,serology_igm_result,Reagente/Positivo,290723
+DENV,2023,serology_igm_result,codigo_0,1099
+DENV,2024,serology_igm_result,Ignorado/NA,3005570
+DENV,2024,serology_igm_result,Inconclusivo,8147
+DENV,2024,serology_igm_result,Nao reagente/Negativo,201643
+DENV,2024,serology_igm_result,Nao realizado,2625804
+DENV,2024,serology_igm_result,Reagente/Positivo,723225
+DENV,2024,serology_igm_result,codigo_0,535
+DENV,2025,serology_igm_result,Ignorado/NA,1608963
+DENV,2025,serology_igm_result,Inconclusivo,330
+DENV,2025,serology_igm_result,Nao reagente/Negativo,1577
+DENV,2025,serology_igm_result,Nao realizado,30432
+DENV,2025,serology_igm_result,Reagente/Positivo,1633
+DENV,2025,serology_igm_result,codigo_0,280
+DENV,2026,serology_igm_result,Ignorado/NA,202915
+DENV,2026,serology_igm_result,Inconclusivo,1539
+DENV,2026,serology_igm_result,Nao reagente/Negativo,14972
+DENV,2026,serology_igm_result,Nao realizado,191260
+DENV,2026,serology_igm_result,Reagente/Positivo,54350
+DENV,2026,serology_igm_result,codigo_0,287
+DENV,2016,serotype,DENV1,3794
+DENV,2016,serotype,DENV2,133
+DENV,2016,serotype,DENV3,42
+DENV,2016,serotype,DENV4,106
+DENV,2016,serotype,Ignorado/NA,1511458
+DENV,2017,serotype,DENV1,283
+DENV,2017,serotype,DENV2,204
+DENV,2017,serotype,DENV3,9
+DENV,2017,serotype,DENV4,51
+DENV,2017,serotype,Ignorado/NA,242701
+DENV,2018,serotype,DENV1,456
+DENV,2018,serotype,DENV2,687
+DENV,2018,serotype,DENV3,3
+DENV,2018,serotype,DENV4,12
+DENV,2018,serotype,Ignorado/NA,264302
+DENV,2019,serotype,DENV1,4198
+DENV,2019,serotype,DENV2,7982
+DENV,2019,serotype,DENV3,10
+DENV,2019,serotype,DENV4,398
+DENV,2019,serotype,Ignorado/NA,1541538
+DENV,2020,serotype,DENV1,2085
+DENV,2020,serotype,DENV2,5126
+DENV,2020,serotype,DENV3,3
+DENV,2020,serotype,DENV4,38
+DENV,2020,serotype,Ignorado/NA,949211
+DENV,2021,serotype,DENV1,2755
+DENV,2021,serotype,DENV2,1559
+DENV,2021,serotype,DENV3,3
+DENV,2021,serotype,DENV4,10
+DENV,2021,serotype,Ignorado/NA,527009
+DENV,2021,serotype,codigo_0,8713
+DENV,2022,serotype,DENV1,18256
+DENV,2022,serotype,DENV2,2474
+DENV,2022,serotype,DENV3,6
+DENV,2022,serotype,DENV4,20
+DENV,2022,serotype,Ignorado/NA,1373198
+DENV,2022,serotype,codigo_0,11141
+DENV,2023,serotype,DENV1,40854
+DENV,2023,serotype,DENV2,6021
+DENV,2023,serotype,DENV3,106
+DENV,2023,serotype,DENV4,18
+DENV,2023,serotype,Ignorado/NA,1464550
+DENV,2023,serotype,codigo_0,134407
+DENV,2024,serotype,DENV1,129949
+DENV,2024,serotype,DENV2,57790
+DENV,2024,serotype,DENV3,1789
+DENV,2024,serotype,DENV4,55
+DENV,2024,serotype,Ignorado/NA,6244283
+DENV,2024,serotype,codigo_0,131058
+DENV,2025,serotype,DENV1,5921
+DENV,2025,serotype,DENV2,36162
+DENV,2025,serotype,DENV3,6857
+DENV,2025,serotype,DENV4,38
+DENV,2025,serotype,Ignorado/NA,1560744
+DENV,2025,serotype,codigo_0,33493
+DENV,2026,serotype,DENV1,1842
+DENV,2026,serotype,DENV2,21158
+DENV,2026,serotype,DENV3,9841
+DENV,2026,serotype,DENV4,113
+DENV,2026,serotype,Ignorado/NA,414621
+DENV,2026,serotype,codigo_0,17748
+DENV,2016,sex,Feminino,856174
+DENV,2016,sex,Ignorado,2712
+DENV,2016,sex,Ignorado/NA,185
+DENV,2016,sex,Masculino,656462
+DENV,2017,sex,Feminino,132481
+DENV,2017,sex,Ignorado,281
+DENV,2017,sex,Ignorado/NA,3
+DENV,2017,sex,Masculino,110483
+DENV,2018,sex,Feminino,146386
+DENV,2018,sex,Ignorado,249
+DENV,2018,sex,Ignorado/NA,4
+DENV,2018,sex,Masculino,118821
+DENV,2019,sex,Feminino,863819
+DENV,2019,sex,Ignorado,2032
+DENV,2019,sex,Ignorado/NA,9
+DENV,2019,sex,Masculino,688266
+DENV,2020,sex,Feminino,528470
+DENV,2020,sex,Ignorado,975
+DENV,2020,sex,Ignorado/NA,6
+DENV,2020,sex,Masculino,427012
+DENV,2021,sex,Feminino,291319
+DENV,2021,sex,Ignorado,561
+DENV,2021,sex,Ignorado/NA,5
+DENV,2021,sex,Masculino,248164
+DENV,2022,sex,Feminino,761763
+DENV,2022,sex,Ignorado,1408
+DENV,2022,sex,Ignorado/NA,25
+DENV,2022,sex,Masculino,641899
+DENV,2023,sex,Feminino,885311
+DENV,2023,sex,Ignorado,2355
+DENV,2023,sex,Ignorado/NA,6
+DENV,2023,sex,Masculino,758284
+DENV,2024,sex,Feminino,3580624
+DENV,2024,sex,Ignorado,9839
+DENV,2024,sex,Ignorado/NA,13
+DENV,2024,sex,Masculino,2974448
+DENV,2025,sex,Feminino,892251
+DENV,2025,sex,Ignorado,1205
+DENV,2025,sex,Ignorado/NA,2
+DENV,2025,sex,Masculino,749757
+DENV,2026,sex,Feminino,251047
+DENV,2026,sex,Ignorado,307
+DENV,2026,sex,Masculino,213969
+ZIKV,2016,age_group,1-4,10611
+ZIKV,2016,age_group,10-14,15934
+ZIKV,2016,age_group,15-19,24566
+ZIKV,2016,age_group,20-29,62471
+ZIKV,2016,age_group,30-39,57636
+ZIKV,2016,age_group,40-49,39126
+ZIKV,2016,age_group,5-9,13290
+ZIKV,2016,age_group,50-59,27737
+ZIKV,2016,age_group,60-69,14741
+ZIKV,2016,age_group,70-79,5974
+ZIKV,2016,age_group,80+,2352
+ZIKV,2016,age_group,<1,7026
+ZIKV,2017,age_group,1-4,1558
+ZIKV,2017,age_group,10-14,1862
+ZIKV,2017,age_group,15-19,3317
+ZIKV,2017,age_group,20-29,8478
+ZIKV,2017,age_group,30-39,6654
+ZIKV,2017,age_group,40-49,3498
+ZIKV,2017,age_group,5-9,1760
+ZIKV,2017,age_group,50-59,2171
+ZIKV,2017,age_group,60-69,1180
+ZIKV,2017,age_group,70-79,458
+ZIKV,2017,age_group,80+,174
+ZIKV,2017,age_group,<1,1574
+ZIKV,2018,age_group,1-4,1014
+ZIKV,2018,age_group,10-14,1177
+ZIKV,2018,age_group,15-19,1875
+ZIKV,2018,age_group,20-29,4834
+ZIKV,2018,age_group,30-39,4011
+ZIKV,2018,age_group,40-49,2334
+ZIKV,2018,age_group,5-9,1139
+ZIKV,2018,age_group,50-59,1688
+ZIKV,2018,age_group,60-69,894
+ZIKV,2018,age_group,70-79,407
+ZIKV,2018,age_group,80+,128
+ZIKV,2018,age_group,<1,1083
+ZIKV,2019,age_group,1-4,1681
+ZIKV,2019,age_group,10-14,2216
+ZIKV,2019,age_group,15-19,2811
+ZIKV,2019,age_group,20-29,7260
+ZIKV,2019,age_group,30-39,6092
+ZIKV,2019,age_group,40-49,3268
+ZIKV,2019,age_group,5-9,2186
+ZIKV,2019,age_group,50-59,2084
+ZIKV,2019,age_group,60-69,1058
+ZIKV,2019,age_group,70-79,454
+ZIKV,2019,age_group,80+,159
+ZIKV,2019,age_group,<1,1231
+ZIKV,2020,age_group,1-4,804
+ZIKV,2020,age_group,10-14,1214
+ZIKV,2020,age_group,15-19,1457
+ZIKV,2020,age_group,20-29,4283
+ZIKV,2020,age_group,30-39,4402
+ZIKV,2020,age_group,40-49,3041
+ZIKV,2020,age_group,5-9,1110
+ZIKV,2020,age_group,50-59,2026
+ZIKV,2020,age_group,60-69,988
+ZIKV,2020,age_group,70-79,453
+ZIKV,2020,age_group,80+,193
+ZIKV,2020,age_group,<1,896
+ZIKV,2021,age_group,1-4,858
+ZIKV,2021,age_group,10-14,1170
+ZIKV,2021,age_group,15-19,1373
+ZIKV,2021,age_group,20-29,3934
+ZIKV,2021,age_group,30-39,3845
+ZIKV,2021,age_group,40-49,2718
+ZIKV,2021,age_group,5-9,1070
+ZIKV,2021,age_group,50-59,1913
+ZIKV,2021,age_group,60-69,955
+ZIKV,2021,age_group,70-79,437
+ZIKV,2021,age_group,80+,157
+ZIKV,2021,age_group,<1,660
+ZIKV,2022,age_group,1-4,1789
+ZIKV,2022,age_group,10-14,2570
+ZIKV,2022,age_group,15-19,2816
+ZIKV,2022,age_group,20-29,7088
+ZIKV,2022,age_group,30-39,6521
+ZIKV,2022,age_group,40-49,4892
+ZIKV,2022,age_group,5-9,2397
+ZIKV,2022,age_group,50-59,3438
+ZIKV,2022,age_group,60-69,1976
+ZIKV,2022,age_group,70-79,966
+ZIKV,2022,age_group,80+,370
+ZIKV,2022,age_group,<1,981
+ZIKV,2023,age_group,1-4,1390
+ZIKV,2023,age_group,10-14,2510
+ZIKV,2023,age_group,15-19,3290
+ZIKV,2023,age_group,20-29,7521
+ZIKV,2023,age_group,30-39,6421
+ZIKV,2023,age_group,40-49,5212
+ZIKV,2023,age_group,5-9,2132
+ZIKV,2023,age_group,50-59,3500
+ZIKV,2023,age_group,60-69,2056
+ZIKV,2023,age_group,70-79,899
+ZIKV,2023,age_group,80+,329
+ZIKV,2023,age_group,<1,743
+ZIKV,2024,age_group,1-4,1593
+ZIKV,2024,age_group,10-14,2776
+ZIKV,2024,age_group,15-19,3580
+ZIKV,2024,age_group,20-29,9273
+ZIKV,2024,age_group,30-39,7671
+ZIKV,2024,age_group,40-49,6189
+ZIKV,2024,age_group,5-9,2288
+ZIKV,2024,age_group,50-59,4385
+ZIKV,2024,age_group,60-69,2798
+ZIKV,2024,age_group,70-79,1313
+ZIKV,2024,age_group,80+,522
+ZIKV,2024,age_group,<1,924
+ZIKV,2025,age_group,1-4,1141
+ZIKV,2025,age_group,10-14,1759
+ZIKV,2025,age_group,15-19,2089
+ZIKV,2025,age_group,20-29,5191
+ZIKV,2025,age_group,30-39,4276
+ZIKV,2025,age_group,40-49,3368
+ZIKV,2025,age_group,5-9,1628
+ZIKV,2025,age_group,50-59,2594
+ZIKV,2025,age_group,60-69,1737
+ZIKV,2025,age_group,70-79,799
+ZIKV,2025,age_group,80+,330
+ZIKV,2025,age_group,<1,852
+ZIKV,2026,age_group,1-4,626
+ZIKV,2026,age_group,10-14,1019
+ZIKV,2026,age_group,15-19,1295
+ZIKV,2026,age_group,20-29,2739
+ZIKV,2026,age_group,30-39,2060
+ZIKV,2026,age_group,40-49,1604
+ZIKV,2026,age_group,5-9,941
+ZIKV,2026,age_group,50-59,1107
+ZIKV,2026,age_group,60-69,679
+ZIKV,2026,age_group,70-79,324
+ZIKV,2026,age_group,80+,154
+ZIKV,2026,age_group,<1,423
+ZIKV,2016,classification,Dengue c/ complicacoes (antigo),62198
+ZIKV,2016,classification,Dengue classico (schema antigo),141766
+ZIKV,2016,classification,Ignorado/NA,6656
+ZIKV,2016,classification,Inconclusivo,70844
+ZIKV,2017,classification,Dengue c/ complicacoes (antigo),14520
+ZIKV,2017,classification,Dengue classico (schema antigo),9578
+ZIKV,2017,classification,Ignorado/NA,1011
+ZIKV,2017,classification,Inconclusivo,7575
+ZIKV,2018,classification,Dengue c/ complicacoes (antigo),12136
+ZIKV,2018,classification,Dengue classico (schema antigo),4399
+ZIKV,2018,classification,Ignorado/NA,732
+ZIKV,2018,classification,Inconclusivo,3317
+ZIKV,2019,classification,Dengue c/ complicacoes (antigo),20179
+ZIKV,2019,classification,Dengue classico (schema antigo),4307
+ZIKV,2019,classification,Ignorado/NA,903
+ZIKV,2019,classification,Inconclusivo,5111
+ZIKV,2020,classification,Dengue c/ complicacoes (antigo),13314
+ZIKV,2020,classification,Dengue classico (schema antigo),3093
+ZIKV,2020,classification,Ignorado/NA,450
+ZIKV,2020,classification,Inconclusivo,4010
+ZIKV,2021,classification,Dengue c/ complicacoes (antigo),13035
+ZIKV,2021,classification,Dengue classico (schema antigo),4308
+ZIKV,2021,classification,Ignorado/NA,320
+ZIKV,2021,classification,Inconclusivo,1427
+ZIKV,2022,classification,Dengue c/ complicacoes (antigo),27502
+ZIKV,2022,classification,Dengue classico (schema antigo),3536
+ZIKV,2022,classification,Ignorado/NA,576
+ZIKV,2022,classification,Inconclusivo,4190
+ZIKV,2023,classification,Dengue c/ complicacoes (antigo),29392
+ZIKV,2023,classification,Dengue classico (schema antigo),4036
+ZIKV,2023,classification,Ignorado/NA,356
+ZIKV,2023,classification,Inconclusivo,2070
+ZIKV,2023,classification,codigo_0,149
+ZIKV,2024,classification,Dengue c/ complicacoes (antigo),38198
+ZIKV,2024,classification,Dengue classico (schema antigo),2068
+ZIKV,2024,classification,Ignorado/NA,537
+ZIKV,2024,classification,Inconclusivo,2509
+ZIKV,2025,classification,Dengue c/ complicacoes (antigo),22099
+ZIKV,2025,classification,Dengue classico (schema antigo),1875
+ZIKV,2025,classification,Ignorado/NA,433
+ZIKV,2025,classification,Inconclusivo,1353
+ZIKV,2025,classification,codigo_0,4
+ZIKV,2026,classification,Dengue c/ complicacoes (antigo),10849
+ZIKV,2026,classification,Dengue classico (schema antigo),655
+ZIKV,2026,classification,Ignorado/NA,776
+ZIKV,2026,classification,Inconclusivo,673
+ZIKV,2026,classification,codigo_0,18
+ZIKV,2016,criterion,Clinico-epidemiologico,178720
+ZIKV,2016,criterion,Ignorado/NA,77419
+ZIKV,2016,criterion,Laboratorial,25325
+ZIKV,2017,criterion,Clinico-epidemiologico,15871
+ZIKV,2017,criterion,Ignorado/NA,8627
+ZIKV,2017,criterion,Laboratorial,8186
+ZIKV,2018,criterion,Clinico-epidemiologico,7277
+ZIKV,2018,criterion,Ignorado/NA,4076
+ZIKV,2018,criterion,Laboratorial,9231
+ZIKV,2019,criterion,Clinico-epidemiologico,12105
+ZIKV,2019,criterion,Ignorado/NA,6075
+ZIKV,2019,criterion,Laboratorial,12320
+ZIKV,2020,criterion,Clinico-epidemiologico,4488
+ZIKV,2020,criterion,Ignorado/NA,4493
+ZIKV,2020,criterion,Laboratorial,11886
+ZIKV,2021,criterion,Clinico-epidemiologico,4873
+ZIKV,2021,criterion,Ignorado/NA,1793
+ZIKV,2021,criterion,Laboratorial,12424
+ZIKV,2022,criterion,Clinico-epidemiologico,8309
+ZIKV,2022,criterion,Ignorado/NA,5000
+ZIKV,2022,criterion,Laboratorial,22495
+ZIKV,2023,criterion,Clinico-epidemiologico,13075
+ZIKV,2023,criterion,Ignorado/NA,2734
+ZIKV,2023,criterion,Laboratorial,19982
+ZIKV,2023,criterion,codigo_0,212
+ZIKV,2024,criterion,Clinico-epidemiologico,10373
+ZIKV,2024,criterion,Ignorado/NA,3348
+ZIKV,2024,criterion,Laboratorial,29545
+ZIKV,2024,criterion,codigo_0,46
+ZIKV,2025,criterion,Clinico-epidemiologico,4005
+ZIKV,2025,criterion,Ignorado/NA,1852
+ZIKV,2025,criterion,Laboratorial,19882
+ZIKV,2025,criterion,codigo_0,25
+ZIKV,2026,criterion,Clinico-epidemiologico,1656
+ZIKV,2026,criterion,Ignorado/NA,1474
+ZIKV,2026,criterion,Laboratorial,9823
+ZIKV,2026,criterion,codigo_0,18
+ZIKV,2016,evolution,Cura,186214
+ZIKV,2016,evolution,Ignorado,6433
+ZIKV,2016,evolution,Ignorado/NA,88643
+ZIKV,2016,evolution,Obito pelo agravo,43
+ZIKV,2016,evolution,Obito por outras causas,131
+ZIKV,2017,evolution,Cura,21536
+ZIKV,2017,evolution,Ignorado,1107
+ZIKV,2017,evolution,Ignorado/NA,9918
+ZIKV,2017,evolution,Obito pelo agravo,12
+ZIKV,2017,evolution,Obito por outras causas,111
+ZIKV,2018,evolution,Cura,14417
+ZIKV,2018,evolution,Ignorado,984
+ZIKV,2018,evolution,Ignorado/NA,5065
+ZIKV,2018,evolution,Obito pelo agravo,7
+ZIKV,2018,evolution,Obito por outras causas,111
+ZIKV,2019,evolution,Cura,21849
+ZIKV,2019,evolution,Ignorado,1340
+ZIKV,2019,evolution,Ignorado/NA,7180
+ZIKV,2019,evolution,Obito pelo agravo,5
+ZIKV,2019,evolution,Obito por outras causas,126
+ZIKV,2020,evolution,Cura,12141
+ZIKV,2020,evolution,Ignorado,3096
+ZIKV,2020,evolution,Ignorado/NA,5541
+ZIKV,2020,evolution,Obito pelo agravo,9
+ZIKV,2020,evolution,Obito por outras causas,80
+ZIKV,2021,evolution,Cura,15491
+ZIKV,2021,evolution,Ignorado,944
+ZIKV,2021,evolution,Ignorado/NA,2573
+ZIKV,2021,evolution,Obito pelo agravo,5
+ZIKV,2021,evolution,Obito por outras causas,77
+ZIKV,2022,evolution,Cura,25564
+ZIKV,2022,evolution,Ignorado,3624
+ZIKV,2022,evolution,Ignorado/NA,6487
+ZIKV,2022,evolution,Obito pelo agravo,2
+ZIKV,2022,evolution,Obito por outras causas,127
+ZIKV,2023,evolution,Cura,22253
+ZIKV,2023,evolution,Ignorado,6875
+ZIKV,2023,evolution,Ignorado/NA,4621
+ZIKV,2023,evolution,Obito pelo agravo,1
+ZIKV,2023,evolution,Obito por outras causas,176
+ZIKV,2023,evolution,codigo_0,2077
+ZIKV,2024,evolution,Cura,30809
+ZIKV,2024,evolution,Ignorado,5612
+ZIKV,2024,evolution,Ignorado/NA,6351
+ZIKV,2024,evolution,Obito por outras causas,225
+ZIKV,2024,evolution,codigo_0,315
+ZIKV,2025,evolution,Cura,20034
+ZIKV,2025,evolution,Ignorado,1636
+ZIKV,2025,evolution,Ignorado/NA,3777
+ZIKV,2025,evolution,Obito pelo agravo,1
+ZIKV,2025,evolution,Obito por outras causas,129
+ZIKV,2025,evolution,codigo_0,187
+ZIKV,2026,evolution,Cura,10296
+ZIKV,2026,evolution,Ignorado,721
+ZIKV,2026,evolution,Ignorado/NA,1847
+ZIKV,2026,evolution,Obito por outras causas,63
+ZIKV,2026,evolution,codigo_0,44
+ZIKV,2016,federative_unit,Acre,1531
+ZIKV,2016,federative_unit,Alagoas,8153
+ZIKV,2016,federative_unit,Amapa,1057
+ZIKV,2016,federative_unit,Amazonas,6023
+ZIKV,2016,federative_unit,Bahia,58938
+ZIKV,2016,federative_unit,Ceara,8670
+ZIKV,2016,federative_unit,Distrito Federal,1050
+ZIKV,2016,federative_unit,Espirito Santo,2909
+ZIKV,2016,federative_unit,Goias,11290
+ZIKV,2016,federative_unit,Maranhao,5031
+ZIKV,2016,federative_unit,Mato Grosso,26509
+ZIKV,2016,federative_unit,Mato Grosso do Sul,3874
+ZIKV,2016,federative_unit,Minas Gerais,20482
+ZIKV,2016,federative_unit,Para,6632
+ZIKV,2016,federative_unit,Paraiba,4179
+ZIKV,2016,federative_unit,Parana,3954
+ZIKV,2016,federative_unit,Pernambuco,1539
+ZIKV,2016,federative_unit,Piaui,538
+ZIKV,2016,federative_unit,Rio Grande do Norte,4479
+ZIKV,2016,federative_unit,Rio Grande do Sul,885
+ZIKV,2016,federative_unit,Rio de Janeiro,83562
+ZIKV,2016,federative_unit,Rondonia,1881
+ZIKV,2016,federative_unit,Roraima,362
+ZIKV,2016,federative_unit,Santa Catarina,350
+ZIKV,2016,federative_unit,Sao Paulo,10414
+ZIKV,2016,federative_unit,Sergipe,872
+ZIKV,2016,federative_unit,Tocantins,6300
+ZIKV,2017,federative_unit,Acre,295
+ZIKV,2017,federative_unit,Alagoas,361
+ZIKV,2017,federative_unit,Amapa,109
+ZIKV,2017,federative_unit,Amazonas,699
+ZIKV,2017,federative_unit,Bahia,3026
+ZIKV,2017,federative_unit,Ceara,3569
+ZIKV,2017,federative_unit,Distrito Federal,284
+ZIKV,2017,federative_unit,Espirito Santo,576
+ZIKV,2017,federative_unit,Goias,4882
+ZIKV,2017,federative_unit,Maranhao,630
+ZIKV,2017,federative_unit,Mato Grosso,2621
+ZIKV,2017,federative_unit,Mato Grosso do Sul,404
+ZIKV,2017,federative_unit,Minas Gerais,1853
+ZIKV,2017,federative_unit,Para,1456
+ZIKV,2017,federative_unit,Paraiba,289
+ZIKV,2017,federative_unit,Parana,488
+ZIKV,2017,federative_unit,Pernambuco,344
+ZIKV,2017,federative_unit,Piaui,525
+ZIKV,2017,federative_unit,Rio Grande do Norte,683
+ZIKV,2017,federative_unit,Rio Grande do Sul,152
+ZIKV,2017,federative_unit,Rio de Janeiro,2959
+ZIKV,2017,federative_unit,Rondonia,516
+ZIKV,2017,federative_unit,Roraima,855
+ZIKV,2017,federative_unit,Santa Catarina,104
+ZIKV,2017,federative_unit,Sao Paulo,1670
+ZIKV,2017,federative_unit,Sergipe,60
+ZIKV,2017,federative_unit,Tocantins,3274
+ZIKV,2018,federative_unit,Acre,365
+ZIKV,2018,federative_unit,Alagoas,447
+ZIKV,2018,federative_unit,Amapa,126
+ZIKV,2018,federative_unit,Amazonas,469
+ZIKV,2018,federative_unit,Bahia,1547
+ZIKV,2018,federative_unit,Ceara,632
+ZIKV,2018,federative_unit,Distrito Federal,172
+ZIKV,2018,federative_unit,Espirito Santo,592
+ZIKV,2018,federative_unit,Goias,2071
+ZIKV,2018,federative_unit,Maranhao,212
+ZIKV,2018,federative_unit,Mato Grosso,1099
+ZIKV,2018,federative_unit,Mato Grosso do Sul,358
+ZIKV,2018,federative_unit,Minas Gerais,1018
+ZIKV,2018,federative_unit,Para,808
+ZIKV,2018,federative_unit,Paraiba,687
+ZIKV,2018,federative_unit,Parana,198
+ZIKV,2018,federative_unit,Pernambuco,796
+ZIKV,2018,federative_unit,Piaui,104
+ZIKV,2018,federative_unit,Rio Grande do Norte,1201
+ZIKV,2018,federative_unit,Rio Grande do Sul,134
+ZIKV,2018,federative_unit,Rio de Janeiro,4229
+ZIKV,2018,federative_unit,Rondonia,271
+ZIKV,2018,federative_unit,Roraima,155
+ZIKV,2018,federative_unit,Santa Catarina,90
+ZIKV,2018,federative_unit,Sao Paulo,1440
+ZIKV,2018,federative_unit,Sergipe,27
+ZIKV,2018,federative_unit,Tocantins,1336
+ZIKV,2019,federative_unit,Acre,150
+ZIKV,2019,federative_unit,Alagoas,1337
+ZIKV,2019,federative_unit,Amapa,121
+ZIKV,2019,federative_unit,Amazonas,122
+ZIKV,2019,federative_unit,Bahia,3123
+ZIKV,2019,federative_unit,Ceara,633
+ZIKV,2019,federative_unit,Distrito Federal,431
+ZIKV,2019,federative_unit,Espirito Santo,1368
+ZIKV,2019,federative_unit,Goias,1058
+ZIKV,2019,federative_unit,Maranhao,464
+ZIKV,2019,federative_unit,Mato Grosso,426
+ZIKV,2019,federative_unit,Mato Grosso do Sul,647
+ZIKV,2019,federative_unit,Minas Gerais,3215
+ZIKV,2019,federative_unit,Para,402
+ZIKV,2019,federative_unit,Paraiba,709
+ZIKV,2019,federative_unit,Parana,343
+ZIKV,2019,federative_unit,Pernambuco,3879
+ZIKV,2019,federative_unit,Piaui,178
+ZIKV,2019,federative_unit,Rio Grande do Norte,1665
+ZIKV,2019,federative_unit,Rio Grande do Sul,166
+ZIKV,2019,federative_unit,Rio de Janeiro,2859
+ZIKV,2019,federative_unit,Rondonia,441
+ZIKV,2019,federative_unit,Roraima,191
+ZIKV,2019,federative_unit,Santa Catarina,206
+ZIKV,2019,federative_unit,Sao Paulo,3461
+ZIKV,2019,federative_unit,Sergipe,435
+ZIKV,2019,federative_unit,Tocantins,2470
+ZIKV,2020,federative_unit,Acre,305
+ZIKV,2020,federative_unit,Alagoas,272
+ZIKV,2020,federative_unit,Amapa,31
+ZIKV,2020,federative_unit,Amazonas,133
+ZIKV,2020,federative_unit,Bahia,5044
+ZIKV,2020,federative_unit,Ceara,768
+ZIKV,2020,federative_unit,Distrito Federal,2692
+ZIKV,2020,federative_unit,Espirito Santo,104
+ZIKV,2020,federative_unit,Goias,186
+ZIKV,2020,federative_unit,Maranhao,183
+ZIKV,2020,federative_unit,Mato Grosso,842
+ZIKV,2020,federative_unit,Mato Grosso do Sul,345
+ZIKV,2020,federative_unit,Minas Gerais,1378
+ZIKV,2020,federative_unit,Para,440
+ZIKV,2020,federative_unit,Paraiba,624
+ZIKV,2020,federative_unit,Parana,207
+ZIKV,2020,federative_unit,Pernambuco,2145
+ZIKV,2020,federative_unit,Piaui,56
+ZIKV,2020,federative_unit,Rio Grande do Norte,1569
+ZIKV,2020,federative_unit,Rio Grande do Sul,331
+ZIKV,2020,federative_unit,Rio de Janeiro,313
+ZIKV,2020,federative_unit,Rondonia,588
+ZIKV,2020,federative_unit,Roraima,74
+ZIKV,2020,federative_unit,Santa Catarina,224
+ZIKV,2020,federative_unit,Sao Paulo,1163
+ZIKV,2020,federative_unit,Sergipe,528
+ZIKV,2020,federative_unit,Tocantins,322
+ZIKV,2021,federative_unit,Acre,622
+ZIKV,2021,federative_unit,Alagoas,450
+ZIKV,2021,federative_unit,Amapa,116
+ZIKV,2021,federative_unit,Amazonas,223
+ZIKV,2021,federative_unit,Bahia,2120
+ZIKV,2021,federative_unit,Ceara,1701
+ZIKV,2021,federative_unit,Distrito Federal,85
+ZIKV,2021,federative_unit,Goias,150
+ZIKV,2021,federative_unit,Maranhao,105
+ZIKV,2021,federative_unit,Mato Grosso,401
+ZIKV,2021,federative_unit,Mato Grosso do Sul,415
+ZIKV,2021,federative_unit,Minas Gerais,401
+ZIKV,2021,federative_unit,Para,252
+ZIKV,2021,federative_unit,Paraiba,2528
+ZIKV,2021,federative_unit,Parana,79
+ZIKV,2021,federative_unit,Pernambuco,4414
+ZIKV,2021,federative_unit,Piaui,104
+ZIKV,2021,federative_unit,Rio Grande do Norte,919
+ZIKV,2021,federative_unit,Rio Grande do Sul,265
+ZIKV,2021,federative_unit,Rio de Janeiro,194
+ZIKV,2021,federative_unit,Rondonia,294
+ZIKV,2021,federative_unit,Roraima,194
+ZIKV,2021,federative_unit,Santa Catarina,162
+ZIKV,2021,federative_unit,Sao Paulo,966
+ZIKV,2021,federative_unit,Sergipe,1142
+ZIKV,2021,federative_unit,Tocantins,788
+ZIKV,2022,federative_unit,Acre,103
+ZIKV,2022,federative_unit,Alagoas,1273
+ZIKV,2022,federative_unit,Amapa,114
+ZIKV,2022,federative_unit,Amazonas,356
+ZIKV,2022,federative_unit,Bahia,2944
+ZIKV,2022,federative_unit,Ceara,2896
+ZIKV,2022,federative_unit,Distrito Federal,110
+ZIKV,2022,federative_unit,Espirito Santo,1068
+ZIKV,2022,federative_unit,Goias,290
+ZIKV,2022,federative_unit,Maranhao,1315
+ZIKV,2022,federative_unit,Mato Grosso,400
+ZIKV,2022,federative_unit,Mato Grosso do Sul,1267
+ZIKV,2022,federative_unit,Minas Gerais,545
+ZIKV,2022,federative_unit,Para,571
+ZIKV,2022,federative_unit,Paraiba,2547
+ZIKV,2022,federative_unit,Parana,123
+ZIKV,2022,federative_unit,Pernambuco,5151
+ZIKV,2022,federative_unit,Piaui,382
+ZIKV,2022,federative_unit,Rio Grande do Norte,8048
+ZIKV,2022,federative_unit,Rio Grande do Sul,497
+ZIKV,2022,federative_unit,Rio de Janeiro,213
+ZIKV,2022,federative_unit,Rondonia,303
+ZIKV,2022,federative_unit,Roraima,117
+ZIKV,2022,federative_unit,Santa Catarina,544
+ZIKV,2022,federative_unit,Sao Paulo,1084
+ZIKV,2022,federative_unit,Sergipe,1366
+ZIKV,2022,federative_unit,Tocantins,2177
+ZIKV,2023,federative_unit,Acre,908
+ZIKV,2023,federative_unit,Alagoas,197
+ZIKV,2023,federative_unit,Amapa,73
+ZIKV,2023,federative_unit,Amazonas,367
+ZIKV,2023,federative_unit,Bahia,4394
+ZIKV,2023,federative_unit,Ceara,1147
+ZIKV,2023,federative_unit,Distrito Federal,77
+ZIKV,2023,federative_unit,Espirito Santo,13284
+ZIKV,2023,federative_unit,Goias,445
+ZIKV,2023,federative_unit,Maranhao,1889
+ZIKV,2023,federative_unit,Mato Grosso,726
+ZIKV,2023,federative_unit,Mato Grosso do Sul,1335
+ZIKV,2023,federative_unit,Minas Gerais,1041
+ZIKV,2023,federative_unit,Para,460
+ZIKV,2023,federative_unit,Paraiba,293
+ZIKV,2023,federative_unit,Parana,167
+ZIKV,2023,federative_unit,Pernambuco,1192
+ZIKV,2023,federative_unit,Piaui,106
+ZIKV,2023,federative_unit,Rio Grande do Norte,1408
+ZIKV,2023,federative_unit,Rio Grande do Sul,253
+ZIKV,2023,federative_unit,Rio de Janeiro,307
+ZIKV,2023,federative_unit,Rondonia,496
+ZIKV,2023,federative_unit,Roraima,300
+ZIKV,2023,federative_unit,Santa Catarina,235
+ZIKV,2023,federative_unit,Sao Paulo,1048
+ZIKV,2023,federative_unit,Sergipe,770
+ZIKV,2023,federative_unit,Tocantins,3085
+ZIKV,2024,federative_unit,Acre,958
+ZIKV,2024,federative_unit,Alagoas,234
+ZIKV,2024,federative_unit,Amapa,420
+ZIKV,2024,federative_unit,Amazonas,293
+ZIKV,2024,federative_unit,Bahia,4691
+ZIKV,2024,federative_unit,Ceara,2255
+ZIKV,2024,federative_unit,Distrito Federal,140
+ZIKV,2024,federative_unit,Espirito Santo,5427
+ZIKV,2024,federative_unit,Goias,3416
+ZIKV,2024,federative_unit,Maranhao,1845
+ZIKV,2024,federative_unit,Mato Grosso,2541
+ZIKV,2024,federative_unit,Mato Grosso do Sul,1124
+ZIKV,2024,federative_unit,Minas Gerais,1157
+ZIKV,2024,federative_unit,Para,903
+ZIKV,2024,federative_unit,Paraiba,2181
+ZIKV,2024,federative_unit,Parana,133
+ZIKV,2024,federative_unit,Pernambuco,3546
+ZIKV,2024,federative_unit,Piaui,94
+ZIKV,2024,federative_unit,Rio Grande do Norte,3093
+ZIKV,2024,federative_unit,Rio Grande do Sul,127
+ZIKV,2024,federative_unit,Rio de Janeiro,714
+ZIKV,2024,federative_unit,Rondonia,2425
+ZIKV,2024,federative_unit,Roraima,523
+ZIKV,2024,federative_unit,Santa Catarina,199
+ZIKV,2024,federative_unit,Sao Paulo,1989
+ZIKV,2024,federative_unit,Sergipe,910
+ZIKV,2024,federative_unit,Tocantins,1974
+ZIKV,2025,federative_unit,Acre,1279
+ZIKV,2025,federative_unit,Alagoas,174
+ZIKV,2025,federative_unit,Amapa,176
+ZIKV,2025,federative_unit,Amazonas,231
+ZIKV,2025,federative_unit,Bahia,916
+ZIKV,2025,federative_unit,Ceara,1738
+ZIKV,2025,federative_unit,Distrito Federal,37
+ZIKV,2025,federative_unit,Espirito Santo,1230
+ZIKV,2025,federative_unit,Goias,301
+ZIKV,2025,federative_unit,Maranhao,1105
+ZIKV,2025,federative_unit,Mato Grosso,3282
+ZIKV,2025,federative_unit,Mato Grosso do Sul,3720
+ZIKV,2025,federative_unit,Minas Gerais,520
+ZIKV,2025,federative_unit,Para,528
+ZIKV,2025,federative_unit,Paraiba,212
+ZIKV,2025,federative_unit,Parana,211
+ZIKV,2025,federative_unit,Pernambuco,1860
+ZIKV,2025,federative_unit,Piaui,83
+ZIKV,2025,federative_unit,Rio Grande do Norte,1784
+ZIKV,2025,federative_unit,Rio Grande do Sul,33
+ZIKV,2025,federative_unit,Rio de Janeiro,541
+ZIKV,2025,federative_unit,Rondonia,2575
+ZIKV,2025,federative_unit,Roraima,107
+ZIKV,2025,federative_unit,Santa Catarina,193
+ZIKV,2025,federative_unit,Sao Paulo,2003
+ZIKV,2025,federative_unit,Sergipe,190
+ZIKV,2025,federative_unit,Tocantins,735
+ZIKV,2026,federative_unit,Acre,266
+ZIKV,2026,federative_unit,Alagoas,158
+ZIKV,2026,federative_unit,Amapa,96
+ZIKV,2026,federative_unit,Amazonas,86
+ZIKV,2026,federative_unit,Bahia,585
+ZIKV,2026,federative_unit,Ceara,2132
+ZIKV,2026,federative_unit,Distrito Federal,19
+ZIKV,2026,federative_unit,Espirito Santo,213
+ZIKV,2026,federative_unit,Goias,410
+ZIKV,2026,federative_unit,Maranhao,1600
+ZIKV,2026,federative_unit,Mato Grosso,631
+ZIKV,2026,federative_unit,Mato Grosso do Sul,1826
+ZIKV,2026,federative_unit,Minas Gerais,290
+ZIKV,2026,federative_unit,Para,350
+ZIKV,2026,federative_unit,Paraiba,32
+ZIKV,2026,federative_unit,Parana,74
+ZIKV,2026,federative_unit,Pernambuco,1269
+ZIKV,2026,federative_unit,Piaui,22
+ZIKV,2026,federative_unit,Rio Grande do Norte,945
+ZIKV,2026,federative_unit,Rio Grande do Sul,21
+ZIKV,2026,federative_unit,Rio de Janeiro,43
+ZIKV,2026,federative_unit,Rondonia,589
+ZIKV,2026,federative_unit,Roraima,55
+ZIKV,2026,federative_unit,Santa Catarina,98
+ZIKV,2026,federative_unit,Sao Paulo,467
+ZIKV,2026,federative_unit,Sergipe,97
+ZIKV,2026,federative_unit,Tocantins,597
+ZIKV,2016,pregnancy,1o trimestre,6566
+ZIKV,2016,pregnancy,2o trimestre,9818
+ZIKV,2016,pregnancy,3o trimestre,9203
+ZIKV,2016,pregnancy,Idade gestacional ignorada,1143
+ZIKV,2016,pregnancy,Ignorado,43108
+ZIKV,2016,pregnancy,Ignorado/NA,11
+ZIKV,2016,pregnancy,Nao,82511
+ZIKV,2016,pregnancy,Nao se aplica,129104
+ZIKV,2017,pregnancy,1o trimestre,1679
+ZIKV,2017,pregnancy,2o trimestre,2289
+ZIKV,2017,pregnancy,3o trimestre,2142
+ZIKV,2017,pregnancy,Idade gestacional ignorada,161
+ZIKV,2017,pregnancy,Ignorado,3032
+ZIKV,2017,pregnancy,Ignorado/NA,1
+ZIKV,2017,pregnancy,Nao,9189
+ZIKV,2017,pregnancy,Nao se aplica,14191
+ZIKV,2018,pregnancy,1o trimestre,949
+ZIKV,2018,pregnancy,2o trimestre,1236
+ZIKV,2018,pregnancy,3o trimestre,1165
+ZIKV,2018,pregnancy,Idade gestacional ignorada,69
+ZIKV,2018,pregnancy,Ignorado,1721
+ZIKV,2018,pregnancy,Ignorado/NA,1
+ZIKV,2018,pregnancy,Nao,5803
+ZIKV,2018,pregnancy,Nao se aplica,9640
+ZIKV,2019,pregnancy,1o trimestre,1407
+ZIKV,2019,pregnancy,2o trimestre,2070
+ZIKV,2019,pregnancy,3o trimestre,1988
+ZIKV,2019,pregnancy,Idade gestacional ignorada,120
+ZIKV,2019,pregnancy,Ignorado,2003
+ZIKV,2019,pregnancy,Ignorado/NA,2
+ZIKV,2019,pregnancy,Nao,7940
+ZIKV,2019,pregnancy,Nao se aplica,14970
+ZIKV,2020,pregnancy,1o trimestre,573
+ZIKV,2020,pregnancy,2o trimestre,753
+ZIKV,2020,pregnancy,3o trimestre,659
+ZIKV,2020,pregnancy,Idade gestacional ignorada,50
+ZIKV,2020,pregnancy,Ignorado,3031
+ZIKV,2020,pregnancy,Ignorado/NA,2
+ZIKV,2020,pregnancy,Nao,5317
+ZIKV,2020,pregnancy,Nao se aplica,10482
+ZIKV,2021,pregnancy,1o trimestre,470
+ZIKV,2021,pregnancy,2o trimestre,602
+ZIKV,2021,pregnancy,3o trimestre,626
+ZIKV,2021,pregnancy,Idade gestacional ignorada,46
+ZIKV,2021,pregnancy,Ignorado,1149
+ZIKV,2021,pregnancy,Nao,6279
+ZIKV,2021,pregnancy,Nao se aplica,9918
+ZIKV,2022,pregnancy,1o trimestre,745
+ZIKV,2022,pregnancy,2o trimestre,1070
+ZIKV,2022,pregnancy,3o trimestre,955
+ZIKV,2022,pregnancy,Idade gestacional ignorada,99
+ZIKV,2022,pregnancy,Ignorado,1790
+ZIKV,2022,pregnancy,Nao,13100
+ZIKV,2022,pregnancy,Nao se aplica,18045
+ZIKV,2023,pregnancy,1o trimestre,544
+ZIKV,2023,pregnancy,2o trimestre,822
+ZIKV,2023,pregnancy,3o trimestre,797
+ZIKV,2023,pregnancy,Idade gestacional ignorada,132
+ZIKV,2023,pregnancy,Ignorado,2039
+ZIKV,2023,pregnancy,Nao,12883
+ZIKV,2023,pregnancy,Nao se aplica,18786
+ZIKV,2024,pregnancy,1o trimestre,969
+ZIKV,2024,pregnancy,2o trimestre,1371
+ZIKV,2024,pregnancy,3o trimestre,1347
+ZIKV,2024,pregnancy,Idade gestacional ignorada,99
+ZIKV,2024,pregnancy,Ignorado,1928
+ZIKV,2024,pregnancy,Nao,16303
+ZIKV,2024,pregnancy,Nao se aplica,21295
+ZIKV,2025,pregnancy,1o trimestre,671
+ZIKV,2025,pregnancy,2o trimestre,945
+ZIKV,2025,pregnancy,3o trimestre,992
+ZIKV,2025,pregnancy,Idade gestacional ignorada,52
+ZIKV,2025,pregnancy,Ignorado,729
+ZIKV,2025,pregnancy,Nao,8826
+ZIKV,2025,pregnancy,Nao se aplica,13549
+ZIKV,2026,pregnancy,1o trimestre,200
+ZIKV,2026,pregnancy,2o trimestre,263
+ZIKV,2026,pregnancy,3o trimestre,223
+ZIKV,2026,pregnancy,Idade gestacional ignorada,35
+ZIKV,2026,pregnancy,Ignorado,357
+ZIKV,2026,pregnancy,Nao,4716
+ZIKV,2026,pregnancy,Nao se aplica,7177
+ZIKV,2016,sex,Feminino,189769
+ZIKV,2016,sex,Ignorado,351
+ZIKV,2016,sex,Masculino,91344
+ZIKV,2017,sex,Feminino,22862
+ZIKV,2017,sex,Ignorado,21
+ZIKV,2017,sex,Masculino,9801
+ZIKV,2018,sex,Feminino,13669
+ZIKV,2018,sex,Ignorado,7
+ZIKV,2018,sex,Masculino,6908
+ZIKV,2019,sex,Feminino,20417
+ZIKV,2019,sex,Ignorado,37
+ZIKV,2019,sex,Masculino,10046
+ZIKV,2020,sex,Feminino,13252
+ZIKV,2020,sex,Ignorado,15
+ZIKV,2020,sex,Masculino,7600
+ZIKV,2021,sex,Feminino,12011
+ZIKV,2021,sex,Ignorado,5
+ZIKV,2021,sex,Masculino,7074
+ZIKV,2022,sex,Feminino,22289
+ZIKV,2022,sex,Ignorado,5
+ZIKV,2022,sex,Masculino,13510
+ZIKV,2023,sex,Feminino,21277
+ZIKV,2023,sex,Ignorado,8
+ZIKV,2023,sex,Masculino,14718
+ZIKV,2024,sex,Feminino,26449
+ZIKV,2024,sex,Ignorado,16
+ZIKV,2024,sex,Masculino,16847
+ZIKV,2025,sex,Feminino,15525
+ZIKV,2025,sex,Ignorado,2
+ZIKV,2025,sex,Masculino,10237
+ZIKV,2026,sex,Feminino,7383
+ZIKV,2026,sex,Masculino,5588

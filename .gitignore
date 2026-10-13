@@ -1,0 +1,11 @@
+.Rhistory
+.RData
+.Rproj.user/
+.claude/
+*.bak
+*.part
+*.chunk
+
+# raw official sources (1.7 GB; re-download with tools/fetch_raw_sources.R)
+raw/*
+!raw/MANIFEST.csv

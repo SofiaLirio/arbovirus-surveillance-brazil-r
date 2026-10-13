@@ -1,0 +1,96 @@
+Script,Output_file,Figure,Panel,Item,Value
+adv_cocirculation.R,cocirculation_heatmap.png,Supplementary,left,Former title,National cross-correlation by virus pair
+adv_cocirculation.R,cocirculation_heatmap.png,Supplementary,right,Former title,National co-activity (both > own median)
+adv_covid_its.R,its_national.png,Supplementary,Dengue,Pandemic level effect (p),-26% (p = 0.299)
+adv_covid_its.R,its_national.png,Supplementary,Chikungunya,Pandemic level effect (p),-54% (p < 0.001)
+adv_covid_its.R,its_national.png,Supplementary,Zika,Pandemic level effect (p),-37% (p = 0.013)
+adv_covid_its.R,its_national.png,Supplementary,,Former title,"<virus> — national monthly incidence, with pandemic effect"
+adv_dlnm.R,dlnm_exposure_response.png,Supplementary,,Former title,"DLNM cumulative exposure–response (lags 0–2, state+month FE)"
+adv_epidemic_threshold.R,epidemic_threshold_national.png,Supplementary,,Former title,<virus> — national incidence vs epidemic threshold
+adv_forecast.R,forecast_national.png,Supplementary,,Former title,<virus> — national 12-month hold-out forecast
+adv_spatial_regression.R,spatial_regression.png,Supplementary,left,Former title,Model fit by virus
+adv_spatial_regression.R,spatial_regression.png,Supplementary,right,Former title,Residual spatial autocorrelation
+adv_spatial_regression.R,spatial_regression.png,Supplementary,right,Key (former title),Red bar = residual Moran's I with p < 0.05
+alt_results.R,trend01_slope_first_last.png,Supplementary,,Former title,"Slope chart — first vs last year of surveillance, coloured states are MK-significant (p<0.05)"
+alt_results.R,trend03_sen_dotbar.png,Supplementary,,Former title,Mann-Kendall Sen slopes by state — sorted dot-and-bar
+alt_results.R,spat01_choropleth_facet.png,Supplementary,,Former title,Choropleth small-multiples — mean annual incidence per 100k
+alt_results.R,spat02_lisa_facet.png,Supplementary,,Former title,LISA cluster categories — faceted by disease
+alt_results.R,glm02_caterpillar_temp_irr.png,Supplementary,,Former title,"Caterpillar plot — per-state temperature IRR (NegBin), sorted"
+arbovirus_geospatial.R,geo_07_combined_map.png,Figure 6,Dengue,"Global Moran's I (p, 999 permutations)",0.516 (p = 0.001)
+arbovirus_geospatial.R,geo_07_combined_map.png,Figure 6,Chikungunya,"Global Moran's I (p, 999 permutations)",0.004 (p = 0.285)
+arbovirus_geospatial.R,geo_07_combined_map.png,Figure 6,Zika,"Global Moran's I (p, 999 permutations)",-0.006 (p = 0.326)
+arbovirus_geospatial.R,geo_07_combined_map.png,Figure 6,Dengue,"Class bounds, cases per 100,000 (class 1 -> 5)","71–129  |  129–397  |  397–762  |  762–1,212  |  1,212–1,782"
+arbovirus_geospatial.R,geo_07_combined_map.png,Figure 6,Chikungunya,"Class bounds, cases per 100,000 (class 1 -> 5)",6–67  |  67–136  |  136–197  |  197–325  |  325–498
+arbovirus_geospatial.R,geo_07_combined_map.png,Figure 6,Zika,"Class bounds, cases per 100,000 (class 1 -> 5)",2–20  |  20–42  |  42–72  |  72–98  |  98–137
+arbovirus_geospatial.R,geo_07_combined_map.png,Figure 6,,Key,"Circle = dengue, triangle = chikungunya, square = Zika; fill = natural-breaks (Jenks, k = 5) class of the population-weighted mean annual incidence, computed separately for each disease; symbols for RN, PB, PE, AL, SE, ES and RJ are drawn offshore with a leader line to the state."
+arbovirus_geospatial.R,geo_02_temporal_dengue.png,Figure S1,,Former title,"Dengue — Annual Incidence per 100,000 by State"
+arbovirus_geospatial.R,geo_03_temporal_chikv.png,Figure S1,,Former title,"Chikungunya — Annual Incidence per 100,000 by State"
+arbovirus_geospatial.R,geo_04_temporal_zikv.png,Figure S1,,Former title,"Zika — Annual Incidence per 100,000 by State"
+arbovirus_geospatial.R,geo_05_lisa_clusters.png,Figure S2A,,Former title,"LISA Cluster Maps — Local Moran's I (999 permutations, alpha = 0.05)"
+arbovirus_geospatial.R,geo_05_lisa_clusters.png,Figure S2A,,Key (former title),HH = high-high cluster; LL = low-low cluster; HL/LH = spatial outliers; NS = not significant
+arbovirus_geospatial.R,geo_06_trend_map.png,Figure S2B,,Former title,Mann-Kendall Trend Classification by State
+arbovirus_geospatial.R,geo_06_trend_map.png,Figure S2B,,Key (former title),Solid = p < 0.05; pale = not significant
+arbovirus_pipeline_en.R,py_01_annual_incidence.png,Figure 1A,,Former title,"Annual Arbovirus Incidence in Brazil (per 100,000 inhabitants)"
+arbovirus_pipeline_en.R,py_02_heatmap_state_year.png,Supplementary,,Former title,"Annual Incidence by State (per 100,000 inhabitants)"
+arbovirus_pipeline_en.R,py_03_boxplot_regional.png,Figure 1B,,Former title,Monthly Incidence Distribution by Region
+arbovirus_pipeline_en.R,py_03b_boxplot_disease_comparison.png,Supplementary,,Former title,"Monthly Incidence Comparison by Disease (per 100,000 inhabitants)"
+arbovirus_pipeline_en.R,py_04_mannkendall_tau.png,Figure 2A,Dengue,Significant states (p < 0.05),2/27
+arbovirus_pipeline_en.R,py_04_mannkendall_tau.png,Figure 2A,Chikungunya,Significant states (p < 0.05),3/27
+arbovirus_pipeline_en.R,py_04_mannkendall_tau.png,Figure 2A,Zika,Significant states (p < 0.05),6/27
+arbovirus_pipeline_en.R,py_04_mannkendall_tau.png,Figure 2A,,Former title,Mann-Kendall Test — Kendall's Tau by State (coloured bars = p < 0.05)
+arbovirus_pipeline_en.R,py_05_sens_slope.png,Figure 2B,,Former title,Sen's Slope by State — Rate of Change in Incidence
+arbovirus_pipeline_en.R,py_06_spearman_summary.png,Figure 3A,,Former title,Spearman Correlation: Monthly Incidence × Climate
+arbovirus_pipeline_en.R,py_06_spearman_summary.png,Figure 3A,,Key (former title),Cells = mean Rho across states; * = ≥ 50% of states with p < 0.05
+arbovirus_pipeline_en.R,py_07_spearman_state_bestlag.png,Supplementary,,Former title,Spearman's Rho by State — Lag with Highest Absolute Correlation
+arbovirus_pipeline_en.R,py_07_spearman_state_bestlag.png,Supplementary,,Key (former title),"Opaque bar = p < 0.05; L0/L1/L2 = optimal lag; top row temperature, bottom row rainfall"
+arbovirus_pipeline_en.R,py_08_lag_profile_region.png,Figure 3B,,Former title,Lag Profile: Mean Rho by Region and Time Lag
+arbovirus_pipeline_en.R,py_06b_spearman_rho_only.png,Supplementary,,Former title,Spearman's Rho by State — All Variables and Lags
+arbovirus_pipeline_en.R,py_06d_rain_significant_states.png,Supplementary,Dengue,Significant states (p < 0.05),24
+arbovirus_pipeline_en.R,py_06d_rain_significant_states.png,Supplementary,Chikungunya,Significant states (p < 0.05),26
+arbovirus_pipeline_en.R,py_06d_rain_significant_states.png,Supplementary,Zika,Significant states (p < 0.05),22
+arbovirus_pipeline_en.R,py_06d_rain_significant_states.png,Supplementary,,Former title,States with Significant Spearman Correlation: Rainfall × Incidence
+arbovirus_pipeline_en.R,py_06d_rain_significant_states.png,Supplementary,,Key (former title),Best significant lag shown (L0/L1/L2); p < 0.05
+arbovirus_pipeline_en.R,py_06c_spearman_rain_lag2.png,Supplementary,Dengue,Significant states (p < 0.05),23
+arbovirus_pipeline_en.R,py_06c_spearman_rain_lag2.png,Supplementary,Chikungunya,Significant states (p < 0.05),26
+arbovirus_pipeline_en.R,py_06c_spearman_rain_lag2.png,Supplementary,Zika,Significant states (p < 0.05),23
+arbovirus_pipeline_en.R,py_06c_spearman_rain_lag2.png,Supplementary,,Former title,Spearman Correlation: Rainfall (month t) × Incidence (month t+2)
+arbovirus_pipeline_en.R,py_06c_spearman_rain_lag2.png,Supplementary,,Key (former title),Opaque bar = p < 0.05
+arbovirus_pipeline_en.R,py_10_moran_scatterplot.png,Figure 4,Dengue,"Global Moran's I (p, 999 permutations)",0.516 (p = 0.001)
+arbovirus_pipeline_en.R,py_10_moran_scatterplot.png,Figure 4,Chikungunya,"Global Moran's I (p, 999 permutations)",0.004 (p = 0.285)
+arbovirus_pipeline_en.R,py_10_moran_scatterplot.png,Figure 4,Zika,"Global Moran's I (p, 999 permutations)",-0.006 (p = 0.326)
+arbovirus_pipeline_en.R,py_10_moran_scatterplot.png,Figure 4,,Former title,Moran Scatterplot — Spatial Autocorrelation
+graphpad_pipeline.R,Dengue_01b_monthly_heatmap.png,Supplementary,,Former title,Dengue — Monthly 2016-2025 (heat-map)
+graphpad_pipeline.R,Dengue_02_ELISA.png,Figure 7A,,Former title,Dengue — ELISA 2016-2025
+graphpad_pipeline.R,Dengue_02_IgM.png,Figure 7B,,Former title,Dengue — IgM 2016-2025
+graphpad_pipeline.R,Dengue_02_hospitalization.png,Figure 7C,,Former title,Dengue — Hospitalization 2016-2025
+graphpad_pipeline.R,Dengue_03_sex.png,Figure 5B,,Former title,Dengue — Sex 2016-2025
+graphpad_pipeline.R,Dengue_03_serotype.png,Figure 7D,,Former title,Dengue — Serotype 2016-2025
+graphpad_pipeline.R,Dengue_04_age_group_violin.png,Figure 5A,,Former title,Dengue — Age group 2016-2025
+graphpad_pipeline.R,Dengue_04_age_group_violin.png,Figure 5A,,Key (former in-plot note),Ages reconstructed from binned counts (jittered uniformly inside each bin); inner lines = quartiles; white dot = median; n = cases with known age.
+graphpad_pipeline.R,Dengue_05_federative_unit_totals.png,Supplementary,,Former title,Dengue — Federative unit 2016-2025
+graphpad_pipeline.R,Chikungunya_01b_monthly_heatmap.png,Supplementary,,Former title,Chikungunya — Monthly 2017-2025 (heat-map)
+graphpad_pipeline.R,Chikungunya_04_age_group_violin.png,Figure 5A,,Former title,Chikungunya — Age group 2017-2025
+graphpad_pipeline.R,Chikungunya_04_age_group_violin.png,Figure 5A,,Key (former in-plot note),Ages reconstructed from binned counts (jittered uniformly inside each bin); inner lines = quartiles; white dot = median; n = cases with known age.
+graphpad_pipeline.R,Chikungunya_03_sex.png,Figure 5B,,Former title,Chikungunya — Sex 2017-2025
+graphpad_pipeline.R,Chikungunya_05_federative_unit_totals.png,Supplementary,,Former title,Chikungunya — Federative unit 2017-2025
+graphpad_pipeline.R,Chikungunya_03_evolution.png,Figure 8A,,Former title,Chikungunya — Evolution 2013-2025
+graphpad_pipeline.R,Chikungunya_03_criteria.png,Figure 8A,,Former title,Chikungunya — Criteria 2010 2017-2025
+graphpad_pipeline.R,Chikungunya_03_classification.png,Figure 8A,,Former title,Chikungunya — Classfication 2017-2025
+graphpad_pipeline.R,Zika_05_federative_unit_totals.png,Supplementary,,Former title,Zika — Federative unit 2016-2025
+graphpad_pipeline.R,Zika_03_sex.png,Figure 5B,,Former title,Zika — Sex 2016-2025
+graphpad_pipeline.R,Zika_01b_monthly_heatmap.png,Supplementary,,Former title,Zika — Monthly 2016-2025 (heat-map)
+graphpad_pipeline.R,Zika_04_age_group_violin.png,Figure 5A,,Former title,Zika — Age group 2016-2025
+graphpad_pipeline.R,Zika_04_age_group_violin.png,Figure 5A,,Key (former in-plot note),Ages reconstructed from binned counts (jittered uniformly inside each bin); inner lines = quartiles; white dot = median; n = cases with known age.
+graphpad_pipeline.R,Zika_03_pregnancy.png,Figure 8B,,Former title,Zika — Pregnancy 2016-2025
+graphpad_pipeline.R,Zika_03_evolution.png,Figure 8B,,Former title,Zika — Evolution 2016-2025
+graphpad_pipeline.R,Zika_03_criteria.png,Figure 8B,,Former title,Zika — Criteria 2016-2025
+graphpad_pipeline.R,Zika_03_classification.png,Figure 8B,,Former title,Zika — Classification 2016-2025
+plot_glm_results.R,glm_fig1_pooled_climate_irr.png,GLM Figure 1,,Former title,Pooled GLM with state + month fixed effects — climate IRRs
+plot_glm_results.R,glm_fig1_pooled_climate_irr.png,GLM Figure 1,,Key (former title),95% CI; cluster-robust SEs for Poisson / NegBin; * p < 0.05
+plot_glm_results.R,glm_fig2_per_state_heatmap.png,GLM Figure 2,,Former title,Per-state Negative-Binomial GLM — climate IRRs by state and virus
+plot_glm_results.R,glm_fig2_per_state_heatmap.png,GLM Figure 2,,Key (former title),"Month FE, HAC SEs; * significant at p < 0.05; red = positive, blue = negative"
+plot_glm_results.R,glm_fig3_lag_profile.png,GLM Figure 3,,Former title,Per-state NegBin GLM with lagged climate predictors and month FE — median IRR across states
+plot_glm_results.R,glm_fig3_lag_profile.png,GLM Figure 3,,Key (former title),Line = median IRR across states; shaded = IQR
+plot_glm_results.R,glm_fig4_aic_comparison.png,GLM Figure 4,,Former title,Model fit comparison — median AIC across states (log scale)
+plot_glm_results.R,glm_fig4_aic_comparison.png,GLM Figure 4,,Key (former title),Negative Binomial fits dengue/chikv/zika monthly counts vastly better than Poisson due to overdispersion
+plot_glm_results.R,glm_fig5_forest_significant.png,GLM Figure 5,,Former title,"Forest plot of significant per-state climate effects (Negative-Binomial GLM, p < 0.05)"
